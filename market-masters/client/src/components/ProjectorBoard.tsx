@@ -387,15 +387,15 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
                 if (!bgSrc && eraName.toLowerCase().includes('covid')) bgSrc = '/eras/covid.png';
                 
                 if (bgSrc) {
-                   return <img src={bgSrc} alt="Era Background" className="w-full h-full object-cover opacity-20 mix-blend-multiply" />;
+                   return <img src={bgSrc} alt="Era Background" className="w-full h-full object-cover opacity-15" />;
                 }
-                return <h1 className="text-9xl font-black text-brand-900 whitespace-nowrap tracking-tighter mix-blend-multiply -rotate-12 opacity-5">MARKET MASTERS</h1>;
+                return <h1 className="text-9xl font-black text-brand-900 whitespace-nowrap tracking-tighter -rotate-12 opacity-5">MARKET MASTERS</h1>;
              })()}
           </div>
 
           <div className="z-10 flex flex-col items-center gap-10">
             <motion.div 
-              className="text-center soft-panel px-10 py-6 bg-white/80 backdrop-blur-xl"
+              className="text-center soft-panel px-10 py-6 bg-white shadow-2xl"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
