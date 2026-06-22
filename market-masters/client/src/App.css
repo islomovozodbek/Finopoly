@@ -1,0 +1,72 @@
+/* Custom CSS for 3D Dice Animation and Game Mechanics */
+
+.dice-container {
+  perspective: 1000px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.dice {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dice-face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.1), var(--shadow-soft);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+/* Dots inside the dice */
+.dot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--text-primary);
+  box-shadow: inset 0 3px rgba(0,0,0,0.2);
+}
+
+/* Positioning the faces in 3D space */
+.face-front  { transform: rotateY(  0deg) translateZ(50px); }
+.face-back   { transform: rotateY(180deg) translateZ(50px); }
+.face-right  { transform: rotateY( 90deg) translateZ(50px); }
+.face-left   { transform: rotateY(-90deg) translateZ(50px); }
+.face-top    { transform: rotateX( 90deg) translateZ(50px); }
+.face-bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+/* Roll Animations */
+.rolling {
+  animation: roll 1s ease-in-out infinite;
+}
+
+@keyframes roll {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(720deg) rotateY(720deg) rotateZ(360deg); }
+}
+
+/* Show specific numbers */
+.show-1 { transform: rotateY(  0deg); }
+.show-2 { transform: rotateY(-90deg); }
+.show-3 { transform: rotateY(180deg); }
+.show-4 { transform: rotateY( 90deg); }
+.show-5 { transform: rotateX(-90deg); }
+.show-6 { transform: rotateX( 90deg); }
+
+/* Game Piece transitions */
+.game-piece {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
