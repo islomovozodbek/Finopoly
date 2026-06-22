@@ -14,6 +14,16 @@ const TOKEN_TYPES = [
 
 const SPECIAL_TILES = [2, 7, 17, 22, 33, 36];
 
+const ERA_BACKGROUNDS: Record<string, string> = {
+  "Trump vs. China (2025)": "/eras/trump_china.png",
+  "The Great Depression (1929–1939)": "/eras/great_depression.png",
+  "AI Boom & Tech Stock Rally (2023–2025)": "/eras/ai_boom.png",
+  "War in Ukraine (2022–Ongoing)": "/eras/ukraine.png",
+  "U.S. Regional Bank Failures (2023)": "/eras/bank_failures.png",
+  "2008 Global Financial Crisis": "/eras/2008_crisis.png",
+  "COVID": "/eras/covid.png"
+};
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ProjectorBoard({ socket, gameState, roomId }: { socket: any, gameState: GameState, roomId: string }) {
   const [drawnCards, setDrawnCards] = useState<InvestmentCard[]>([]);
@@ -210,11 +220,11 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
     
     const content = isSpecial ? (
         <>
-            {squareIndex % 2 === 0 ? <Newspaper className="text-blue-500 mb-1" size={16} /> : <TrendingUp className="text-purple-500 mb-1" size={16} />}
-            <div className="text-[8px] text-blue-700 font-bold uppercase text-center leading-tight">Market<br/>News</div>
+            {squareIndex % 2 === 0 ? <span className="font-pixel text-blue-500 mb-2 text-[10px] drop-shadow-sm">[!]</span> : <span className="font-pixel text-purple-500 mb-2 text-[10px] drop-shadow-sm">[$]</span>}
+            <div className="font-pixel text-[5px] text-blue-700 uppercase text-center leading-tight tracking-tighter">Market<br/>News</div>
         </>
     ) : (
-        <div className="text-[8px] text-[var(--text-tertiary)] font-bold uppercase text-center leading-tight">Asset<br/>{squareIndex}</div>
+        <div className="font-pixel text-[5px] text-[var(--text-tertiary)] uppercase text-center leading-tight tracking-tighter">Asset<br/><span className="text-[6px]">{squareIndex}</span></div>
     );
 
     if (orientation === 'bottom') return <div className="mt-2 flex flex-col items-center">{content}</div>;
@@ -233,7 +243,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const bottomEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 9 - i; 
     return (
-      <div key={`bottom-${i}`} className="col-span-1 border-r-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-col items-center justify-start relative overflow-hidden group">
+      <div key={`bottom-${i}`} className="col-span-1 border-r-2 border-t-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-col items-center justify-start relative overflow-hidden group">
         {renderSquareContent(squareIndex, 'bottom')}
         <div className={`absolute bottom-0 w-full h-3 ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderTokens(squareIndex)}
@@ -245,7 +255,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const leftEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 19 - i;
     return (
-      <div key={`left-${i}`} className="col-span-1 border-b-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-row items-center justify-end relative overflow-hidden group">
+      <div key={`left-${i}`} className="col-span-1 border-b-2 border-r-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-row items-center justify-end relative overflow-hidden group">
         <div className={`absolute left-0 w-3 h-full ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderSquareContent(squareIndex, 'left')}
         {renderTokens(squareIndex)}
@@ -257,7 +267,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const topEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 21 + i;
     return (
-      <div key={`top-${i}`} className="col-span-1 border-r-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-col items-center justify-end relative overflow-hidden group">
+      <div key={`top-${i}`} className="col-span-1 border-r-2 border-b-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-col items-center justify-end relative overflow-hidden group">
         <div className={`absolute top-0 w-full h-3 ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderSquareContent(squareIndex, 'top')}
         {renderTokens(squareIndex)}
@@ -269,7 +279,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const rightEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 31 + i;
     return (
-      <div key={`right-${i}`} className="col-span-1 border-b-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-row items-center justify-start relative overflow-hidden group">
+      <div key={`right-${i}`} className="col-span-1 border-b-2 border-l-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-row items-center justify-start relative overflow-hidden group">
         {renderSquareContent(squareIndex, 'right')}
         <div className={`absolute right-0 w-3 h-full ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderTokens(squareIndex)}
@@ -352,8 +362,8 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
         
         {/* TOP LEFT CORNER (20) */}
         <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-sky-50 flex flex-col items-center justify-center relative p-1 text-center rotate-135">
-           <HandCoins className="text-sky-500 mb-1 drop-shadow-sm" size={24}/>
-           <span className="text-[8px] font-black text-sky-700 leading-none">WHITE COLLAR<br/>PRISON</span>
+           <img src="/corners/corner_prison.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
+           <span className="font-pixel text-[4px] text-sky-700 leading-none">PRISON</span>
            {renderTokens(20)}
         </div>
         
@@ -361,17 +371,26 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
 
         {/* TOP RIGHT CORNER (30) */}
         <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-orange-50 flex flex-col items-center justify-center relative p-1 text-center rotate-45">
-           <Gavel className="text-orange-500 mb-1 drop-shadow-sm" size={24}/>
-           <span className="text-[8px] font-black text-orange-700 leading-none">BUYOUT</span>
+           <img src="/corners/corner_buyout.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
+           <span className="font-pixel text-[4px] text-orange-700 leading-none">BUYOUT</span>
            {renderTokens(30)}
         </div>
 
         <div className="col-span-1 row-span-9 grid grid-rows-9">{leftEdge}</div>
 
         {/* CENTER AREA */}
-        <div className="col-span-9 row-span-9 relative flex flex-col items-center justify-center bg-[var(--bg-primary)] overflow-hidden shadow-inner">
-          <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none -rotate-12">
-             <h1 className="text-9xl font-black text-brand-900 whitespace-nowrap tracking-tighter mix-blend-multiply">MARKET MASTERS</h1>
+        <div className="col-span-9 row-span-9 relative flex flex-col items-center justify-center bg-[var(--bg-primary)] border-4 border-[var(--border-strong)] overflow-hidden shadow-inner">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+             {(() => {
+                const eraName = gameState?.currentEraName || '';
+                let bgSrc = ERA_BACKGROUNDS[eraName];
+                if (!bgSrc && eraName.toLowerCase().includes('covid')) bgSrc = '/eras/covid.png';
+                
+                if (bgSrc) {
+                   return <img src={bgSrc} alt="Era Background" className="w-full h-full object-cover opacity-20 mix-blend-multiply" />;
+                }
+                return <h1 className="text-9xl font-black text-brand-900 whitespace-nowrap tracking-tighter mix-blend-multiply -rotate-12 opacity-5">MARKET MASTERS</h1>;
+             })()}
           </div>
 
           <div className="z-10 flex flex-col items-center gap-10">
@@ -445,8 +464,8 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
 
         {/* BOTTOM LEFT CORNER (10) */}
         <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-rose-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
-           <Activity className="text-rose-500 mb-1 drop-shadow-sm" size={24}/>
-           <span className="text-[8px] font-black text-rose-700 leading-none">ANGEL<br/>INVEST</span>
+           <img src="/corners/corner_crash.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
+           <span className="font-pixel text-[4px] text-rose-700 leading-none">ANGEL</span>
            {renderTokens(10)}
         </div>
 
@@ -454,8 +473,8 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
 
         {/* BOTTOM RIGHT CORNER - Start (0) */}
         <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-emerald-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
-           <Landmark className="text-emerald-500 mb-1 drop-shadow-sm" size={24}/>
-           <span className="text-[10px] font-black text-emerald-700 leading-none">START</span>
+           <img src="/corners/corner_start.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
+           <span className="font-pixel text-[5px] text-emerald-700 leading-none">START</span>
            {renderTokens(0)}
         </div>
 
