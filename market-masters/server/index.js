@@ -25,8 +25,12 @@ const clientBuildPath = path.join(__dirname, '../client/dist');
 app.use(express.static(clientBuildPath));
 
 // Fallback to React router for all other requests
-app.get('*', (req, res) => {
-  res.sendFile(path.join(clientBuildPath, 'index.html'));
+app.use((req, res, next) => {
+  if (req.method === 'GET' && !req.path.startsWith('/socket.io')) {
+    res.sendFile(path.join(clientBuildPath, 'index.html'));
+  } else {
+    next();
+  }
 });
 
 const server = http.createServer(app);
