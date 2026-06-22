@@ -8,7 +8,7 @@ import LandingPage from './components/LandingPage';
 import { LogOut } from 'lucide-react';
 import type { GameState } from './types';
 
-const socket = io('http://localhost:3001');
+const socket = io(import.meta.env.PROD ? '/' : 'http://localhost:3001');
 
 function Navigation() {
   const location = useLocation();

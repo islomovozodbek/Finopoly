@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Landmark, Gavel, HandCoins, Activity, Box, Sparkles, CheckCircle2, AlertTriangle, ArrowRight, Car, Rocket, Sailboat, Zap, Star, Crown, Newspaper, TrendingUp } from 'lucide-react';
+import { Box, Sparkles, CheckCircle2, AlertTriangle, ArrowRight, Car, Rocket, Sailboat, Zap, Star, Crown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { GameState, Team, InvestmentCard, SpecialCard } from '../types';
 

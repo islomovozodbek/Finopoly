@@ -20,6 +20,15 @@ try {
 const app = express();
 app.use(cors());
 
+// Serve the React frontend static files
+const clientBuildPath = path.join(__dirname, '../client/dist');
+app.use(express.static(clientBuildPath));
+
+// Fallback to React router for all other requests
+app.get('*', (req, res) => {
+  res.sendFile(path.join(clientBuildPath, 'index.html'));
+});
+
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -520,7 +529,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
