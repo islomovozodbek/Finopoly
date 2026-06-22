@@ -3,6 +3,10 @@ const path = require('path');
 const fs = require('fs');
 
 const dbPath = path.join(__dirname, 'data', 'database.sqlite');
+const dataDir = path.dirname(dbPath);
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
 const db = new Database(dbPath);
 
 // Initialization
