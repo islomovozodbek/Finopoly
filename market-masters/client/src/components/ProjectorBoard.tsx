@@ -361,7 +361,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
       <div className="relative w-full max-w-[85vh] aspect-square bg-white border-8 border-[var(--border-strong)] shadow-[var(--shadow-medium)] grid grid-cols-11 grid-rows-11 overflow-hidden">
         
         {/* TOP LEFT CORNER (20) */}
-        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-sky-50 flex flex-col items-center justify-center relative p-1 text-center rotate-135">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-sky-50 flex flex-col items-center justify-center relative p-1 text-center">
            <img src="/corners/corner_prison.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
            <span className="font-pixel text-[4px] text-sky-700 leading-none">PRISON</span>
            {renderTokens(20)}
@@ -370,7 +370,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
         <div className="col-span-9 row-span-1 grid grid-cols-9">{topEdge}</div>
 
         {/* TOP RIGHT CORNER (30) */}
-        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-orange-50 flex flex-col items-center justify-center relative p-1 text-center rotate-45">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-orange-50 flex flex-col items-center justify-center relative p-1 text-center">
            <img src="/corners/corner_buyout.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
            <span className="font-pixel text-[4px] text-orange-700 leading-none">BUYOUT</span>
            {renderTokens(30)}
@@ -463,7 +463,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
         <div className="col-span-1 row-span-9 grid grid-rows-9">{rightEdge}</div>
 
         {/* BOTTOM LEFT CORNER (10) */}
-        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-rose-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-rose-50 flex flex-col items-center justify-center relative p-1 text-center">
            <img src="/corners/corner_crash.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
            <span className="font-pixel text-[4px] text-rose-700 leading-none">ANGEL</span>
            {renderTokens(10)}
@@ -472,7 +472,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
         <div className="col-span-9 row-span-1 grid grid-cols-9">{bottomEdge}</div>
 
         {/* BOTTOM RIGHT CORNER - Start (0) */}
-        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-emerald-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-emerald-50 flex flex-col items-center justify-center relative p-1 text-center">
            <img src="/corners/corner_start.png" className="w-8 h-8 object-contain mb-1 drop-shadow-sm mix-blend-multiply" />
            <span className="font-pixel text-[5px] text-emerald-700 leading-none">START</span>
            {renderTokens(0)}
