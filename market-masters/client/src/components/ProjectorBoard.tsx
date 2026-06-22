@@ -233,7 +233,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const bottomEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 9 - i; 
     return (
-      <div key={`bottom-${i}`} className="col-span-1 border-r border-[var(--border-subtle)] bg-[var(--bg-secondary)] flex flex-col items-center justify-start relative overflow-hidden group">
+      <div key={`bottom-${i}`} className="col-span-1 border-r-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-col items-center justify-start relative overflow-hidden group">
         {renderSquareContent(squareIndex, 'bottom')}
         <div className={`absolute bottom-0 w-full h-3 ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderTokens(squareIndex)}
@@ -245,7 +245,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const leftEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 19 - i;
     return (
-      <div key={`left-${i}`} className="col-span-1 border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)] flex flex-row items-center justify-end relative overflow-hidden group">
+      <div key={`left-${i}`} className="col-span-1 border-b-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-row items-center justify-end relative overflow-hidden group">
         <div className={`absolute left-0 w-3 h-full ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderSquareContent(squareIndex, 'left')}
         {renderTokens(squareIndex)}
@@ -257,7 +257,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const topEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 21 + i;
     return (
-      <div key={`top-${i}`} className="col-span-1 border-r border-[var(--border-subtle)] bg-[var(--bg-secondary)] flex flex-col items-center justify-end relative overflow-hidden group">
+      <div key={`top-${i}`} className="col-span-1 border-r-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-col items-center justify-end relative overflow-hidden group">
         <div className={`absolute top-0 w-full h-3 ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderSquareContent(squareIndex, 'top')}
         {renderTokens(squareIndex)}
@@ -269,7 +269,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
   const rightEdge = Array.from({ length: 9 }).map((_, i) => {
     const squareIndex = 31 + i;
     return (
-      <div key={`right-${i}`} className="col-span-1 border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)] flex flex-row items-center justify-start relative overflow-hidden group">
+      <div key={`right-${i}`} className="col-span-1 border-b-2 border-[var(--border-strong)] bg-[var(--bg-secondary)] flex flex-row items-center justify-start relative overflow-hidden group">
         {renderSquareContent(squareIndex, 'right')}
         <div className={`absolute right-0 w-3 h-full ${getStripeColor(squareIndex)} opacity-80`}></div>
         {renderTokens(squareIndex)}
@@ -348,10 +348,10 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
       </div>
 
       {/* 11x11 Grid Board */}
-      <div className="relative w-full max-w-[85vh] aspect-square bg-white border border-[var(--border-strong)] shadow-[var(--shadow-medium)] rounded-xl grid grid-cols-11 grid-rows-11 overflow-hidden">
+      <div className="relative w-full max-w-[85vh] aspect-square bg-white border-8 border-[var(--border-strong)] shadow-[var(--shadow-medium)] grid grid-cols-11 grid-rows-11 overflow-hidden">
         
         {/* TOP LEFT CORNER (20) */}
-        <div className="col-span-1 row-span-1 border border-[var(--border-subtle)] bg-sky-50 flex flex-col items-center justify-center relative p-1 text-center rotate-135">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-sky-50 flex flex-col items-center justify-center relative p-1 text-center rotate-135">
            <HandCoins className="text-sky-500 mb-1 drop-shadow-sm" size={24}/>
            <span className="text-[8px] font-black text-sky-700 leading-none">WHITE COLLAR<br/>PRISON</span>
            {renderTokens(20)}
@@ -360,7 +360,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
         <div className="col-span-9 row-span-1 grid grid-cols-9">{topEdge}</div>
 
         {/* TOP RIGHT CORNER (30) */}
-        <div className="col-span-1 row-span-1 border border-[var(--border-subtle)] bg-orange-50 flex flex-col items-center justify-center relative p-1 text-center rotate-45">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-orange-50 flex flex-col items-center justify-center relative p-1 text-center rotate-45">
            <Gavel className="text-orange-500 mb-1 drop-shadow-sm" size={24}/>
            <span className="text-[8px] font-black text-orange-700 leading-none">BUYOUT</span>
            {renderTokens(30)}
@@ -444,7 +444,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
         <div className="col-span-1 row-span-9 grid grid-rows-9">{rightEdge}</div>
 
         {/* BOTTOM LEFT CORNER (10) */}
-        <div className="col-span-1 row-span-1 border border-[var(--border-subtle)] bg-rose-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-rose-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
            <Activity className="text-rose-500 mb-1 drop-shadow-sm" size={24}/>
            <span className="text-[8px] font-black text-rose-700 leading-none">ANGEL<br/>INVEST</span>
            {renderTokens(10)}
@@ -453,7 +453,7 @@ export default function ProjectorBoard({ socket, gameState, roomId }: { socket: 
         <div className="col-span-9 row-span-1 grid grid-cols-9">{bottomEdge}</div>
 
         {/* BOTTOM RIGHT CORNER - Start (0) */}
-        <div className="col-span-1 row-span-1 border border-[var(--border-subtle)] bg-emerald-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
+        <div className="col-span-1 row-span-1 border-2 border-[var(--border-strong)] bg-emerald-50 flex flex-col items-center justify-center relative p-1 text-center -rotate-45">
            <Landmark className="text-emerald-500 mb-1 drop-shadow-sm" size={24}/>
            <span className="text-[10px] font-black text-emerald-700 leading-none">START</span>
            {renderTokens(0)}

@@ -1,89 +1,111 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", "sans-serif";
-  --font-mono: "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace";
+  --font-sans: "VT323", "Courier New", monospace;
+  --font-pixel: "Press Start 2P", monospace;
   
-  --color-brand-50: #f4f4f5;
-  --color-brand-100: #e4e4e7;
-  --color-brand-200: #d4d4d8;
-  --color-brand-300: #a1a1aa;
-  --color-brand-400: #71717a;
-  --color-brand-500: #52525b;
-  --color-brand-600: #3f3f46;
-  --color-brand-700: #27272a;
-  --color-brand-800: #18181b;
-  --color-brand-900: #09090b;
+  --color-brand-50: #fef08a;
+  --color-brand-100: #fde047;
+  --color-brand-500: #eab308;
+  --color-brand-600: #ca8a04;
+  --color-brand-900: #713f12;
 
-  --color-accent-50: #eff6ff;
-  --color-accent-100: #dbeafe;
+  --color-accent-50: #bfdbfe;
+  --color-accent-100: #93c5fd;
   --color-accent-500: #3b82f6;
   --color-accent-600: #2563eb;
 }
 
 :root {
-  /* Premium Light Mode Aesthetic */
-  --bg-primary: #F8FAFC; /* Slate 50 */
-  --bg-secondary: rgba(255, 255, 255, 0.85); /* Translucent White for Glassmorphism */
-  --bg-tertiary: #F1F5F9; /* Slate 100 */
-  --border-subtle: rgba(0, 0, 0, 0.05);
-  --border-strong: rgba(0, 0, 0, 0.1);
+  /* Retro 8-bit Aesthetic */
+  --bg-primary: #FDF6E3; /* Cream background */
+  --bg-secondary: #FFF9E6; /* Slightly lighter cream */
+  --bg-tertiary: #F0E6D2; /* Darker cream */
   
-  --text-primary: #0F172A; /* Slate 900 */
-  --text-secondary: #334155; /* Slate 700 */
-  --text-tertiary: #64748B; /* Slate 500 */
+  --border-subtle: #000000;
+  --border-strong: #000000;
   
-  --shadow-soft: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  --text-primary: #000000; 
+  --text-secondary: #222222; 
+  --text-tertiary: #444444; 
   
-  --glow-accent: 0 0 20px rgba(59, 130, 246, 0.3);
+  --shadow-soft: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-medium: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+  
+  --glow-accent: none;
+}
+
+* {
+  border-radius: 0 !important;
 }
 
 body {
   margin: 0;
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
+    linear-gradient(#E8DFCB 1px, transparent 1px),
+    linear-gradient(90deg, #E8DFCB 1px, transparent 1px);
+  background-size: 20px 20px;
   background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
+  font-size: 1.2rem;
+  -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .pixel-font {
+  font-family: var(--font-pixel);
+  text-transform: uppercase;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--bg-primary);
+  border-left: 2px solid #000;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong);
-  border-radius: 4px;
+  background: var(--bg-tertiary);
+  border: 2px solid #000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-tertiary);
+  background: #ccc;
 }
 
-/* Glassmorphism Soft UI Panel */
+/* Retro Panel */
 .soft-panel {
   background-color: var(--bg-secondary);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid #000;
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.1s ease;
 }
 
 .soft-panel:hover {
-  box-shadow: var(--shadow-medium);
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
 }
 
-/* 3D Dice Styles */
+/* Flat solid buttons for retro style */
+button, .btn {
+  border: 4px solid #000 !important;
+  box-shadow: var(--shadow-soft) !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+}
+
+button:active, .btn:active {
+  transform: translate(4px, 4px) !important;
+  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1) !important;
+}
+
+/* 3D Dice Styles (Retro blocky version) */
 .dice-container {
   width: 80px;
   height: 80px;
@@ -96,34 +118,31 @@ body {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 1.5s steps(8); /* Choppy retro animation */
 }
 
 .dice.rolling {
-  animation: roll 1.5s linear infinite;
+  animation: roll 1.5s steps(8) infinite;
 }
 
 .dice-face {
   position: absolute;
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid rgba(0,0,0,0.1);
-  border-radius: 16px;
-  box-shadow: inset 0 0 15px rgba(0,0,0,0.05), 0 4px 15px rgba(0,0,0,0.1);
+  background: #fff;
+  border: 4px solid #000;
+  box-shadow: inset -4px -4px 0px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  backdrop-filter: blur(4px);
 }
 
 .dot {
   width: 16px;
   height: 16px;
-  background: linear-gradient(135deg, #1E293B, #0F172A);
-  border-radius: 50%;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3), 0 1px 2px rgba(255,255,255,0.8);
+  background: #000;
+  border-radius: 0; /* Square dots for 8-bit */
 }
 
 .face-front  { transform: translateZ(40px); }
@@ -148,21 +167,21 @@ body {
 
 /* Animations */
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 2s steps(4) infinite;
 }
 
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-4px); }
   100% { transform: translateY(0px); }
 }
 
 .pulse-glow {
-  animation: pulse-glow 2s infinite;
+  animation: pulse-glow 1s steps(2) infinite;
 }
 
 @keyframes pulse-glow {
-  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3); }
-  70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
