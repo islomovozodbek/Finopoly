@@ -2,6 +2,7 @@ services:
   - type: web
     name: finopoly
     env: node
+    plan: free
     buildCommand: "cd market-masters && npm install && cd client && npm install && npm run build"
     startCommand: "cd market-masters/server && npm install && node index.js"
     envVars:
