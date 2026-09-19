@@ -15,28 +15,28 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center p-4">
-      <div className="soft-panel p-10 w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 rounded-2xl bg-brand-900 text-white flex items-center justify-center text-3xl font-black mx-auto mb-4 shadow-md">
+    <div className="min-h-dvh bg-[var(--bg-primary)] flex items-center justify-center p-[var(--space-md)]">
+      <div className="soft-panel p-[var(--space-xl)] w-full max-w-md">
+        <div className="text-center mb-[var(--space-lg)]">
+          <div className="w-16 h-16 rounded-2xl bg-[var(--color-brand)] text-white flex items-center justify-center text-3xl display-font mx-auto mb-[var(--space-sm)] shadow-[var(--shadow-brand-glow)]">
             M
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-[var(--text-primary)]">Market Masters</h1>
-          <p className="text-[var(--text-tertiary)] mt-2">Connect to the Finopoly platform</p>
+          <h1 className="text-[length:var(--text-heading-lg)] display-font tracking-tight text-[var(--text-primary)]">Market Masters</h1>
+          <p className="text-[var(--text-tertiary)] mt-[var(--space-2xs)] text-sm sm:text-base">Connect to the Finopoly platform</p>
         </div>
 
-        <form onSubmit={handleJoin} className="space-y-6">
-          <div className="space-y-3">
+        <form onSubmit={handleJoin} className="space-y-[var(--space-lg)]">
+          <div className="space-y-[var(--space-xs)]">
             <label className="block text-sm font-medium text-[var(--text-secondary)]">Select Role</label>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="grid grid-cols-1 gap-[var(--space-xs)]">
               <button
                 type="button"
                 onClick={() => setRole('BOARD')}
-                className={`flex items-center gap-3 p-4 border rounded-xl transition-all text-left ${role === 'BOARD' ? 'border-brand-500 bg-brand-50 ring-1 ring-brand-500/20' : 'border-[var(--border-subtle)] bg-white hover:border-[var(--border-strong)]'}`}
+                className={`flex items-center gap-3 p-[var(--space-md)] border rounded-xl transition-all text-left min-h-0 ${role === 'BOARD' ? 'border-[var(--color-brand)] bg-[var(--color-brand-subtle)]' : 'border-[var(--border-subtle)] bg-[var(--bg-elevated)] hover:border-[var(--border-strong)]'}`}
               >
-                <MonitorPlay className={role === 'BOARD' ? 'text-brand-600' : 'text-[var(--text-tertiary)]'} />
+                <MonitorPlay className={role === 'BOARD' ? 'text-[var(--color-brand-hover)]' : 'text-[var(--text-tertiary)]'} />
                 <div>
-                  <div className={`font-semibold ${role === 'BOARD' ? 'text-brand-900' : 'text-[var(--text-primary)]'}`}>Projector Board</div>
+                  <div className="font-semibold text-[var(--text-primary)]">Projector Board</div>
                   <div className="text-xs text-[var(--text-tertiary)] mt-0.5">Main room display</div>
                 </div>
               </button>
@@ -44,11 +44,11 @@ export default function LandingPage() {
               <button
                 type="button"
                 onClick={() => setRole('MODERATOR')}
-                className={`flex items-center gap-3 p-4 border rounded-xl transition-all text-left ${role === 'MODERATOR' ? 'border-brand-500 bg-brand-50 ring-1 ring-brand-500/20' : 'border-[var(--border-subtle)] bg-white hover:border-[var(--border-strong)]'}`}
+                className={`flex items-center gap-3 p-[var(--space-md)] border rounded-xl transition-all text-left min-h-0 ${role === 'MODERATOR' ? 'border-[var(--color-brand)] bg-[var(--color-brand-subtle)]' : 'border-[var(--border-subtle)] bg-[var(--bg-elevated)] hover:border-[var(--border-strong)]'}`}
               >
-                <Users className={role === 'MODERATOR' ? 'text-brand-600' : 'text-[var(--text-tertiary)]'} />
+                <Users className={role === 'MODERATOR' ? 'text-[var(--color-brand-hover)]' : 'text-[var(--text-tertiary)]'} />
                 <div>
-                  <div className={`font-semibold ${role === 'MODERATOR' ? 'text-brand-900' : 'text-[var(--text-primary)]'}`}>Host Control</div>
+                  <div className="font-semibold text-[var(--text-primary)]">Host Control</div>
                   <div className="text-xs text-[var(--text-tertiary)] mt-0.5">Manage game flow & teams</div>
                 </div>
               </button>
@@ -56,11 +56,11 @@ export default function LandingPage() {
               <button
                 type="button"
                 onClick={() => setRole('LEADERBOARD')}
-                className={`flex items-center gap-3 p-4 border rounded-xl transition-all text-left ${role === 'LEADERBOARD' ? 'border-brand-500 bg-brand-50 ring-1 ring-brand-500/20' : 'border-[var(--border-subtle)] bg-white hover:border-[var(--border-strong)]'}`}
+                className={`flex items-center gap-3 p-[var(--space-md)] border rounded-xl transition-all text-left min-h-0 ${role === 'LEADERBOARD' ? 'border-[var(--color-brand)] bg-[var(--color-brand-subtle)]' : 'border-[var(--border-subtle)] bg-[var(--bg-elevated)] hover:border-[var(--border-strong)]'}`}
               >
-                <Trophy className={role === 'LEADERBOARD' ? 'text-brand-600' : 'text-[var(--text-tertiary)]'} />
+                <Trophy className={role === 'LEADERBOARD' ? 'text-[var(--color-brand-hover)]' : 'text-[var(--text-tertiary)]'} />
                 <div>
-                  <div className={`font-semibold ${role === 'LEADERBOARD' ? 'text-brand-900' : 'text-[var(--text-primary)]'}`}>Global Leaderboard</div>
+                  <div className="font-semibold text-[var(--text-primary)]">Global Leaderboard</div>
                   <div className="text-xs text-[var(--text-tertiary)] mt-0.5">Aggregate ranking view</div>
                 </div>
               </button>
@@ -71,7 +71,7 @@ export default function LandingPage() {
             <div>
               <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Room Selection</label>
               <select
-                className="w-full bg-white border border-[var(--border-strong)] rounded-lg p-3 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all shadow-sm"
+                className="w-full bg-[var(--bg-elevated)] border border-[var(--border-strong)] rounded-lg p-3 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand)]/30 focus:border-[var(--color-brand)] transition-all"
                 value={roomId}
                 onChange={(e) => setRoomId(e.target.value)}
               >
@@ -85,7 +85,7 @@ export default function LandingPage() {
 
           <button
             type="submit"
-            className="w-full py-4 mt-4 bg-brand-900 hover:bg-brand-800 text-white font-semibold rounded-xl transition-colors flex justify-center items-center gap-2 shadow-md"
+            className="w-full py-[var(--space-sm)] bg-[var(--color-brand)] hover:bg-[var(--color-brand-hover)] text-white rounded-xl transition-colors flex justify-center items-center gap-2 shadow-[var(--shadow-brand-glow)]"
           >
             <LogIn size={20} />
             Enter {role === 'LEADERBOARD' ? 'Leaderboard' : 'Room'}
