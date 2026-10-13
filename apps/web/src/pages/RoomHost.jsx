@@ -15,6 +15,13 @@ import { getTeamIcon } from '@finopoly/content/client';
 import styles from './RoomHost.module.css';
 
 const PHASES = ['lobby', 'briefing', 'research', 'playing', 'debrief'];
+const PHASE_HELP = {
+  lobby: 'Add teams and share their join codes, then start the game.',
+  briefing: 'Introduce the current era. Teams read the background on their devices.',
+  research: 'Give teams time to discuss the market before making a move.',
+  playing: 'Roll for the current team, then finish their investment before the next roll.',
+  debrief: 'Review the results and discuss what each team learned.',
+};
 
 // The three corner squares have no descriptive content anywhere else in the
 // app (unlike market-news cards, packages/content/news.js) -- mechanics
@@ -125,6 +132,7 @@ export default function RoomHost() {
       {/* ── Phase selector ── */}
       <div className={styles.phaseBar}>
         <span className={styles.phaseLabel}>Phase</span>
+        <div className={styles.phaseContent}>
         <div className={styles.phaseGroup}>
           {PHASES.map((p) => (
             <button
@@ -138,6 +146,8 @@ export default function RoomHost() {
               {p}
             </button>
           ))}
+        </div>
+        <p className={styles.phaseHelp}>{PHASE_HELP[room.phase]}</p>
         </div>
       </div>
 

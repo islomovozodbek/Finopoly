@@ -9,7 +9,7 @@ function iconInk(color) {
   const channels = color.slice(1).match(/../g).map(hex => parseInt(hex, 16) / 255)
     .map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4);
   const luminance = channels[0] * .2126 + channels[1] * .7152 + channels[2] * .0722;
-  return luminance < .18 ? 'var(--color-on-accent)' : 'var(--token-ink)';
+  return luminance < .18 ? 'var(--avatar-ink-light)' : 'var(--token-ink)';
 }
 
 /** One recognizable team symbol across board, phones, and rankings. */

@@ -2,34 +2,36 @@
  * Design tokens. Nothing literal (colors, spacing, motion durations) outside
  * this file — every surface consumes these custom properties.
  *
- * THEME: Warm neutral / modern — inspired by Ozod's "Market Masters"
- * Host Control Panel. Brand palette is cream/red/near-black, expressed with
- * soft shadow-based elevation rather than hard borders; green is kept for
- * --gain only since the palette can't also carry "up vs. down" financial
- * meaning. The only saturated color outside this file is syndicate identity,
- * asset group bars, and gain/loss.
+ * Light and dark palettes share semantic roles. Cranberry identifies actions,
+ * sector colors identify board spaces, and green/red indicate signed results.
+ * Identity colors and their icon ink remain consistent across both themes.
  */
 :root {
   color-scheme: light;
-  --bg: #FCF9F2;
+  --bg: #F5F7FA;
   --surface: #FFFFFF;
-  --surface-2: #F6F3EC;
-  --border: #E4E0D6;
-  --border-hi: #CCC7BA;
-  --text: #292D32;
-  --text-2: #56606A;
-  --text-3: #646D75;
-  --accent: #C41230;
-  --accent-soft: #FFF0F0;
-  --info: #295B91;
-  --info-soft: #EDF4FC;
-  --board-frame: #E6DFD0;
+  --surface-2: #EBEFF5;
+  --border: #D4DBE5;
+  --border-hi: #7A899D;
+  --text: #17263A;
+  --text-2: #43536B;
+  --text-3: #52647D;
+  --accent: #AC1740;
+  --accent-strong: #8E1033;
+  --accent-soft: #FBEAF0;
+  --on-accent: #FFFFFF;
+  --info: #245E91;
+  --info-soft: #E8F1FB;
+  --board-frame: #CAD4E1;
   --token-ink: #17212A;
-  --gain: #0A8754;
-  --loss: #C41230;
-  --success: #1E7B34;
-  --danger-bg: #FDF1F1;
-  --danger-bg-strong: #FCE4E4;
+  --avatar-ink-light: #FFFFFF;
+  --gain: #087647;
+  --loss: #AF233C;
+  --success: #087647;
+  --danger-bg: #FCEFF1;
+  --danger-bg-strong: #F9E1E7;
+  --disabled-bg: #E2E7EF;
+  --disabled-text: #526078;
 
   /* Category colors identify sectors; gain/loss keep their financial meaning. */
   --group-financials: #B37A15;
@@ -49,18 +51,18 @@
   --group-macro-soft: #EAF5F6;
   --group-crypto-soft: #F4EEF9;
 
-  --font-ui: 'Inter Tight', 'Geist', system-ui, -apple-system, sans-serif;
-  --font-display: 'Inter Tight', 'Geist', system-ui, -apple-system, sans-serif;
+  --font-ui: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-ui);
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
 
-  --text-xs: 12px;
-  --text-sm: 14px;
+  --text-xs: 13px;
+  --text-sm: 15px;
   --text-base: 16px;
   --text-lg: 20px;
-  --text-xl: 28px;
-  --text-2xl: 40px;
-  --text-3xl: 64px;
-  --text-4xl: 80px;
+  --text-xl: 26px;
+  --text-2xl: 36px;
+  --text-3xl: 48px;
+  --text-4xl: 64px;
 
   --space-1: 8px;
   --space-2: 16px;
@@ -112,14 +114,14 @@
   --color-text-muted: var(--text-2);
   --color-text-faint: var(--text-3);
   --color-accent: var(--accent);
-  --color-accent-strong: #9A0E24;
+  --color-accent-strong: var(--accent-strong);
   --color-accent-soft: var(--accent-soft);
-  --color-on-accent: #ffffff;
+  --color-on-accent: var(--on-accent);
   --color-gain: var(--gain);
-  --color-gain-dark: #0A8754;
+  --color-gain-dark: var(--gain);
   --color-loss: var(--loss);
   --color-danger: var(--loss);
-  --color-danger-soft: rgba(196, 18, 48, 0.08);
+  --color-danger-soft: var(--danger-bg);
   --color-danger-bg: var(--danger-bg);
   --color-danger-bg-strong: var(--danger-bg-strong);
   --color-success: var(--success);
@@ -127,6 +129,51 @@
   --font-mono-alias: var(--font-mono);
   --motion-fast: 120ms ease-out;
   --radius-xs: 4px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #131C29;
+  --surface: #1B2738;
+  --surface-2: #28364A;
+  --border: #3B4C64;
+  --border-hi: #899CB6;
+  --text: #F2F5FA;
+  --text-2: #D1DCEB;
+  --text-3: #B4C4DB;
+  --accent: #FF9DB9;
+  --accent-strong: #FFB8CC;
+  --accent-soft: #3D293A;
+  --on-accent: #301421;
+  --info: #A5D2FF;
+  --info-soft: #22374D;
+  --board-frame: #40516A;
+  --gain: #7DE0AF;
+  --loss: #FFA5B2;
+  --success: #7DE0AF;
+  --danger-bg: #3E2936;
+  --danger-bg-strong: #4C2E3D;
+  --disabled-bg: #334156;
+  --disabled-text: #C3CEE0;
+  --group-financials: #EAC16D;
+  --group-consumer: #E994AD;
+  --group-energy: #78CFB1;
+  --group-realestate: #E9A078;
+  --group-tech: #91B7EF;
+  --group-industrials: #BECD87;
+  --group-macro: #85C9D4;
+  --group-crypto: #C5A1E7;
+  --group-financials-soft: #393324;
+  --group-consumer-soft: #3B293A;
+  --group-energy-soft: #20382F;
+  --group-realestate-soft: #3D3029;
+  --group-tech-soft: #26364F;
+  --group-industrials-soft: #313825;
+  --group-macro-soft: #21383E;
+  --group-crypto-soft: #342C45;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px -4px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px -12px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -137,7 +184,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-ui);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin: 0;
 }
 
@@ -146,13 +193,7 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-.tabular-num,
-.money,
-.timer,
-.percentage,
-.dice,
-.count {
-  font-family: var(--font-mono);
+.tabular-num, .money, .timer, .percentage, .dice, .count {
   font-variant-numeric: tabular-nums;
 }
 

@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext.jsx';
 import Button from '../components/Button.jsx';
 import TextField from '../components/TextField.jsx';
 import Logo from '../components/Logo.jsx';
+import ThemeToggle from '../components/ThemeToggle.jsx';
 import styles from './Login.module.css';
 
 const BOARD_CELLS = 36;
@@ -63,6 +64,7 @@ export default function Login() {
       </aside>
 
       <div className={styles.formPanel}>
+        <div className={styles.themeControl}><ThemeToggle /></div>
         <div className={styles.formInner}>
           <div className={styles.mobileLogo}>
             <Logo size="md" />

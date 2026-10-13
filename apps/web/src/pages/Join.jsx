@@ -7,6 +7,7 @@ import { ROLE_STORAGE_KEY } from '../lib/teamRole.js';
 import PageLoader from '../components/PageLoader.jsx';
 import styles from './Join.module.css';
 import Logo from '../components/Logo.jsx';
+import ThemeToggle from '../components/ThemeToggle.jsx';
 
 const ROLES = [
   { id: 'analyst', label: 'Market Analyst' },
@@ -45,7 +46,7 @@ export default function Join() {
   return (
     <div className={styles.page}>
       <form className={styles.card} onSubmit={handleSubmit}>
-        <Logo size="md" />
+        <div className={styles.brandRow}><Logo size="md" /><ThemeToggle compact /></div>
         <h1 className={styles.heading}>Join your team</h1>
         <p className={styles.help}>Enter the six-character code from your host. Your team’s moves stay saved when you leave this page.</p>
 

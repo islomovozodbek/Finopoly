@@ -54,12 +54,13 @@ export default function Leaderboard() {
       <TopBar />
       <div className={styles.headerRow}>
         <h1 className={styles.heading}>Global Rankings</h1>
+        <p className={styles.help}>Compare every team’s cash. Signed amounts show the change during their current era.</p>
       </div>
 
       {rows.length === 0 ? (
         <p className={styles.empty}>No syndicates registered yet.</p>
       ) : (
-        <table className={styles.table}>
+        <div className={styles.tableScroll} role="region" aria-label="Global rankings" tabIndex={0}><table className={styles.table}>
           <thead>
             <tr>
               <th>Rank</th>
@@ -77,10 +78,10 @@ export default function Leaderboard() {
               return (
                 <tr key={s.syndicateId} className={i < 3 ? styles.topRow : undefined}>
                   <td className={styles.rank}>{i + 1}</td>
-                  <td className={styles.syndicateCell}>
+                  <td><span className={styles.syndicateCell}>
                     <TeamAvatar team={s} />
                     {s.name}
-                  </td>
+                  </span></td>
                   <td className={styles.room}>{s.roomSlug}</td>
                   <td className={styles.room}>{era?.title ?? '—'}</td>
                   <td className="money">{formatMoney(s.cash)}</td>
@@ -89,7 +90,7 @@ export default function Leaderboard() {
               );
             })}
           </tbody>
-        </table>
+        </table></div>
       )}
     </div>
   );

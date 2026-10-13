@@ -14,6 +14,7 @@ import FinishedPhase from '../components/team/FinishedPhase.jsx';
 import styles from './Team.module.css';
 import Logo from '../components/Logo.jsx';
 import TeamAvatar from '../components/TeamAvatar.jsx';
+import ThemeToggle from '../components/ThemeToggle.jsx';
 import { getMyRole } from '../lib/teamRole.js';
 
 /**
@@ -91,6 +92,7 @@ export default function Team() {
         <TeamAvatar team={mySyndicate} />
         <span className={styles.syndicateName}>{mySyndicate.name}</span>
         </div>
+        <ThemeToggle compact />
       </header>
       <div className={styles.contextLine}><span>{era?.title ?? 'Waiting for the game'}{getMyRole()?.label ? ` · ${getMyRole().label}` : ''}</span>{state.syncing && <span role="status">Reconnecting…</span>}</div>
 

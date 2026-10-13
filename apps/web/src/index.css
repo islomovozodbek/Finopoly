@@ -16,7 +16,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -56,9 +56,19 @@ ul {
   list-style: none;
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+:focus-visible { outline: 3px solid var(--info); outline-offset: 3px; }
+
+html[data-theme-switching] *, html[data-theme-switching] *::before, html[data-theme-switching] *::after {
+  transition: none !important;
+}
+
+/* Disabled controls stay readable; a neutral fill signals their state. */
+button:disabled {
+  background: var(--disabled-bg) !important;
+  color: var(--disabled-text) !important;
+  border-color: var(--border) !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
 }
 
 ::selection {

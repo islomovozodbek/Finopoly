@@ -14,7 +14,7 @@
 .newsSpace { background: var(--info-soft); color: var(--info); }
 .assetSpace { background: var(--group-surface); }
 .groupBar { position: absolute; top: 0; right: 0; left: 0; height: 5px; background: var(--group-color); }
-.spaceNumber { position: absolute; top: 7px; left: 4px; font-size: 8px; color: var(--text-2); }
+.spaceNumber { display: none; position: absolute; top: 7px; left: 4px; font-size: 8px; color: var(--text-2); }
 .spaceName { font-size: 10px; line-height: 1.15; font-weight: 600; padding-top: 5px; padding-bottom: 12px; overflow-wrap: anywhere; }
 .specialName { font-size: 8px; line-height: 1.1; font-weight: 700; }
 .tokenGrid { position: absolute; bottom: 3px; left: 3px; right: 3px; display: flex; justify-content: center; flex-wrap: wrap; gap: 2px; }
@@ -51,6 +51,7 @@
 .centerCards { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); width: 100%; }
 .centerTitle { font-size: var(--text-xl); line-height: 1.2; text-align: center; }
 .centerCardsRow { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; width: 100%; }
+.mobileOptions, .mobileOptionsHint { display: none; }
 .card { display: flex; flex-direction: column; gap: 10px; padding: 14px; min-width: 0; background: var(--surface-2); border-radius: var(--radius); }
 .cardType { color: var(--text-2); font-size: var(--text-xs); font-weight: 600; }
 .cardName { font-size: var(--text-base); font-weight: 700; line-height: 1.25; overflow-wrap: anywhere; }
@@ -86,12 +87,14 @@
 .actionError { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--loss); background: var(--danger-bg); padding: 12px 16px; border-radius: var(--radius); margin-bottom: var(--space-2); }
 .actionErrorDismiss { background: none; border: none; color: inherit; font-size: var(--text-lg); min-width: 44px; min-height: 44px; cursor: pointer; }
 @media (max-width: 1050px) {
-  .layout { grid-template-columns: minmax(0,1fr) 260px; gap: var(--space-2); }
+  .layout { grid-template-columns: minmax(0,1fr); gap: var(--space-2); }
   .page { padding-right: var(--space-2); padding-left: var(--space-2); }
-  .spaceName { font-size: 8px; }
+  .board { width: min(100%, 680px); }
+  .rail { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-2); }
+  .timerBlock, .legend { grid-column: 1 / -1; }
+  .legendGrid { grid-template-columns: repeat(4,minmax(0,1fr)); }
   .center { padding: var(--space-2); gap: var(--space-1); }
   .card { padding: 10px; }
-  .cardReason { display: none; }
 }
 @media (max-width: 760px) {
   .header { min-height: 88px; flex-wrap: wrap; padding: 12px 0; gap: 6px; }
@@ -99,7 +102,7 @@
   .roomName { max-width: 180px; overflow-wrap: anywhere; }
   .headerActions { width: 100%; justify-content: space-between; }
   .phaseBadge { padding: 4px 10px; }
-  .hostLink { min-height: 32px; font-size: var(--text-xs); }
+  .hostLink { min-height: 44px; font-size: var(--text-sm); }
   .layout { grid-template-columns: minmax(0,1fr); }
   .board { width: min(100%, 680px); border-width: 5px; gap: 2px; }
   .rail { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-2); }
@@ -114,7 +117,7 @@
   .corner svg, .newsSpace svg { width: 14px; height: 14px; }
   .specialName { font-size: 6px; }
   .spaceName { display: none; }
-  .spaceNumber { font-size: 8px; top: 9px; left: 50%; transform: translateX(-50%); }
+  .spaceNumber { display: block; font-size: 8px; top: 9px; left: 50%; transform: translateX(-50%); }
   .groupBar { height: 4px; }
   .tokenGrid:not([data-count="1"]) { display: none; }
   .tokenOverflow { position: absolute; bottom: 2px; display: flex; align-items: center; gap: 1px; color: var(--text); }
@@ -125,12 +128,14 @@
   .center { padding: 10px; gap: 8px; }
   .centerCards { gap: 8px; }
   .centerTitle { font-size: var(--text-base); }
-  .centerHelp { font-size: var(--text-xs); line-height: 1.35; }
-  .centerCardsRow { gap: 5px; }
-  .card { padding: 8px 6px; gap: 6px; }
-  .cardType, .cardFlap { font-size: 9px; }
-  .cardName { font-size: 10px; }
-  .cardFlap { padding-top: 2px; }
+  .centerHelp { font-size: var(--text-sm); line-height: 1.45; }
+  .centerCards .centerCardsRow { display: none; }
+  .mobileOptionsHint { display: block; font-size: var(--text-xs); color: var(--info); text-align: center; }
+  .mobileOptions { display: block; padding: 20px 16px; border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); }
+  .mobileOptions .empty { margin-bottom: 16px; }
+  .mobileOptions .centerCardsRow { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .mobileOptions .card { padding: 16px; gap: 8px; }
+  .mobileOptions .cardReason { display: block; font-size: var(--text-sm); }
   .die { width: 30px; height: 30px; padding: 4px; }
   .pip, .pipEmpty { width: 4px; height: 4px; }
   .turnSyndicate { font-size: var(--text-xl); }

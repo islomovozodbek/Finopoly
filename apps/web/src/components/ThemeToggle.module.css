@@ -1,0 +1,19 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 14px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: background var(--motion-state), border-color var(--motion-state);
+}
+.toggle:hover { background: var(--surface-2); border-color: var(--text-2); }
+.compact { padding: 8px; }

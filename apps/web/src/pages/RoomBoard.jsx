@@ -13,6 +13,7 @@ import PageLoader from '../components/PageLoader.jsx';
 import ResolvePanel from '../components/turn/ResolvePanel.jsx';
 import Logo from '../components/Logo.jsx';
 import TeamAvatar from '../components/TeamAvatar.jsx';
+import ThemeToggle from '../components/ThemeToggle.jsx';
 import styles from './RoomBoard.module.css';
 
 const GROUP_VAR = (group) => `var(--group-${group}, var(--border-hi))`;
@@ -159,16 +160,23 @@ function CenterCards({ pendingTurn, syndicate }) {
     <div className={styles.centerCards}>
       <h2 className={styles.centerTitle}>Choose an investment</h2>
       <p className={styles.centerHelp}><TeamAvatar team={syndicate} size="sm" /> {syndicate?.name} is choosing on their team device. Finish this choice before the next roll.</p>
-      <div className={styles.centerCardsRow}>
-        {pendingTurn.drawnCards.map((card, index) => (
-          <div key={card.id} className={styles.card}>
-            <span className={styles.cardType}>Option {index + 1} · {card.assetType}</span>
-            <span className={styles.cardName}>{card.name}</span>
-            <span className={styles.cardReason}>{card.reason}</span>
-            <span className={styles.cardFlap}>Return hidden</span>
-          </div>
-        ))}
-      </div>
+      <p className={styles.mobileOptionsHint}>The three options are below the board.</p>
+      <InvestmentOptions cards={pendingTurn.drawnCards} />
+    </div>
+  );
+}
+
+function InvestmentOptions({ cards }) {
+  return (
+    <div className={styles.centerCardsRow}>
+      {cards.map((card, index) => (
+        <div key={card.id} className={styles.card}>
+          <span className={styles.cardType}>Option {index + 1} · {card.assetType}</span>
+          <span className={styles.cardName}>{card.name}</span>
+          <span className={styles.cardReason}>{card.reason}</span>
+          <span className={styles.cardFlap}>Return hidden</span>
+        </div>
+      ))}
     </div>
   );
 }
@@ -242,7 +250,7 @@ export default function RoomBoard() {
       <header className={styles.header}>
         <div className={styles.identity}><Link to="/select" aria-label="Finopoly games"><Logo size="sm" /></Link><span className={styles.roomName}>{room.name}</span></div>
         <div className={styles.headerActions}><span className={styles.phaseBadge}>{state.syncing ? 'Reconnecting…' : pendingTurn ? 'Turn in progress' : game?.status === 'lobby' ? 'Waiting to start' : game?.status === 'finished' ? 'Game complete' : 'Ready to roll'}</span>
-        {isHost && <Link className={styles.hostLink} to={`/room/${slug}/host`}>Host controls <ArrowSquareOut size={16} aria-hidden="true" /></Link>}</div>
+        {isHost && <Link className={styles.hostLink} to={`/room/${slug}/host`}>Host controls <ArrowSquareOut size={16} aria-hidden="true" /></Link>}<ThemeToggle compact /></div>
       </header>
       {error && (
         <div className={styles.actionError} role="alert">
@@ -290,6 +298,14 @@ export default function RoomBoard() {
           )}
         </div>
       </div></div>
+
+      {pendingTurn?.stage === 'awaiting_pick' && pendingTurn.drawnCards && (
+        <section className={styles.mobileOptions} aria-label="Investment options">
+          <h2 className={styles.railTitle}>Three investment options</h2>
+          <p className={styles.empty}>Choose on your team device. Returns stay hidden until you invest.</p>
+          <InvestmentOptions cards={pendingTurn.drawnCards} />
+        </section>
+      )}
 
       <div className={styles.rail}>
         {deadline && (
