@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { ERA_BRIEFINGS } from '@estate/content/client';
+import { ArrowSquareOut, Check, ClockCounterClockwise, Copy, GearSix, UsersThree, WarningCircle, X } from '@phosphor-icons/react';
+import { ERA_BRIEFINGS } from '@finopoly/content/client';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useHostConnection } from '../hooks/useHostConnection.js';
 import { useRoomAction } from '../hooks/useRoomAction.js';
+import { useCountdown, formatCountdown } from '../hooks/useCountdown.js';
 import { formatMoney, formatSignedMoney } from '../lib/money.js';
 import PageLoader from '../components/PageLoader.jsx';
 import TopBar from '../components/TopBar.jsx';
 import ResolvePanel from '../components/turn/ResolvePanel.jsx';
+import TeamAvatar from '../components/TeamAvatar.jsx';
+import { getTeamIcon } from '@finopoly/content/client';
 import styles from './RoomHost.module.css';
 
 const PHASES = ['lobby', 'briefing', 'research', 'playing', 'debrief'];
@@ -33,7 +37,8 @@ export default function RoomHost() {
   const { slug } = useParams();
   const { session, profile } = useAuth();
   const state = useHostConnection(slug, session?.access_token);
-  const { busy, error, clearError, act } = useRoomAction(slug, session?.access_token);
+  const { busy: actionBusy, error, clearError, act } = useRoomAction(slug, session?.access_token, state);
+  const busy = actionBusy || state.syncing;
   const [newSyndicateName, setNewSyndicateName] = useState('');
   const [resetConfirm, setResetConfirm] = useState('');
   const [showDanger, setShowDanger] = useState(false);
@@ -102,18 +107,18 @@ export default function RoomHost() {
       {/* ── Header ── */}
       <div className={styles.header}>
         <div>
-          <h1 className={styles.pageTitle}>⚙ Host Control Panel</h1>
-          <p className={styles.pageSubtitle}>Manage room {room.name} and manual overrides</p>
+          <h1 className={styles.pageTitle}>Host controls</h1>
+          <p className={styles.pageSubtitle}>{room.name} · {state.syncing ? 'Reconnecting to the game…' : 'Guide your teams through the market.'}</p>
         </div>
         <a className={styles.boardLink} href={`/room/${slug}/board`} target="_blank" rel="noreferrer">
-          View Board ↗
+          Open game board <ArrowSquareOut size={16} aria-hidden="true" />
         </a>
       </div>
 
       {error && (
-        <div className={styles.errorBanner}>
+        <div className={styles.errorBanner} role="alert">
           <span>{error}</span>
-          <button type="button" className={styles.errorBannerDismiss} onClick={clearError}>×</button>
+          <button type="button" className={styles.errorBannerDismiss} onClick={clearError} aria-label="Dismiss error"><X size={18} /></button>
         </div>
       )}
 
@@ -126,6 +131,7 @@ export default function RoomHost() {
               key={p}
               type="button"
               disabled={busy}
+              aria-pressed={room.phase === p}
               className={`${styles.phaseBtn} ${room.phase === p ? styles.phaseBtnActive : ''}`}
               onClick={() => act('SET_PHASE', { phase: p })}
             >
@@ -134,42 +140,6 @@ export default function RoomHost() {
           ))}
         </div>
       </div>
-
-      {/* ── New Game danger section ── */}
-      {isHost && (
-        <section className={styles.dangerSection}>
-          <div className={styles.dangerInfo}>
-            <span className={styles.dangerIcon}>⚠</span>
-            <div>
-              <span className={styles.dangerTitle}>New Game</span>
-              <span className={styles.dangerDesc}>Clears all teams, rooms, and transactions — start fresh.</span>
-            </div>
-          </div>
-          <button type="button" className={styles.newGameBtn} onClick={() => setShowDanger((v) => !v)}>
-            ↺ New Game
-          </button>
-          {showDanger && (
-            <div className={styles.dangerPanel}>
-              <input
-                value={resetConfirm}
-                onChange={(e) => setResetConfirm(e.target.value)}
-                placeholder='Type "RESET" to confirm'
-              />
-              <button
-                type="button"
-                disabled={resetConfirm !== 'RESET' || busy}
-                className={styles.resetBtn}
-                onClick={() => {
-                  act('RESET_ROOM', {});
-                  setResetConfirm('');
-                }}
-              >
-                Reset Room
-              </button>
-            </div>
-          )}
-        </section>
-      )}
 
       {/* ── Game Setup (pre-start) ── */}
       {isHost && game?.status === 'lobby' && (
@@ -220,7 +190,7 @@ export default function RoomHost() {
         {/* LEFT: Room Setup — Era, Roll, Teams */}
         <section className={styles.card}>
           <div className={styles.cardHeader}>
-            <h2 className={styles.sectionTitle}>👥 Room Setup</h2>
+            <h2 className={styles.sectionTitle}><UsersThree size={22} weight="duotone" aria-hidden="true" /> Teams & turns</h2>
             <span className={styles.teamCount}>{syndicates.length} / 8 Teams</span>
           </div>
           <div className={styles.cardDivider} />
@@ -236,17 +206,17 @@ export default function RoomHost() {
             <button
               type="button"
               className={styles.forceAdvanceBtn}
-              disabled={busy}
+              disabled={busy || Boolean(pendingTurn) || game?.status === 'finished'}
               onClick={() => act('ADVANCE_ERA', {})}
             >
-              Force Advance Era
+              {game?.status === 'lobby' ? 'Start game' : 'Next era'}
             </button>
           </div>
 
           <div className={styles.turnActions}>
             <span className={styles.turnLabel}>
-              Whose turn: <strong style={{ color: turnSyndicate?.color }}>{turnSyndicate?.name ?? '—'}</strong>
-              {game?.status !== 'active' && ' (start an era below to roll)'}
+              Current turn: <TeamAvatar team={turnSyndicate} size="sm" /> <strong>{turnSyndicate?.name ?? 'Waiting for teams'}</strong>
+              {game?.status !== 'active' && ' (start the game to roll)'}
             </span>
             <div className={styles.turnBtns}>
               <button
@@ -255,12 +225,12 @@ export default function RoomHost() {
                 disabled={busy || Boolean(pendingTurn) || game?.status !== 'active'}
                 onClick={() => act('ROLL', {})}
               >
-                ROLL
+                Roll the die
               </button>
               <button
                 type="button"
                 className={styles.skipTurnBtn}
-                disabled={busy || game?.status !== 'active'}
+                disabled={busy || Boolean(pendingTurn) || game?.status !== 'active'}
                 onClick={() => act('SKIP_TURN', {})}
               >
                 Skip Turn
@@ -280,7 +250,7 @@ export default function RoomHost() {
 
           {/* Pending turn panels */}
           {pendingTurn?.stage === 'awaiting_pick' && (
-            <InvestmentPanel pendingTurn={pendingTurn} syndicate={turnSyndicate} busy={busy} onForceSubmit={(cardId, betAmount) => act('FORCE_SUBMIT', { cardId, betAmount })} />
+            <InvestmentPanel key={pendingTurn.id} pendingTurn={pendingTurn} syndicate={syndicates.find(s => s.id === pendingTurn.syndicateId)} busy={busy} onForceSubmit={(cardId, betAmount) => act('FORCE_SUBMIT', { cardId, betAmount })} />
           )}
           {pendingTurn?.stage === 'news' && (
             <NewsPanel pendingTurn={pendingTurn} syndicates={syndicates} busy={busy} onResolve={(targetId) => act('RESOLVE_NEWS', { targetId })} />
@@ -316,7 +286,7 @@ export default function RoomHost() {
 
         {/* RIGHT: Manual Adjustments */}
         <section className={styles.card}>
-          <h2 className={styles.sectionTitle}>⊕ Manual Adjustments</h2>
+          <h2 className={styles.sectionTitle}><GearSix size={22} weight="duotone" aria-hidden="true" /> Cash adjustments</h2>
           <div className={styles.cardDivider} />
 
           <div className={styles.adjustField}>
@@ -328,7 +298,7 @@ export default function RoomHost() {
             >
               <option value="">-- Select a Team --</option>
               {syndicates.map((s) => (
-                <option key={s.id} value={s.id}>{s.name}</option>
+                <option key={s.id} value={s.id}>{getTeamIcon(s).emoji} {s.name}</option>
               ))}
             </select>
           </div>
@@ -371,14 +341,14 @@ export default function RoomHost() {
       {/* ── Transaction History ── */}
       <section className={styles.txSection}>
         <div className={styles.txHeader}>
-          <h2 className={styles.sectionTitle}>🕐 Transaction History</h2>
+          <h2 className={styles.sectionTitle}><ClockCounterClockwise size={22} weight="duotone" aria-hidden="true" /> Transaction history</h2>
           <span className={styles.txSubtitle}>Latest Events</span>
         </div>
         <div className={styles.cardDivider} />
         {transactions.length === 0 ? (
           <p className={styles.txEmpty}>No transactions recorded yet.</p>
         ) : (
-          <table className={styles.txTable}>
+          <div className={styles.tableScroll}><table className={styles.txTable}>
             <thead>
               <tr><th>Time</th><th>Team</th><th>Type</th><th>Note</th><th>Amount</th></tr>
             </thead>
@@ -388,7 +358,7 @@ export default function RoomHost() {
                 return (
                   <tr key={t.id}>
                     <td>{new Date(t.createdAt).toLocaleTimeString()}</td>
-                    <td>{syn?.name ?? '—'}</td>
+                    <td><span className={styles.historyTeam}><TeamAvatar team={syn} size="sm" />{syn?.name ?? '—'}</span></td>
                     <td>{t.actionType}</td>
                     <td>{t.note}</td>
                     <td className={t.amount >= 0 ? styles.gain : styles.loss}>{formatSignedMoney(t.amount)}</td>
@@ -396,9 +366,46 @@ export default function RoomHost() {
                 );
               })}
             </tbody>
-          </table>
+          </table></div>
         )}
       </section>
+      {/* ── New Game danger section ── */}
+      {isHost && (
+        <section className={styles.dangerSection}>
+          <div className={styles.dangerInfo}>
+            <WarningCircle className={styles.dangerIcon} size={22} aria-hidden="true" />
+            <div>
+              <span className={styles.dangerTitle}>Reset this room</span>
+              <span className={styles.dangerDesc}>Removes this room’s teams and history. Create a new game from Games to keep this one.</span>
+            </div>
+          </div>
+          <button type="button" className={styles.newGameBtn} onClick={() => setShowDanger((v) => !v)}>
+            Reset options
+          </button>
+          {showDanger && (
+            <div className={styles.dangerPanel}>
+              <input
+                value={resetConfirm}
+                onChange={(e) => setResetConfirm(e.target.value)}
+                placeholder='Type "RESET" to confirm'
+              />
+              <button
+                type="button"
+                disabled={resetConfirm !== 'RESET' || busy}
+                className={styles.resetBtn}
+                onClick={() => {
+                  act('RESET_ROOM', {});
+                  setResetConfirm('');
+                }}
+              >
+                Reset Room
+              </button>
+            </div>
+          )}
+        </section>
+      )}
+
+
     </div>
   );
 }
@@ -407,6 +414,7 @@ function InvestmentPanel({ pendingTurn, syndicate, busy, onForceSubmit }) {
   const [selected, setSelected] = useState(null);
   const [bet, setBet] = useState(0);
   const cash = syndicate?.cash ?? 0;
+  const remainingMs = useCountdown(pendingTurn.decisionDeadline);
 
   if (!pendingTurn.drawnCards) {
     return (
@@ -418,7 +426,8 @@ function InvestmentPanel({ pendingTurn, syndicate, busy, onForceSubmit }) {
 
   return (
     <div className={styles.pendingPanel}>
-      <h3 className={styles.pendingTitle}>Cards dealt — host view (percentages visible)</h3>
+      <h3 className={styles.pendingTitle}><TeamAvatar team={syndicate} size="sm" /> {syndicate?.name} is choosing an investment</h3>
+      <p className={styles.newsBody}>{remainingMs > 0 ? `${formatCountdown(remainingMs)} remaining. The team chooses on their device.` : 'Decision time has ended. You can submit for the team.'} Returns below are visible only to hosts.</p>
       <div className={styles.hostCards}>
         {pendingTurn.drawnCards.map((card) => (
           <button
@@ -426,6 +435,8 @@ function InvestmentPanel({ pendingTurn, syndicate, busy, onForceSubmit }) {
             type="button"
             className={`${styles.hostCard} ${selected === card.id ? styles.hostCardSelected : ''}`}
             onClick={() => setSelected(card.id)}
+            aria-pressed={selected === card.id}
+            disabled={busy}
           >
             <span className={styles.cardType}>{card.assetType}</span>
             <span className={styles.cardName}>{card.name}</span>
@@ -442,6 +453,7 @@ function InvestmentPanel({ pendingTurn, syndicate, busy, onForceSubmit }) {
           min={0}
           max={cash}
           value={bet}
+          aria-label="Host investment amount"
           onChange={(e) => setBet(Number(e.target.value))}
         />
         <button type="button" onClick={() => setBet(Math.floor(cash * 0.25))}>25%</button>
@@ -449,10 +461,10 @@ function InvestmentPanel({ pendingTurn, syndicate, busy, onForceSubmit }) {
         <button type="button" onClick={() => setBet(cash)}>All-in</button>
         <button
           type="button"
-          disabled={busy || !selected || bet < 0 || bet > cash}
+          disabled={busy || remainingMs > 0 || !selected || bet < 0 || bet > cash}
           onClick={() => onForceSubmit(selected, bet)}
         >
-          Force Submit
+          Submit for team
         </button>
       </div>
     </div>
@@ -480,20 +492,27 @@ function CornerPanel({ pendingTurn, syndicates, busy, onResolve }) {
 }
 
 function TeamRow({ syndicate: s, busy, act }) {
+  const [copied, setCopied] = useState(false);
+  const [copyError, setCopyError] = useState(false);
   const activeFlags = Object.entries(s.flags).filter(([, v]) => v).map(([k]) => k);
 
   return (
     <div className={styles.teamRow}>
-      <span className={styles.chip} style={{ background: s.color }} />
+      <TeamAvatar team={s} />
       <div className={styles.teamInfo}>
         <span className={styles.teamName}>{s.name}</span>
         <span className={`${styles.teamCash} money`}>{formatMoney(s.cash)}</span>
         <span className={styles.teamPosition}>pos {s.position}</span>
+        {s.joinCode && <span className={styles.joinCode}>Join code <strong>{s.joinCode}</strong><button type="button" aria-label={`Copy join code for ${s.name}`} onClick={async () => {
+          try { await navigator.clipboard.writeText(s.joinCode); setCopied(true); setCopyError(false); }
+          catch { setCopyError(true); }
+        }}>{copied ? <Check size={16} aria-label="Copied" /> : <Copy size={16} aria-hidden="true" />}</button></span>}
+        {copyError && <span className={styles.copyError} role="status">Select the code to copy it manually.</span>}
         {activeFlags.length > 0 && (
           <span className={styles.flags}>{activeFlags.join(', ')}</span>
         )}
       </div>
-      <button type="button" className={styles.removeBtn} disabled={busy} onClick={() => act('REMOVE_SYNDICATE', { id: s.id })}>✕</button>
+      <button type="button" className={styles.removeBtn} disabled={busy} aria-label={`Remove ${s.name}`} onClick={() => act('REMOVE_SYNDICATE', { id: s.id })}><X size={18} aria-hidden="true" /></button>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 /**
  * apps/web's ONLY allowed entry point into packages/content — import from
- * '@estate/content/client', never the bare '@estate/content' package root.
+ * '@finopoly/content/client', never the bare '@finopoly/content' package root.
  *
  * The root index.js re-exports ERAS from eras.js, and eras.js has a
  * top-level side effect (its build-time integrity assertion), which stops
@@ -21,3 +21,4 @@
 export { ERA_BRIEFINGS } from './era-briefings.js';
 export { BOARD } from './board.js';
 export { NEWS_CARDS } from './news.js';
+export { TEAM_ICONS, getTeamIcon } from './team-icons.js';

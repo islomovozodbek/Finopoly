@@ -1,7 +1,7 @@
 // Fails the build if apps/web imports packages/content/eras.js or
 // space-options.js (directly or via a relative deep-import), names ERAS or
-// SPACE_OPTIONS in an import, or imports the bare '@estate/content' package
-// root instead of '@estate/content/client'. Both files carry hidden
+// SPACE_OPTIONS in an import, or imports the bare '@finopoly/content' package
+// root instead of '@finopoly/content/client'. Both files carry hidden
 // per-card/per-space percentages that must never reach the browser.
 //
 // The bare root is unsafe even without naming either export: index.js
@@ -10,7 +10,7 @@
 // tree-shaking it out of the graph for a consumer that only imports e.g.
 // BOARD — confirmed by inspecting a real `vite build` output, which still
 // contained all 720 investment cards' percentages after importing only
-// BOARD from the root package. '@estate/content/client'
+// BOARD from the root package. '@finopoly/content/client'
 // (packages/content/client.js) is a separate entry point that never touches
 // eras.js or space-options.js at all. Run as apps/web's prebuild/pretest
 // step. See packages/content/era-briefings.js and client.js.
@@ -27,7 +27,7 @@ const IMPORT_RE = /^\s*import\s+(?:type\s+)?(\{[^}]*\}|\*\s+as\s+\w+|\w+)?[^'"]*
 // reach the browser. Add an entry here (not a new copy-pasted check) for any
 // future secret-content module.
 const PROTECTED = [
-  { fileName: 'eras.js', exportName: 'ERAS', hint: "use ERA_BRIEFINGS from '@estate/content/client' instead" },
+  { fileName: 'eras.js', exportName: 'ERAS', hint: "use ERA_BRIEFINGS from '@finopoly/content/client' instead" },
   { fileName: 'space-options.js', exportName: 'SPACE_OPTIONS', hint: 'this is server-only, hidden-percentage content' },
 ];
 
@@ -61,13 +61,13 @@ function checkFile(file) {
       }
     }
 
-    if (specifier === '@estate/content') {
+    if (specifier === '@finopoly/content') {
       const names = PROTECTED.map((p) => p.exportName).join('/');
-      violations.push(`${file}:${lineNo}: imports the bare '@estate/content' package root — use '@estate/content/client' instead (the root re-exports ${names} and isn't tree-shake-safe)`);
+      violations.push(`${file}:${lineNo}: imports the bare '@finopoly/content' package root — use '@finopoly/content/client' instead (the root re-exports ${names} and isn't tree-shake-safe)`);
       return;
     }
 
-    if (specifier.startsWith('@estate/content/')) {
+    if (specifier.startsWith('@finopoly/content/')) {
       for (const { exportName, hint } of PROTECTED) {
         if (new RegExp(`\\b${exportName}\\b`).test(bindings)) {
           violations.push(`${file}:${lineNo}: imports ${exportName} — ${hint}`);

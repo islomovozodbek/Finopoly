@@ -1,6 +1,7 @@
-import { NEWS_CARDS } from '@estate/content';
+import { NEWS_CARDS } from '@finopoly/content';
 import { withAuth } from '../../src/auth.js';
 import { supabase } from '../../src/supabase.js';
+import { needsTurnVersion, validRoomVersion } from '../../src/rooms/actionVersion.js';
 import {
   loadRoomBySlug, callRoomAction, broadcastRoomUpdate, fillPendingInvestmentCards,
 } from '../../src/rooms/dispatch.js';
@@ -20,9 +21,14 @@ export default withAuth(async (req, res) => {
     return;
   }
 
-  const { roomSlug, actionType, payload } = req.body ?? {};
+  const { roomSlug, actionType, payload, expectedVersion } = req.body ?? {};
   if (!roomSlug || !actionType) {
     res.status(400).json({ error: 'MISSING_FIELDS' });
+    return;
+  }
+
+  if (needsTurnVersion(actionType) && !validRoomVersion(expectedVersion)) {
+    res.status(400).json({ error: 'ROOM_VERSION_REQUIRED' });
     return;
   }
 
@@ -38,7 +44,16 @@ export default withAuth(async (req, res) => {
   const effectivePayload = actionType === 'ROLL'
     ? { ...payload, newsCard: NEWS_CARDS[Math.floor(Math.random() * NEWS_CARDS.length)] }
     : payload;
-  await callRoomAction(room.id, req.userId, actionType, effectivePayload);
+  try {
+    await callRoomAction(room.id, req.userId, actionType, effectivePayload,
+      needsTurnVersion(actionType) ? expectedVersion : undefined);
+  } catch (error) {
+    if (error?.code === '40001' || error?.message?.includes('VERSION_CONFLICT')) {
+      res.status(409).json({ error: 'STALE_ROOM_STATE' });
+      return;
+    }
+    throw error;
+  }
 
   // A ROLL that lands on an ordinary asset space creates a pending_turns row
   // with drawn_cards left null -- Node can't know which space was landed on

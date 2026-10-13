@@ -6,6 +6,7 @@ import { callRoomAction, resolveJoinCode } from '../lib/roomActions.js';
 import { ROLE_STORAGE_KEY } from '../lib/teamRole.js';
 import PageLoader from '../components/PageLoader.jsx';
 import styles from './Join.module.css';
+import Logo from '../components/Logo.jsx';
 
 const ROLES = [
   { id: 'analyst', label: 'Market Analyst' },
@@ -16,12 +17,13 @@ const ROLES = [
 export default function Join() {
   const { session } = useAuth();
   const accessToken = session?.access_token;
-  const { binding, refresh } = useMyBinding(accessToken);
+  const { binding, error: bindingError, refresh } = useMyBinding(accessToken);
   const [code, setCode] = useState('');
   const [role, setRole] = useState('analyst');
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
+  if (bindingError && binding === null) return <div className={styles.error} role="alert">{bindingError}<button onClick={refresh}>Try again</button></div>;
   if (binding === null) return <PageLoader label="Checking your team…" />;
   if (binding?.roomSlug) return <Navigate to="/team" replace />;
 
@@ -43,7 +45,9 @@ export default function Join() {
   return (
     <div className={styles.page}>
       <form className={styles.card} onSubmit={handleSubmit}>
+        <Logo size="md" />
         <h1 className={styles.heading}>Join your team</h1>
+        <p className={styles.help}>Enter the six-character code from your host. Your team’s moves stay saved when you leave this page.</p>
 
         <label className={styles.label} htmlFor="join-code">Join code</label>
         <input
@@ -59,7 +63,7 @@ export default function Join() {
           required
         />
 
-        <label className={styles.label} htmlFor="role">Your role</label>
+        <span className={styles.label}>Your role</span>
         <div className={styles.roleGroup} role="radiogroup" aria-label="Role">
           {ROLES.map((r) => (
             <button

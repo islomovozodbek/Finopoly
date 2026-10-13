@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { ERA_BRIEFINGS } from '@estate/content/client';
+import { ERA_BRIEFINGS } from '@finopoly/content/client';
 import { useAuth } from '../context/AuthContext.jsx';
 import { createRoom } from '../lib/roomActions.js';
 import PageLoader from '../components/PageLoader.jsx';
@@ -140,6 +140,7 @@ export default function NewRoom() {
                   key={i}
                   className={styles.teamNameInput}
                   value={teamName}
+                  aria-label={`Team ${i + 1} name`}
                   onChange={(e) => changeTeamName(i, e.target.value)}
                   placeholder={`Team ${i + 1}`}
                 />

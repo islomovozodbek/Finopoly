@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getTeamIcon } from '@finopoly/content/client';
 import styles from './ResolvePanel.module.css';
 
 // The one place the "does this event need a target syndicate" rule lives —
@@ -24,10 +25,10 @@ export default function ResolvePanel({ kind, pendingTurn, syndicates, busy, onRe
   return (
     <div className={styles.resolveRow}>
       {needsTarget && (
-        <select className={styles.select} value={target} onChange={(e) => setTarget(e.target.value)}>
+        <select className={styles.select} value={target} onChange={(e) => setTarget(e.target.value)} aria-label="Target team" disabled={busy}>
           <option value="">Choose a target…</option>
           {syndicates.map((s) => (
-            <option key={s.id} value={s.id}>{s.name}</option>
+            <option key={s.id} value={s.id}>{getTeamIcon(s).emoji} {s.name}</option>
           ))}
         </select>
       )}

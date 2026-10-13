@@ -1,11 +1,12 @@
 import { useEffect, useReducer } from 'react';
-import { ERA_BRIEFINGS } from '@estate/content/client';
+import { ERA_BRIEFINGS } from '@finopoly/content/client';
 import { useAuth } from '../context/AuthContext.jsx';
 import { fetchStandings } from '../lib/roomActions.js';
 import { subscribeToGlobalChannel } from '../lib/roomRealtime.js';
 import { formatMoney, formatSignedMoney } from '../lib/money.js';
 import PageLoader from '../components/PageLoader.jsx';
 import TopBar from '../components/TopBar.jsx';
+import TeamAvatar from '../components/TeamAvatar.jsx';
 import styles from './Leaderboard.module.css';
 
 // Each room now runs its own era independently (no more single global
@@ -77,7 +78,7 @@ export default function Leaderboard() {
                 <tr key={s.syndicateId} className={i < 3 ? styles.topRow : undefined}>
                   <td className={styles.rank}>{i + 1}</td>
                   <td className={styles.syndicateCell}>
-                    <span className={styles.chip} style={{ background: s.color }} />
+                    <TeamAvatar team={s} />
                     {s.name}
                   </td>
                   <td className={styles.room}>{s.roomSlug}</td>

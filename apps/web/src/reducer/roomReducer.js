@@ -1,6 +1,7 @@
 export const initialRoomState = {
   status: 'loading', // 'loading' | 'ready' | 'error'
   error: null,
+  syncing: true,
   game: null,
   room: null,
   syndicates: [],
@@ -17,9 +18,12 @@ export const initialRoomState = {
 export function roomReducer(state, action) {
   switch (action.type) {
     case 'STATE_RECEIVED':
+      // A slow fetch must never erase a newer, persisted pending turn.
+      if (state.room && action.payload.room.version < state.room.version) return state;
       return {
         status: 'ready',
         error: null,
+        syncing: false,
         game: action.payload.game,
         room: action.payload.room,
         syndicates: action.payload.syndicates,
@@ -27,7 +31,11 @@ export function roomReducer(state, action) {
         transactions: action.payload.transactions,
       };
     case 'ERROR':
-      return { ...state, status: 'error', error: action.error };
+      return { ...state, status: state.room ? 'ready' : 'error', error: action.error, syncing: true };
+    case 'SYNCING':
+      return { ...state, syncing: true };
+    case 'RESET':
+      return initialRoomState;
     default:
       return state;
   }

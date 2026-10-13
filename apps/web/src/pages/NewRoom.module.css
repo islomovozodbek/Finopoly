@@ -19,6 +19,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  background: var(--surface);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
 }
 
 .heading {
@@ -68,6 +72,7 @@
 .eraChipSelected {
   border-color: var(--accent);
   color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .eraOrder {
@@ -90,8 +95,8 @@
 }
 
 .stepper button {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -140,3 +145,4 @@
   font-size: var(--text-sm);
   margin: 0;
 }
+@media (max-width: 480px) { .center { padding: 20px 12px; } .panel { padding: 24px 18px; } }

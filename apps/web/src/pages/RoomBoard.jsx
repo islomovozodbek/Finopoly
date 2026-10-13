@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowSquareOut, Buildings, Flag, HandCoins, LockKey, Newspaper } from '@phosphor-icons/react';
 import { useParams } from 'react-router-dom';
-import { BOARD, ERA_BRIEFINGS } from '@estate/content/client';
+import { BOARD, ERA_BRIEFINGS } from '@finopoly/content/client';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useRoomConnection } from '../hooks/useRoomConnection.js';
 import { useRoomAction } from '../hooks/useRoomAction.js';
@@ -9,40 +11,33 @@ import { getGridPosition } from '../lib/boardGeometry.js';
 import { formatMoney, formatSignedMoney } from '../lib/money.js';
 import PageLoader from '../components/PageLoader.jsx';
 import ResolvePanel from '../components/turn/ResolvePanel.jsx';
+import Logo from '../components/Logo.jsx';
+import TeamAvatar from '../components/TeamAvatar.jsx';
 import styles from './RoomBoard.module.css';
 
 const GROUP_VAR = (group) => `var(--group-${group}, var(--border-hi))`;
+const GROUPS = { financials: 'Financials', consumer: 'Consumer', energy: 'Energy', realestate: 'Real estate', tech: 'Technology', industrials: 'Industrials', macro: 'Bonds & currency', crypto: 'Crypto' };
+const CORNERS = { 0: Flag, 10: HandCoins, 20: LockKey, 30: Buildings };
 
 function BoardSpace({ space, tokens }) {
   const { row, col } = getGridPosition(space.id);
   const style = { gridRow: row + 1, gridColumn: col + 1 };
 
-  if (space.type === 'corner') {
-    return (
-      <div className={styles.corner} style={style}>
-        <span>{space.name}</span>
-      </div>
-    );
-  }
-  if (space.type === 'market_news') {
-    return (
-      <div className={styles.newsSpace} style={style}>
-        <span aria-hidden="true">?</span>
-      </div>
-    );
-  }
+  const Icon = CORNERS[space.id] ?? Newspaper;
+  const label = `${space.id}. ${space.name}${tokens.length ? ` — ${tokens.map(s => s.name).join(', ')}` : ''}`;
   return (
-    <div className={styles.assetSpace} style={{ ...style, '--group-color': GROUP_VAR(space.group) }}>
-      <div className={styles.groupBar} />
+    <div className={space.type === 'corner' ? styles.corner : space.type === 'market_news' ? styles.newsSpace : styles.assetSpace}
+      style={{ ...style, '--group-color': GROUP_VAR(space.group), '--group-surface': `var(--group-${space.group}-soft, var(--surface-2))` }} title={label} aria-label={label} data-occupied={tokens.length > 0} data-crowded={tokens.length > 4}>
+      {space.type === 'asset' ? <><div className={styles.groupBar} /><span className={styles.spaceNumber}>{space.id}</span><span className={styles.spaceName}>{space.name}</span></>
+        : <><Icon size={22} weight="duotone" aria-hidden="true" /><span className={styles.specialName}>{space.name}</span></>}
       {tokens.length > 0 && (
-        <div className={styles.tokenGrid}>
+        <div className={styles.tokenGrid} data-count={tokens.length} data-crowded={tokens.length > 4}>
           {tokens.map((s) => (
-            <div key={s.id} className={styles.token} style={{ background: s.color }} title={s.name}>
-              {s.name.slice(0, 2).toUpperCase()}
-            </div>
+            <TeamAvatar key={s.id} team={s} size="token" className={styles.token} />
           ))}
         </div>
       )}
+      {tokens.length > 1 && <div className={styles.tokenOverflow}><TeamAvatar team={tokens[0]} size="token" /><span>+{tokens.length - 1}</span></div>}
     </div>
   );
 }
@@ -50,7 +45,9 @@ function BoardSpace({ space, tokens }) {
 function CenterFinished() {
   return (
     <div className={styles.centerIdle}>
-      <span className={styles.turnSyndicate}>Game complete</span>
+      <Flag size={36} weight="duotone" aria-hidden="true" />
+      <h2 className={styles.turnSyndicate}>Game complete</h2>
+      <p className={styles.centerHelp}>The final standings are ready. Well played, investors.</p>
     </div>
   );
 }
@@ -65,10 +62,10 @@ const PIP_LAYOUT = {
   6: [1, 3, 4, 6, 7, 9],
 };
 
-function Die({ value, rolling }) {
+function Die({ value, rolling, animate }) {
   const lit = PIP_LAYOUT[value] ?? [];
   return (
-    <div className={`${styles.die} ${rolling ? styles.dieRolling : styles.dieSettled}`}>
+    <div className={`${styles.die} ${rolling ? styles.dieRolling : animate ? styles.dieSettled : ''}`}>
       <div className={styles.pipGrid}>
         {Array.from({ length: 9 }, (_, i) => (
           <span key={i} className={lit.includes(i + 1) ? styles.pip : styles.pipEmpty} />
@@ -88,12 +85,17 @@ function Die({ value, rolling }) {
 // arrives, briefly cycle random faces before settling on the real one — this
 // plays the same way on every screen watching the board, not just whichever
 // device tapped Roll.
-function DiceReadout({ dice, rollId }) {
+function DiceReadout({ dice, rollId, animate }) {
   const [shownValue, setShownValue] = useState(dice?.[0]);
   const [rolling, setRolling] = useState(false);
 
   useEffect(() => {
     if (!dice) return undefined;
+    if (!animate) {
+      setShownValue(dice[0]);
+      setRolling(false);
+      return undefined;
+    }
     setRolling(true);
     const tumble = setInterval(() => {
       setShownValue(1 + Math.floor(Math.random() * 6));
@@ -109,12 +111,12 @@ function DiceReadout({ dice, rollId }) {
     };
     // Re-runs only when a genuinely new roll lands, not on every re-render.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rollId]);
+  }, [rollId, animate]);
 
   if (!dice) return null;
   return (
     <div className={styles.dice}>
-      <Die value={shownValue ?? dice[0]} rolling={rolling} />
+      <Die value={shownValue ?? dice[0]} rolling={rolling} animate={animate} />
     </div>
   );
 }
@@ -128,26 +130,24 @@ function CenterIdle({ era, turnSyndicate, isHost, busy, gameActive, onRoll, onSk
           <span className={styles.eraYears}>{era.years}</span>
         </div>
       )}
-      <span className={styles.turnLabel}>CURRENT TURN</span>
-      <span className={styles.turnSyndicate} style={{ color: turnSyndicate?.color }}>
-        {turnSyndicate?.name ?? '—'}
-      </span>
+      <TeamAvatar team={turnSyndicate} size="lg" />
+      <h2 className={styles.turnSyndicate}>{turnSyndicate?.name ?? 'Ready to begin?'}</h2>
+      <p className={styles.centerHelp}>{gameActive ? 'Roll, land on a space, then make your investment.' : 'Choose your eras and start the game in host controls.'}</p>
       {isHost && (
         <div className={styles.hostControls}>
           <button type="button" className={styles.rollButton} disabled={busy || !gameActive} onClick={onRoll}>
-            ROLL
+            Roll the die
           </button>
           <button type="button" className={styles.skipButton} disabled={busy || !gameActive} onClick={onSkip}>
             Skip Turn
           </button>
         </div>
       )}
-      {!gameActive && <span className={styles.turnLabel}>Start an era on Host Control to roll</span>}
     </div>
   );
 }
 
-function CenterCards({ pendingTurn }) {
+function CenterCards({ pendingTurn, syndicate }) {
   if (!pendingTurn.drawnCards) {
     return (
       <div className={styles.centerCards}>
@@ -157,13 +157,15 @@ function CenterCards({ pendingTurn }) {
   }
   return (
     <div className={styles.centerCards}>
+      <h2 className={styles.centerTitle}>Choose an investment</h2>
+      <p className={styles.centerHelp}><TeamAvatar team={syndicate} size="sm" /> {syndicate?.name} is choosing on their team device. Finish this choice before the next roll.</p>
       <div className={styles.centerCardsRow}>
-        {pendingTurn.drawnCards.map((card) => (
+        {pendingTurn.drawnCards.map((card, index) => (
           <div key={card.id} className={styles.card}>
-            <span className={styles.cardType}>{card.assetType}</span>
+            <span className={styles.cardType}>Option {index + 1} · {card.assetType}</span>
             <span className={styles.cardName}>{card.name}</span>
             <span className={styles.cardReason}>{card.reason}</span>
-            <div className={styles.cardFlap}>?</div>
+            <span className={styles.cardFlap}>Return hidden</span>
           </div>
         ))}
       </div>
@@ -174,7 +176,7 @@ function CenterCards({ pendingTurn }) {
 function CenterNews({ pendingTurn, isHost, syndicates, busy, onResolve }) {
   return (
     <div className={styles.centerNews}>
-      <span className={styles.newsGlyph} aria-hidden="true">?</span>
+      <Newspaper className={styles.newsGlyph} size={36} weight="duotone" aria-hidden="true" />
       {pendingTurn.newsCard && (
         <>
           <span className={styles.newsTitle}>{pendingTurn.newsCard.title}</span>
@@ -191,7 +193,7 @@ function CenterNews({ pendingTurn, isHost, syndicates, busy, onResolve }) {
 function CenterCorner({ pendingTurn, isHost, syndicates, busy, onResolve }) {
   return (
     <div className={styles.centerCorner}>
-      <span className={styles.newsGlyph} aria-hidden="true">!</span>
+      <HandCoins className={styles.newsGlyph} size={36} weight="duotone" aria-hidden="true" />
       <span className={styles.newsTitle}>{pendingTurn.cornerEvent?.replace(/_/g, ' ')}</span>
       {isHost && (
         <ResolvePanel kind="corner" pendingTurn={pendingTurn} syndicates={syndicates} busy={busy} onResolve={onResolve} />
@@ -204,13 +206,22 @@ export default function RoomBoard() {
   const { slug } = useParams();
   const { session, profile } = useAuth();
   const state = useRoomConnection(slug, session?.access_token);
-  const { busy, error, clearError, act } = useRoomAction(slug, session?.access_token);
+  const { busy: actionBusy, error, clearError, act } = useRoomAction(slug, session?.access_token, state);
+  const busy = actionBusy || state.syncing;
   const isHost = ['host', 'admin'].includes(profile?.app_role);
 
   // Pending-turn decisions (60-90s to force-submit/resolve) take priority
   // over the room's own research-phase timer when both happen to be set.
   const deadline = state.pendingTurn?.decisionDeadline ?? state.room?.timerDeadline ?? null;
   const remainingMs = useCountdown(deadline);
+  const previousTurn = useRef(undefined);
+  const [animatedRollId, setAnimatedRollId] = useState(null);
+  useEffect(() => {
+    if (state.status !== 'ready') return;
+    const id = state.pendingTurn?.id ?? null;
+    if (previousTurn.current !== undefined && id && previousTurn.current !== id) setAnimatedRollId(id);
+    previousTurn.current = id;
+  }, [state.status, state.pendingTurn?.id]);
 
   if (state.status === 'loading') return <PageLoader label="Loading board…" />;
   if (state.status === 'error') return <div className={styles.error}>{state.error}</div>;
@@ -228,23 +239,24 @@ export default function RoomBoard() {
 
   return (
     <div className={styles.page}>
-      {isHost && (
-        <a className={styles.hostLink} href={`/room/${slug}/host`} target="_blank" rel="noreferrer">
-          Host Settings ↗
-        </a>
-      )}
+      <header className={styles.header}>
+        <div className={styles.identity}><Link to="/select" aria-label="Finopoly games"><Logo size="sm" /></Link><span className={styles.roomName}>{room.name}</span></div>
+        <div className={styles.headerActions}><span className={styles.phaseBadge}>{state.syncing ? 'Reconnecting…' : pendingTurn ? 'Turn in progress' : game?.status === 'lobby' ? 'Waiting to start' : game?.status === 'finished' ? 'Game complete' : 'Ready to roll'}</span>
+        {isHost && <Link className={styles.hostLink} to={`/room/${slug}/host`}>Host controls <ArrowSquareOut size={16} aria-hidden="true" /></Link>}</div>
+      </header>
       {error && (
-        <div className={styles.actionError}>
+        <div className={styles.actionError} role="alert">
           <span>{error}</span>
-          <button type="button" className={styles.actionErrorDismiss} onClick={clearError}>×</button>
+          <button type="button" className={styles.actionErrorDismiss} onClick={clearError} aria-label="Dismiss error">×</button>
         </div>
       )}
-      <div className={styles.board}>
+      <main className={styles.layout}>
+      <div className={styles.boardArea}><div className={styles.board}>
         {BOARD.map((space) => (
           <BoardSpace key={space.id} space={space} tokens={tokensByPosition.get(space.id) ?? []} />
         ))}
         <div className={styles.center}>
-          {pendingTurn && <DiceReadout dice={pendingTurn.dice} rollId={pendingTurn.id} />}
+          {pendingTurn && <DiceReadout dice={pendingTurn.dice} rollId={pendingTurn.id} animate={animatedRollId === pendingTurn.id} />}
           {game?.status === 'finished' && <CenterFinished />}
           {game?.status !== 'finished' && !pendingTurn && (
             <CenterIdle
@@ -257,7 +269,7 @@ export default function RoomBoard() {
               onSkip={() => act('SKIP_TURN', {})}
             />
           )}
-          {pendingTurn?.stage === 'awaiting_pick' && <CenterCards pendingTurn={pendingTurn} />}
+          {pendingTurn?.stage === 'awaiting_pick' && <CenterCards pendingTurn={pendingTurn} syndicate={syndicates.find(s => s.id === pendingTurn.syndicateId)} />}
           {pendingTurn?.stage === 'news' && (
             <CenterNews
               pendingTurn={pendingTurn}
@@ -277,32 +289,35 @@ export default function RoomBoard() {
             />
           )}
         </div>
-      </div>
+      </div></div>
 
       <div className={styles.rail}>
         {deadline && (
           <div className={`${styles.timerBlock} ${remainingMs < 10000 ? styles.timerUrgent : ''}`}>
+            <span className={styles.timerLabel}>{pendingTurn ? 'Decision time' : 'Research time'}</span>
             <span className={`${styles.timerValue} timer`}>{formatCountdown(remainingMs)}</span>
           </div>
         )}
 
-        <div className={styles.standings}>
+        <section className={styles.standings}><h2 className={styles.railTitle}>Standings</h2>
+          {ranked.length === 0 && <p className={styles.empty}>Add teams in host controls to begin.</p>}
           {ranked.map((s, i) => (
             <div key={s.id} className={styles.standingRow}>
               <span className={styles.rank}>{i + 1}</span>
-              <span className={styles.chip} style={{ background: s.color }} />
+              <TeamAvatar team={s} />
               <span className={styles.name}>{s.name}</span>
               <span className={`${styles.cash} money`}>{formatMoney(s.cash)}</span>
             </div>
           ))}
-        </div>
+        </section>
 
-        <div className={styles.transactions}>
-          {transactions.map((t) => {
+        <section className={styles.transactions}><h2 className={styles.railTitle}>Recent activity</h2>
+          {transactions.length === 0 && <p className={styles.empty}>Moves and investment results will appear here.</p>}
+          {transactions.slice(0, 8).map((t) => {
             const syn = syndicates.find((s) => s.id === t.syndicateId);
             return (
               <div key={t.id} className={styles.txRow}>
-                <span className={styles.txChip} style={{ background: syn?.color }} />
+                <TeamAvatar team={syn} size="sm" />
                 <span className={styles.txNote}>{syn?.name ?? '—'} · {t.note || t.actionType}</span>
                 <span className={`${styles.txAmount} ${t.amount >= 0 ? styles.gain : styles.loss} money`}>
                   {formatSignedMoney(t.amount)}
@@ -310,8 +325,10 @@ export default function RoomBoard() {
               </div>
             );
           })}
-        </div>
+        </section>
+        <section className={styles.legend}><h2 className={styles.railTitle}>Explore the market</h2><div className={styles.legendGrid}>{Object.entries(GROUPS).map(([key, name]) => <div key={key}><span style={{ background: GROUP_VAR(key) }} />{name}</div>)}</div></section>
       </div>
+      </main>
     </div>
   );
 }

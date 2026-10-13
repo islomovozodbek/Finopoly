@@ -52,7 +52,7 @@ export default function ResolutionPhase({ transaction, era, cash, onContinue }) 
         <span className={gain ? styles.gain : styles.loss}>{formatSignedMoney(transaction.amount)}</span>
       </div>
 
-      {era?.debrief && <p className={styles.debrief}>{era.debrief}</p>}
+      {era?.debrief && <details className={styles.debrief}><summary>What this era teaches us</summary><p>{era.debrief}</p></details>}
 
       <button type="button" className={styles.continueButton} onClick={onContinue}>
         Continue

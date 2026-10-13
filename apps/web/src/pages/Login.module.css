@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: var(--space-12);
-  background: var(--color-surface);
+  background: var(--accent-soft);
   border-right: 1px solid var(--color-border);
   overflow: hidden;
 }
@@ -45,11 +45,13 @@
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-sm);
 }
+.boardCell:nth-child(4n) { background: var(--group-tech-soft); border-color: var(--group-tech); }
+.boardCell:nth-child(4n + 1) { background: var(--group-energy-soft); border-color: var(--group-energy); }
+.boardCell:nth-child(4n + 2) { background: var(--group-financials-soft); border-color: var(--group-financials); }
 
 .lit {
   border-color: var(--color-accent);
   background: var(--color-accent-soft);
-  animation: pulse 3.6s var(--ease-out) infinite;
 }
 
 @keyframes pulse {

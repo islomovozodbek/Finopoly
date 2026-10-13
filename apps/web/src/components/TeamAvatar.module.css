@@ -1,0 +1,7 @@
+.avatar { display: inline-flex; align-items: center; justify-content: center; width: var(--team-avatar-size, 28px); height: var(--team-avatar-size, 28px); flex-shrink: 0; border-radius: var(--radius-full); background: var(--team-avatar-color); color: var(--team-avatar-ink); vertical-align: middle; }
+.avatar svg { display: block; width: 68%; height: 68%; }
+.sm { --team-avatar-size: 24px; }
+.md { --team-avatar-size: 28px; }
+.lg { --team-avatar-size: 44px; }
+.token { --team-avatar-size: 20px; outline: 1px solid var(--surface); }
+@media (max-width: 480px) { .token { --team-avatar-size: 16px; } }

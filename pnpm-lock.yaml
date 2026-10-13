@@ -14,7 +14,7 @@ importers:
 
   apps/server:
     dependencies:
-      '@estate/content':
+      '@finopoly/content':
         specifier: workspace:*
         version: link:../../packages/content
       '@supabase/supabase-js':
@@ -33,7 +33,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@estate/content':
+      '@finopoly/content':
         specifier: workspace:*
         version: link:../../packages/content
       '@phosphor-icons/react':

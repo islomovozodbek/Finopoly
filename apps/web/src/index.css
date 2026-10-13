@@ -36,10 +36,15 @@ p {
 }
 
 button,
-input {
+input,
+select,
+textarea {
   font-family: inherit;
   color: inherit;
 }
+button:not(:disabled) { cursor: pointer; }
+input::placeholder, textarea::placeholder { color: var(--text-3); opacity: 1; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--info); outline-offset: 3px; }
 
 a {
   color: inherit;

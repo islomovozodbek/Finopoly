@@ -50,7 +50,7 @@ export default function Login() {
       <aside className={styles.brandPanel}>
         <div className={styles.brandContent}>
           <Logo size="lg" />
-          <p className={styles.tagline}>Trade blocks, build an empire, and outlast everyone else at the table.</p>
+          <p className={styles.tagline}>Explore financial history. Make your next move together.</p>
         </div>
 
         <div className={styles.board} aria-hidden="true">
@@ -70,7 +70,7 @@ export default function Login() {
 
           <div>
             <h1 className={styles.heading}>Sign in</h1>
-            <p className={styles.subheading}>Welcome back to the table.</p>
+            <p className={styles.subheading}>Host a game and bring the market to your classroom.</p>
           </div>
 
           <form className={styles.form} onSubmit={handlePasswordLogin} noValidate>

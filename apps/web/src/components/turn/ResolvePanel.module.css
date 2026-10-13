@@ -6,6 +6,7 @@
 }
 
 .select {
+  min-height: 44px;
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -16,6 +17,7 @@
 }
 
 .resolveButton {
+  min-height: 44px;
   background: var(--accent);
   border: none;
   border-radius: var(--radius);

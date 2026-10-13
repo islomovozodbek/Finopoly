@@ -1,28 +1,35 @@
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 /**
- * Calls a room-scoped SERVER ACTION. The response is used only for
- * immediate error feedback — the real state update always arrives via the
- * room/host Realtime channel, never from this call's return value directly
- * (optimistic updates are banned; the caller should disable its control and
- * wait for the broadcast).
+ * Calls a room-scoped server action. Its response is an authoritative
+ * snapshot, identical to the broadcast. Applying it also recovers callers
+ * whose socket dropped while the request was in flight.
  * @param {string} roomSlug
  * @param {string} accessToken
  * @param {string} actionType
  * @param {object} [payload]
  */
-export async function callRoomAction(roomSlug, accessToken, actionType, payload = {}) {
+export async function callRoomAction(roomSlug, accessToken, actionType, payload = {}, expectedVersion) {
   const res = await fetch(`${SERVER_URL}/api/rooms/action`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`,
     },
-    body: JSON.stringify({ roomSlug, actionType, payload }),
+    body: JSON.stringify({ roomSlug, actionType, payload, expectedVersion }),
   });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
-    throw new Error(data.error || `Action ${actionType} failed`);
+    const messages = {
+      STALE_ROOM_STATE: 'The game changed. Syncing the latest turn — please try again.',
+      ROOM_VERSION_REQUIRED: 'Reload this page to sync the current turn.',
+      TURN_ALREADY_PENDING: 'Finish the current investment or event before rolling again.',
+      DEADLINE_NOT_PASSED: 'The team still has time to choose. Wait for the decision timer to finish.',
+      NOT_ACTING_DEVICE: 'Another teammate is submitting. Select Take over to use this device.',
+    };
+    const error = new Error(messages[data.error] || data.error || `Action ${actionType} failed`);
+    error.code = data.error;
+    throw error;
   }
   return data;
 }

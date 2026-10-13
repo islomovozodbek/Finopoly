@@ -74,5 +74,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(config.port, () => {
-  console.log(`estate api dev server (local emulator) listening on :${config.port}`);
+  console.log(`Finopoly API dev server (local emulator) listening on :${config.port}`);
 });

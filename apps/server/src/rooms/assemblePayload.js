@@ -1,4 +1,5 @@
 import { stripCards } from './stripCards.js';
+import { assignTeamIcons } from '@finopoly/content';
 
 function toSyndicateView(row, audience) {
   const base = {
@@ -40,6 +41,7 @@ function toSyndicateView(row, audience) {
  * @param {'host'|'room'|'team'} audience
  */
 export function assembleRoomPayload(room, syndicates, pendingTurn, transactions, audience) {
+  const icons = assignTeamIcons(syndicates);
   return {
     game: {
       status: room.status,
@@ -58,7 +60,7 @@ export function assembleRoomPayload(room, syndicates, pendingTurn, transactions,
       timerDeadline: room.timer_deadline,
       version: room.version,
     },
-    syndicates: syndicates.map((row) => toSyndicateView(row, audience)),
+    syndicates: syndicates.map((row) => ({ ...toSyndicateView(row, audience), iconId: icons.get(row.id) })),
     pendingTurn: pendingTurn && {
       id: pendingTurn.id,
       syndicateId: pendingTurn.syndicate_id,
@@ -92,6 +94,7 @@ export function assembleRoomPayload(room, syndicates, pendingTurn, transactions,
  * @param {string|null} eraId
  */
 export function assembleStandingsPayload(roomSlug, syndicates, eraId) {
+  const icons = assignTeamIcons(syndicates);
   return {
     roomSlug,
     eraId,
@@ -99,6 +102,7 @@ export function assembleStandingsPayload(roomSlug, syndicates, eraId) {
       syndicateId: row.id,
       name: row.name,
       color: row.color,
+      iconId: icons.get(row.id),
       cash: row.cash,
       eraStartingCash: row.era_starting_cash,
     })),

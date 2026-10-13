@@ -1,5 +1,5 @@
 {
-  "name": "@estate/server",
+  "name": "@finopoly/server",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
     "create-host": "node scripts/create-host.js"
   },
   "dependencies": {
-    "@estate/content": "workspace:*",
+    "@finopoly/content": "workspace:*",
     "@supabase/supabase-js": "^2.45.4",
     "dotenv": "^16.4.5",
     "zod": "^3.23.8"

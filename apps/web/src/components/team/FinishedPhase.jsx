@@ -1,4 +1,5 @@
 import { formatMoney } from '../../lib/money.js';
+import TeamAvatar from '../TeamAvatar.jsx';
 import styles from './FinishedPhase.module.css';
 
 export default function FinishedPhase({ mySyndicate, syndicates }) {
@@ -8,6 +9,7 @@ export default function FinishedPhase({ mySyndicate, syndicates }) {
   return (
     <div className={styles.phase}>
       <span className={styles.heading}>Game complete</span>
+      <TeamAvatar team={mySyndicate} size="lg" />
       <span className={styles.rankLine}>
         {mySyndicate.name} finished #{rank} of {syndicates.length}
       </span>
@@ -17,7 +19,7 @@ export default function FinishedPhase({ mySyndicate, syndicates }) {
         {ranked.map((s, i) => (
           <div key={s.id} className={`${styles.standingRow} ${s.id === mySyndicate.id ? styles.standingMine : ''}`}>
             <span className={styles.rank}>{i + 1}</span>
-            <span className={styles.chip} style={{ background: s.color }} />
+            <TeamAvatar team={s} />
             <span className={styles.name}>{s.name}</span>
             <span className={`${styles.rowCash} money`}>{formatMoney(s.cash)}</span>
           </div>

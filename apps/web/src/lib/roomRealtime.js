@@ -9,21 +9,21 @@ import { supabase } from './supabase.js';
  * @param {(payload: object) => void} onMessage
  * @returns {() => void} unsubscribe
  */
-function subscribeToTopic(topic, event, onMessage) {
+function subscribeToTopic(topic, event, onMessage, onStatus) {
   const channel = supabase.channel(topic, { config: { private: true } });
   channel.on('broadcast', { event }, ({ payload }) => onMessage(payload));
-  channel.subscribe();
+  channel.subscribe((status) => onStatus?.(status));
   return () => supabase.removeChannel(channel);
 }
 
 /** Projector Board + team phones: room:{slug}, stripped card fronts only. */
-export function subscribeToRoomChannel(slug, onState) {
-  return subscribeToTopic(`room:${slug}`, 'state', onState);
+export function subscribeToRoomChannel(slug, onState, onStatus) {
+  return subscribeToTopic(`room:${slug}`, 'state', onState, onStatus);
 }
 
 /** Host Control only: host:{slug}, full card percentages. */
-export function subscribeToHostChannel(slug, onState) {
-  return subscribeToTopic(`host:${slug}`, 'state', onState);
+export function subscribeToHostChannel(slug, onState, onStatus) {
+  return subscribeToTopic(`host:${slug}`, 'state', onState, onStatus);
 }
 
 /** /leaderboard: cross-room standings delta. */

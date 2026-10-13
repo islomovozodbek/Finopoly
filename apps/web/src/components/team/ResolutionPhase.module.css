@@ -86,14 +86,16 @@
   margin: 0;
   max-width: 480px;
 }
+.debrief summary { min-height: 44px; padding: 12px 0; cursor: pointer; font-size: var(--text-sm); font-weight: 600; color: var(--text); }
+.debrief p { font-size: var(--text-sm); line-height: 1.6; color: var(--text-2); }
 
 .continueButton {
   min-height: 52px;
   padding: 0 var(--space-4);
-  background: var(--syndicate-color, var(--accent));
+  background: var(--accent);
   border: none;
   border-radius: var(--radius);
-  color: var(--bg);
+  color: var(--color-on-accent);
   font-family: var(--font-ui);
   font-weight: 700;
   font-size: var(--text-base);

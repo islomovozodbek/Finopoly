@@ -24,7 +24,7 @@ export default withAuth(async (req, res) => {
     return;
   }
 
-  const room = await loadRoomBySlug(slug);
+  const roomLookup = await loadRoomBySlug(slug);
 
   const { data: profile, error: profileError } = await supabase
     .from('profiles')
@@ -34,7 +34,7 @@ export default withAuth(async (req, res) => {
   if (profileError) throw profileError;
 
   const isStaff = ['host', 'admin'].includes(profile?.app_role);
-  const { syndicates, pendingTurn, transactions, gameState } = await loadRoomSnapshot(room.id);
+  const { room, syndicates, pendingTurn, transactions } = await loadRoomSnapshot(roomLookup.id);
   const audience = isStaff ? 'host' : 'room';
-  res.status(200).json(assembleRoomPayload(room, syndicates, pendingTurn, transactions, audience, gameState));
+  res.status(200).json(assembleRoomPayload(room, syndicates, pendingTurn, transactions, audience));
 });

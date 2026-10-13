@@ -19,12 +19,16 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  padding: 32px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .heading {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-family: var(--font-display);
-  color: var(--accent);
+  color: var(--text);
   margin-bottom: var(--space-1);
 }
 
@@ -67,6 +71,7 @@
 
 .optionSelected {
   border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .optionDisabled {
@@ -143,3 +148,4 @@
   background: var(--accent);
   color: var(--bg);
 }
+@media (max-width: 480px) { .center { padding: 24px 16px; align-items: flex-start; } .panel { padding: 24px 20px; } }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ERAS } from '@estate/content';
+import { ERAS } from '@finopoly/content';
 import { stripCards } from './stripCards.js';
 
 const ALL_REAL_CARDS = ERAS.flatMap((era) => era.investments);

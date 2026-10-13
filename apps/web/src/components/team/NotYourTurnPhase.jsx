@@ -1,4 +1,5 @@
 import { formatMoney } from '../../lib/money.js';
+import TeamAvatar from '../TeamAvatar.jsx';
 import styles from './NotYourTurnPhase.module.css';
 
 const FLAG_LABELS = {
@@ -50,7 +51,8 @@ export default function NotYourTurnPhase({ mySyndicate, syndicates, pendingTurn,
 
       <div className={styles.turnBanner}>
         <span className={styles.turnLabel}>Current turn</span>
-        <span className={styles.turnName} style={{ color: turnSyndicate?.color }}>
+        <span className={styles.turnName}>
+          <TeamAvatar team={turnSyndicate} size="sm" />{' '}
           {turnSyndicate?.name ?? 'Waiting for the host'}
         </span>
         {pendingTurn && (
@@ -63,7 +65,7 @@ export default function NotYourTurnPhase({ mySyndicate, syndicates, pendingTurn,
         {ranked.map((s, i) => (
           <div key={s.id} className={`${styles.standingRow} ${s.id === mySyndicate.id ? styles.standingMine : ''}`}>
             <span className={styles.rank}>{i + 1}</span>
-            <span className={styles.chip} style={{ background: s.color }} />
+            <TeamAvatar team={s} />
             <span className={styles.name}>{s.name}</span>
             <span className={`${styles.cash} money`}>{formatMoney(s.cash)}</span>
           </div>

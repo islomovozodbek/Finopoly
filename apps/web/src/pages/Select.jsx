@@ -7,7 +7,7 @@ import TopBar from '../components/TopBar.jsx';
 import styles from './Select.module.css';
 
 const SURFACES = [
-  { id: 'board', label: 'Projector Board', description: 'Read-only display for the classroom projector', icon: Monitor },
+  { id: 'board', label: 'Game board', description: 'Watch the game, or roll and resolve events as a host.', icon: Monitor },
   { id: 'host', label: 'Host Control', description: 'Run the room: roll, resolve turns, adjust cash', icon: SlidersHorizontal, requiresHost: true },
 ];
 
@@ -43,8 +43,8 @@ export default function Select() {
       <TopBar />
       <div className={styles.center}>
         <div className={styles.panel}>
-          <h1 className={styles.heading}>Finopoly</h1>
-          <p className={styles.subheading}>Select a room and surface to open.</p>
+          <h1 className={styles.heading}>Back to the market</h1>
+          <p className={styles.subheading}>Open a game to continue exactly where your teams left off.</p>
 
           {isHost && (
             <button type="button" className={styles.newGameButton} onClick={() => navigate('/rooms/new')}>
@@ -82,7 +82,7 @@ export default function Select() {
           ) : error ? (
             <p className={styles.error}>{error}</p>
           ) : rooms.length === 0 ? (
-            <p className={styles.subheading}>No rooms configured yet.</p>
+            <p className={styles.subheading}>{isHost ? 'Create your first game to choose eras and invite your teams.' : 'Your host will create a game. Team members can join with their code.'}</p>
           ) : (
             <select
               className={styles.roomSelect}

@@ -13,6 +13,7 @@ export function useMyBinding(accessToken) {
 
   const refresh = useCallback(() => {
     if (!accessToken) return Promise.resolve();
+    setError(null);
     return fetchMyBinding(accessToken)
       .then(setBinding)
       .catch((e) => setError(e.message));

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { callRoomAction } from '../lib/roomActions.js';
 
 /**
@@ -13,21 +13,27 @@ import { callRoomAction } from '../lib/roomActions.js';
  * @param {string|undefined} accessToken
  * @returns {{ busy: boolean, error: string|null, clearError: () => void, act: (actionType: string, payload?: object) => Promise<boolean> }}
  */
-export function useRoomAction(slug, accessToken) {
+export function useRoomAction(slug, accessToken, state) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(null);
+  const inFlight = useRef(false);
 
   async function act(actionType, payload) {
+    if (inFlight.current || state?.syncing) return false;
+    inFlight.current = true;
     setBusy(true);
     setError(null);
     try {
-      await callRoomAction(slug, accessToken, actionType, payload);
+      const snapshot = await callRoomAction(slug, accessToken, actionType, payload, state?.room?.version);
+      state?.receiveSnapshot(snapshot);
       return true;
     } catch (e) {
       setError(e.message);
+      await state?.refresh();
       return false;
     } finally {
       setBusy(false);
+      inFlight.current = false;
     }
   }
 

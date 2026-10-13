@@ -4,14 +4,14 @@
 // organizer needs to log in and create games, no public /signup involved.
 //
 // Run from apps/server (so dotenv picks up its .env):
-//   pnpm --filter @estate/server create-host -- host@example.com "TempPass123" "Host Name"
+//   pnpm --filter @finopoly/server create-host -- host@example.com "TempPass123" "Host Name"
 import { supabase } from '../src/supabase.js';
 
 const [, , email, password, ...nameParts] = process.argv;
 const fullName = nameParts.join(' ') || email;
 
 if (!email || !password) {
-  console.error('Usage: pnpm --filter @estate/server create-host -- <email> <password> ["Full Name"]');
+  console.error('Usage: pnpm --filter @finopoly/server create-host -- <email> <password> ["Full Name"]');
   process.exit(1);
 }
 

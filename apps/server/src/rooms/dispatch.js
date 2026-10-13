@@ -1,4 +1,4 @@
-import { SPACE_OPTIONS } from '@estate/content';
+import { SPACE_OPTIONS } from '@finopoly/content';
 import { supabase } from '../supabase.js';
 import { assembleRoomPayload, assembleStandingsPayload } from './assemblePayload.js';
 import { sendBroadcast, roomTopic, hostTopic, GLOBAL_TOPIC } from './broadcast.js';
@@ -22,29 +22,32 @@ export async function loadRoomBySlug(slug) {
 }
 
 /**
- * Calls apply_room_action(), retrying once on a version conflict (mirrors
- * src/repo/games.js's VersionConflictError + retry-once pattern). Reloads
- * the room's current version itself on conflict rather than trusting a
- * stale caller-supplied one.
+ * Calls apply_room_action(). Turn controls must match the version the user
+ * saw and are never retried against a newer turn. Other actions reload the
+ * current version and retry once if they race with another mutation.
  * @param {string} roomId
  * @param {string} actorId
  * @param {string} actionType
  * @param {object} payload
  * @returns {Promise<{ roomId: string }>}
  */
-export async function callRoomAction(roomId, actorId, actionType, payload) {
+export async function callRoomAction(roomId, actorId, actionType, payload, expectedVersion) {
   const attempt = async () => {
-    const { data: room, error: loadError } = await supabase
-      .from('rooms')
-      .select('version')
-      .eq('id', roomId)
-      .single();
-    if (loadError) throw loadError;
+    let version = expectedVersion;
+    if (version == null) {
+      const { data: room, error: loadError } = await supabase
+        .from('rooms')
+        .select('version')
+        .eq('id', roomId)
+        .single();
+      if (loadError) throw loadError;
+      version = room.version;
+    }
 
     const { data, error } = await supabase.rpc('apply_room_action', {
       p_room_id: roomId,
       p_actor_id: actorId,
-      p_expected_version: room.version,
+      p_expected_version: version,
       p_action_type: actionType,
       p_payload: payload ?? {},
     });
@@ -55,7 +58,8 @@ export async function callRoomAction(roomId, actorId, actionType, payload) {
   try {
     return await attempt();
   } catch (error) {
-    if (!isVersionConflict(error)) throw error;
+    // Do not replay a stale control against a turn the user never saw.
+    if (expectedVersion != null || !isVersionConflict(error)) throw error;
     return attempt(); // one retry, per the plan; a second conflict propagates as a real error
   }
 }
@@ -123,26 +127,34 @@ export async function fillPendingInvestmentCards(roomId) {
  * @param {string} roomId
  */
 export async function loadRoomSnapshot(roomId) {
-  const [{ data: room, error: roomError }, { data: syndicates, error: synError },
-    { data: pendingTurn, error: pendingError }, { data: transactions, error: txError }] = await Promise.all([
-    supabase.from('rooms').select('*').eq('id', roomId).single(),
-    supabase.from('syndicates').select('*').eq('room_id', roomId).order('turn_order'),
-    supabase.from('pending_turns').select('*').eq('room_id', roomId).maybeSingle(),
-    // Host Control now renders this as a real "Transaction History" section
-    // (not just a small recent-activity strip), so it needs more than a
-    // token-sized window of rows.
-    supabase.from('transactions').select('*').eq('room_id', roomId).order('created_at', { ascending: false }).limit(100),
-  ]);
+  // Reads use separate HTTP queries. A version check around them prevents a
+  // navigation snapshot from combining a new room version with old choices.
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const { data: room, error: roomError } = await supabase
+      .from('rooms').select('*').eq('id', roomId).single();
+    if (roomError) throw roomError;
 
-  if (roomError) throw roomError;
-  if (synError) throw synError;
-  if (pendingError) throw pendingError;
-  if (txError) throw txError;
+    const [{ data: syndicates, error: synError }, { data: pendingTurn, error: pendingError },
+      { data: transactions, error: txError }] = await Promise.all([
+      supabase.from('syndicates').select('*').eq('room_id', roomId).order('turn_order'),
+      supabase.from('pending_turns').select('*').eq('room_id', roomId).maybeSingle(),
+      supabase.from('transactions').select('*').eq('room_id', roomId).order('created_at', { ascending: false }).limit(100),
+    ]);
+    if (synError) throw synError;
+    if (pendingError) throw pendingError;
+    if (txError) throw txError;
 
-  return {
-    room, syndicates: syndicates ?? [], pendingTurn: pendingTurn ?? null,
-    transactions: transactions ?? [],
-  };
+    const { data: after, error: afterError } = await supabase
+      .from('rooms').select('version').eq('id', roomId).single();
+    if (afterError) throw afterError;
+    if (after.version !== room.version) continue;
+
+    return {
+      room, syndicates: syndicates ?? [], pendingTurn: pendingTurn ?? null,
+      transactions: transactions ?? [],
+    };
+  }
+  throw new Error('Room is updating. Please try again.');
 }
 
 /**

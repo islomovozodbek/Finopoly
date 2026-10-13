@@ -10,30 +10,44 @@
  * asset group bars, and gain/loss.
  */
 :root {
-  --bg: #FBF8EE;
+  color-scheme: light;
+  --bg: #FCF9F2;
   --surface: #FFFFFF;
-  --surface-2: #F5F0E8;
-  --border: #E6E1D6;
-  --border-hi: #D9D3C4;
-  --text: #1A1A1A;
-  --text-2: #555555;
-  --text-3: #888888;
+  --surface-2: #F6F3EC;
+  --border: #E4E0D6;
+  --border-hi: #CCC7BA;
+  --text: #292D32;
+  --text-2: #56606A;
+  --text-3: #646D75;
   --accent: #C41230;
+  --accent-soft: #FFF0F0;
+  --info: #295B91;
+  --info-soft: #EDF4FC;
+  --board-frame: #E6DFD0;
+  --token-ink: #17212A;
   --gain: #0A8754;
   --loss: #C41230;
   --success: #1E7B34;
   --danger-bg: #FDF1F1;
   --danger-bg-strong: #FCE4E4;
 
-  /* 8 muted group hues — adjusted for legibility on the cream background. */
-  --group-financials: #6B6B6B;
-  --group-consumer: #9E3040;
-  --group-energy: #8B7E6A;
-  --group-realestate: #5A5A5A;
-  --group-tech: #3A3A3A;
-  --group-industrials: #7A2A32;
-  --group-macro: #4D4D4D;
-  --group-crypto: #C41230;
+  /* Category colors identify sectors; gain/loss keep their financial meaning. */
+  --group-financials: #B37A15;
+  --group-consumer: #C15776;
+  --group-energy: #36846C;
+  --group-realestate: #B8673C;
+  --group-tech: #4678BC;
+  --group-industrials: #72833A;
+  --group-macro: #438796;
+  --group-crypto: #8963AA;
+  --group-financials-soft: #FFF5D9;
+  --group-consumer-soft: #FCEFF3;
+  --group-energy-soft: #ECF7EF;
+  --group-realestate-soft: #FCF0E5;
+  --group-tech-soft: #EDF3FC;
+  --group-industrials-soft: #F2F5E5;
+  --group-macro-soft: #EAF5F6;
+  --group-crypto-soft: #F4EEF9;
 
   --font-ui: 'Inter Tight', 'Geist', system-ui, -apple-system, sans-serif;
   --font-display: 'Inter Tight', 'Geist', system-ui, -apple-system, sans-serif;
@@ -62,8 +76,8 @@
   --space-12: 48px;
   --space-16: 64px;
 
-  --radius: 6px;
-  --radius-sm: 6px;
+  --radius: 14px;
+  --radius-sm: 8px;
   --radius-md: 8px;
   --radius-lg: 14px;
   --radius-full: 999px;
@@ -99,7 +113,7 @@
   --color-text-faint: var(--text-3);
   --color-accent: var(--accent);
   --color-accent-strong: #9A0E24;
-  --color-accent-soft: rgba(196, 18, 48, 0.10);
+  --color-accent-soft: var(--accent-soft);
   --color-on-accent: #ffffff;
   --color-gain: var(--gain);
   --color-gain-dark: #0A8754;

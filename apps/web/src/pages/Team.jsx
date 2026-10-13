@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { ERA_BRIEFINGS } from '@estate/content/client';
+import { ERA_BRIEFINGS } from '@finopoly/content/client';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useMyBinding } from '../hooks/useMyBinding.js';
 import { useRoomConnection } from '../hooks/useRoomConnection.js';
@@ -12,6 +12,9 @@ import YourTurnPhase from '../components/team/YourTurnPhase.jsx';
 import ResolutionPhase from '../components/team/ResolutionPhase.jsx';
 import FinishedPhase from '../components/team/FinishedPhase.jsx';
 import styles from './Team.module.css';
+import Logo from '../components/Logo.jsx';
+import TeamAvatar from '../components/TeamAvatar.jsx';
+import { getMyRole } from '../lib/teamRole.js';
 
 /**
  * The one team screen, adapting to the game phase. Room phase ('briefing' |
@@ -23,7 +26,7 @@ import styles from './Team.module.css';
 export default function Team() {
   const { session, profile } = useAuth();
   const accessToken = session?.access_token;
-  const { binding, refresh: refreshBinding } = useMyBinding(accessToken);
+  const { binding, error: bindingError, refresh: refreshBinding } = useMyBinding(accessToken);
   const roomSlug = binding?.roomSlug;
   const state = useRoomConnection(roomSlug, accessToken);
 
@@ -61,6 +64,7 @@ export default function Team() {
     if (myResolution) setResolvedTx(myResolution);
   }, [state.transactions, mySyndicate]);
 
+  if (bindingError && binding === null) return <div className={styles.error} role="alert">{bindingError}<button onClick={refreshBinding}>Try again</button></div>;
   if (binding === null) return <PageLoader label="Loading…" />;
   if (!binding.roomSlug) return <Navigate to="/join" replace />;
   if (state.status === 'loading') return <PageLoader label="Loading your team…" />;
@@ -72,19 +76,23 @@ export default function Team() {
   const turnSyndicate = state.syndicates[state.room.turnIndex] ?? null;
 
   let phase;
-  if (resolvedTx) phase = 'RESOLUTION';
-  else if (state.game?.status === 'finished') phase = 'FINISHED';
+  if (state.game?.status === 'finished') phase = 'FINISHED';
+  else if (myPendingTurn?.stage === 'awaiting_pick') phase = 'YOUR_TURN';
+  else if (resolvedTx) phase = 'RESOLUTION';
   else if (state.room.phase === 'briefing') phase = 'BRIEFING';
   else if (state.room.phase === 'research') phase = 'RESEARCH';
-  else if (myPendingTurn?.stage === 'awaiting_pick') phase = 'YOUR_TURN';
   else phase = 'NOT_YOUR_TURN';
 
   return (
     <div className={styles.page} style={{ '--syndicate-color': mySyndicate.color }}>
       <header className={styles.header}>
-        <span className={styles.chip} style={{ background: mySyndicate.color }} />
+        <Logo size="sm" />
+        <div className={styles.teamIdentity}>
+        <TeamAvatar team={mySyndicate} />
         <span className={styles.syndicateName}>{mySyndicate.name}</span>
+        </div>
       </header>
+      <div className={styles.contextLine}><span>{era?.title ?? 'Waiting for the game'}{getMyRole()?.label ? ` · ${getMyRole().label}` : ''}</span>{state.syncing && <span role="status">Reconnecting…</span>}</div>
 
       {phase === 'RESOLUTION' && (
         <ResolutionPhase
@@ -116,6 +124,7 @@ export default function Team() {
       )}
       {phase === 'YOUR_TURN' && (
         <YourTurnPhase
+          key={myPendingTurn.id}
           pendingTurn={myPendingTurn}
           syndicate={mySyndicate}
           isActor={binding.isActor}
@@ -123,6 +132,10 @@ export default function Team() {
           roomSlug={roomSlug}
           accessToken={accessToken}
           onClaimed={refreshBinding}
+          roomVersion={state.room.version}
+          syncing={state.syncing}
+          receiveSnapshot={state.receiveSnapshot}
+          onRefresh={() => Promise.all([state.refresh(), refreshBinding()])}
         />
       )}
     </div>

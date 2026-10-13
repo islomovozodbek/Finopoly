@@ -2,8 +2,9 @@ export { SECTORS } from './sectors.js';
 export { ROUNDS } from './events.js';
 export { CARDS } from './cards.js';
 export { BOARD } from './board.js';
+export { TEAM_ICONS, getTeamIcon, assignTeamIcons } from './team-icons.js';
 
-// New game model (Market Masters). ERAS and SPACE_OPTIONS both carry hidden
+// Finopoly room game model. ERAS and SPACE_OPTIONS both carry hidden
 // percentages and must stay server-only — apps/web never imports either
 // directly. See era-briefings.js, client.js, and
 // scripts/check-content-boundary.js / check-dist-boundary.js.
