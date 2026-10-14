@@ -1,0 +1,3068 @@
+[
+  {
+    "id": "trump_vs_china_(2025)",
+    "name": "Trump vs. China (2025)",
+    "description": "Re-elected President Trump reignites a trade war with China.",
+    "investments": [
+      {
+        "name": "Lockheed Martin (LMT)",
+        "type": "Good",
+        "percentage": 17,
+        "reason": "Defense stock rose +17% due to increased U.S. military spending.",
+        "description": "A US defense and aerospace manufacturer."
+      },
+      {
+        "name": "Raytheon Technologies (RTX)",
+        "type": "Good",
+        "percentage": 13,
+        "reason": "Aerospace and defense stock up +13% from rising security budgets.",
+        "description": "A major US aerospace and defense conglomerate."
+      },
+      {
+        "name": "Northrop Grumman (NOC)",
+        "type": "Good",
+        "percentage": 15,
+        "reason": "Gained +15% on defense contract growth.",
+        "description": "A multinational aerospace and defense technology company."
+      },
+      {
+        "name": "General Dynamics (GD)",
+        "type": "Good",
+        "percentage": 11,
+        "reason": "Up +11% on weapon system orders.",
+        "description": "A US aerospace and defense corporation."
+      },
+      {
+        "name": "CrowdStrike (CRWD)",
+        "type": "Good",
+        "percentage": 23,
+        "reason": "Cybersecurity surged +23% amid cyber conflict fears.",
+        "description": "A US cybersecurity technology company."
+      },
+      {
+        "name": "Palo Alto Networks (PANW)",
+        "type": "Good",
+        "percentage": 19,
+        "reason": "Gained +19% as cyber threats increased.",
+        "description": "A multinational cybersecurity company."
+      },
+      {
+        "name": "Fortinet (FTNT)",
+        "type": "Good",
+        "percentage": 18,
+        "reason": "Rose +18% from demand in cybersecurity infrastructure.",
+        "description": "A multinational corporation developing cybersecurity solutions."
+      },
+      {
+        "name": "Booz Allen Hamilton (BAH)",
+        "type": "Good",
+        "percentage": 14,
+        "reason": "Intelligence contractor gained +14%.",
+        "description": "A US IT and management consulting firm."
+      },
+      {
+        "name": "U.S. Steel (X)",
+        "type": "Good",
+        "percentage": 20,
+        "reason": "Domestic steel demand rose +20% due to tariffs.",
+        "description": "An American integrated steel producer."
+      },
+      {
+        "name": "Nucor (NUE)",
+        "type": "Good",
+        "percentage": 18,
+        "reason": "Benefited from reshoring; up +18%.",
+        "description": "A US producer of steel and related products."
+      },
+      {
+        "name": "General Electric (GE)",
+        "type": "Good",
+        "percentage": 12,
+        "reason": "Reshoring and infrastructure; +12%.",
+        "description": "A multinational conglomerate focused on energy and aviation."
+      },
+      {
+        "name": "Tesla (TSLA)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Domestic EV production support boosted price +10%.",
+        "description": "A US electric vehicle and clean energy company."
+      },
+      {
+        "name": "First Solar (FSLR)",
+        "type": "Good",
+        "percentage": 22,
+        "reason": "Gained +22% from anti-China solar incentives.",
+        "description": "A US manufacturer of solar panels."
+      },
+      {
+        "name": "Enphase Energy (ENPH)",
+        "type": "Good",
+        "percentage": 17,
+        "reason": "Domestic energy focus helped it climb +17%.",
+        "description": "A US energy technology company."
+      },
+      {
+        "name": "Caterpillar (CAT)",
+        "type": "Good",
+        "percentage": 11,
+        "reason": "Up +11% due to construction and manufacturing push.",
+        "description": "A US manufacturer of construction and mining equipment."
+      },
+      {
+        "name": "Deere & Co (DE)",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "Farm equipment rose +9% on ag independence.",
+        "description": "A US manufacturer of agricultural and heavy machinery."
+      },
+      {
+        "name": "Infrastructure ETF (IFRA)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Rose +10% from infrastructure spending.",
+        "description": "A fund investing in infrastructure-related companies."
+      },
+      {
+        "name": "Aerospace ETF (XAR)",
+        "type": "Good",
+        "percentage": 16,
+        "reason": "Up +16% with military industry rally.",
+        "description": "A fund investing in the aerospace sector."
+      },
+      {
+        "name": "Rare Earth ETF (REMX)",
+        "type": "Good",
+        "percentage": 21,
+        "reason": "Rose +21% as U.S. pursued alternatives.",
+        "description": "A fund tracking rare earth metal companies."
+      },
+      {
+        "name": "US Aerospace ETF (ITA)",
+        "type": "Good",
+        "percentage": 14,
+        "reason": "Gained +14%.",
+        "description": "A fund investing in US defense and aerospace."
+      },
+      {
+        "name": "American Tower (AMT)",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "Gained +7% from secure communication infrastructure.",
+        "description": "A real estate investment trust for communications infrastructure."
+      },
+      {
+        "name": "Equinix (EQIX)",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "Data center demand up +9%.",
+        "description": "A multinational digital infrastructure and data center company."
+      },
+      {
+        "name": "Prologis (PLD)",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "Logistics real estate up +6% due to reshoring.",
+        "description": "A real estate investment trust focused on logistics."
+      },
+      {
+        "name": "Short-Term Treasuries (VGSH)",
+        "type": "Good",
+        "percentage": 2,
+        "reason": "Safe haven; up +2%.",
+        "description": "A fund holding short-term US government bonds."
+      },
+      {
+        "name": "1-3yr Treasury ETF (SHY)",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "Low volatility asset gained +1.8%.",
+        "description": "A fund tracking short-term US Treasury bonds."
+      },
+      {
+        "name": "Gold (Commodity)",
+        "type": "Good",
+        "percentage": 12,
+        "reason": "Gained +12% from geopolitical fears.",
+        "description": "A precious metal bought and sold globally."
+      },
+      {
+        "name": "Silver (Commodity)",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "Rose +8%.",
+        "description": "A precious metal used in industry and investment."
+      },
+      {
+        "name": "Defense REITs",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "Up +6%.",
+        "description": "Real estate trusts managing properties for defense contractors."
+      },
+      {
+        "name": "Aerospace & Defense ETF",
+        "type": "Good",
+        "percentage": 13,
+        "reason": "Gained +13%.",
+        "description": "A fund investing in aviation and defense stocks."
+      },
+      {
+        "name": "Industrial REITs",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "Up +5%.",
+        "description": "Real estate trusts focusing on industrial properties."
+      },
+      {
+        "name": "Domestic Farmland Funds",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "Ag push raised prices +7%.",
+        "description": "Investment funds buying and managing agricultural land."
+      },
+      {
+        "name": "Oil ETFs",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "Gained +6% due to supply tension fears.",
+        "description": "Exchange-traded funds that track oil prices."
+      },
+      {
+        "name": "Domestic Logistics ETFs",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "Up +7%.",
+        "description": "Funds investing in supply chain and logistics companies."
+      },
+      {
+        "name": "Small Cap Industrials",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "Benefited from reshoring; +9%.",
+        "description": "Smaller companies operating in the industrial sector."
+      },
+      {
+        "name": "Pro-Manufacturing Muni Bonds",
+        "type": "Good",
+        "percentage": 3,
+        "reason": "Rose +3%.",
+        "description": "Bonds funding local manufacturing infrastructure projects."
+      },
+      {
+        "name": "Agriculture ETFs",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "Up +4% from food security focus.",
+        "description": "Funds that track companies in the agricultural sector."
+      },
+      {
+        "name": "Alibaba (BABA)",
+        "type": "Bad",
+        "percentage": -28,
+        "reason": "Down -28% due to new U.S. tech restrictions.",
+        "description": "A Chinese multinational e-commerce and tech company."
+      },
+      {
+        "name": "Tencent (TCEHY)",
+        "type": "Bad",
+        "percentage": -22,
+        "reason": "Fell -22% on fears of U.S. bans.",
+        "description": "A Chinese multinational technology and entertainment conglomerate."
+      },
+      {
+        "name": "JD.com (JD)",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "Dropped -25% amid anti-China sentiment.",
+        "description": "A major Chinese e-commerce company."
+      },
+      {
+        "name": "Apple (AAPL)",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "Lost -12% due to supply chain and Chinese retaliation.",
+        "description": "A US tech company focused on digital consumer products."
+      },
+      {
+        "name": "Intel (INTC)",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "Dropped -10% due to Chinese market exposure.",
+        "description": "A multinational semiconductor and technology corporation."
+      },
+      {
+        "name": "Qualcomm (QCOM)",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "Fell -15% on tech ban threats.",
+        "description": "A US multinational corporation creating semiconductors."
+      },
+      {
+        "name": "Nike (NKE)",
+        "type": "Bad",
+        "percentage": -9,
+        "reason": "Down -9% on lost Chinese market share.",
+        "description": "A US multinational athletic footwear and apparel corporation."
+      },
+      {
+        "name": "Starbucks (SBUX)",
+        "type": "Bad",
+        "percentage": -7,
+        "reason": "Dropped -7% due to Chinese pushback.",
+        "description": "A multinational chain of coffeehouses and roastery reserves."
+      },
+      {
+        "name": "TSMC (TSM)",
+        "type": "Bad",
+        "percentage": -11,
+        "reason": "Lost -11% due to Taiwan-China tension.",
+        "description": "A Taiwanese multinational semiconductor manufacturing company."
+      },
+      {
+        "name": "ASML (ASML)",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "Fell -10% due to export restrictions.",
+        "description": "A Dutch multinational company specializing in semiconductor manufacturing."
+      },
+      {
+        "name": "Baidu (BIDU)",
+        "type": "Bad",
+        "percentage": -24,
+        "reason": "Dropped -24% amid delisting fears.",
+        "description": "A Chinese multinational tech company specializing in internet services."
+      },
+      {
+        "name": "NIO Inc (NIO)",
+        "type": "Bad",
+        "percentage": -21,
+        "reason": "Down -21% with EV tariffs.",
+        "description": "A Chinese multinational electric vehicle manufacturer."
+      },
+      {
+        "name": "Xpeng (XPEV)",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "Fell -18% due to trade barriers.",
+        "description": "A Chinese electric vehicle manufacturer."
+      },
+      {
+        "name": "Li Auto (LI)",
+        "type": "Bad",
+        "percentage": -17,
+        "reason": "Dropped -17% on U.S. market access risks.",
+        "description": "A Chinese electric vehicle manufacturer."
+      },
+      {
+        "name": "Foxconn (HNHPF)",
+        "type": "Bad",
+        "percentage": -13,
+        "reason": "Down -13% from iPhone disruption.",
+        "description": "A Taiwanese multinational electronics contract manufacturer."
+      },
+      {
+        "name": "China Construction Bank",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "Lost -10% on deglobalization fears.",
+        "description": "One of the large state-owned commercial banks in China."
+      },
+      {
+        "name": "Ping An Insurance (PNGAY)",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "Down -12% with capital outflows.",
+        "description": "A Chinese holding company dealing in insurance and financial services."
+      },
+      {
+        "name": "China ETF (GXC)",
+        "type": "Bad",
+        "percentage": -19,
+        "reason": "Dropped -19%.",
+        "description": "A fund tracking a broad index of Chinese equities."
+      },
+      {
+        "name": "China Internet ETF (KWEB)",
+        "type": "Bad",
+        "percentage": -26,
+        "reason": "Fell -26%.",
+        "description": "A fund tracking Chinese internet software and services companies."
+      },
+      {
+        "name": "China ETF (MCHI)",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "Down -20%.",
+        "description": "An exchange-traded fund focused on Chinese equities."
+      },
+      {
+        "name": "EM Bonds (China-linked)",
+        "type": "Bad",
+        "percentage": -8,
+        "reason": "Lost -8% on capital flight.",
+        "description": "Emerging market bonds with exposure to the Chinese economy."
+      },
+      {
+        "name": "Emerging Market ETFs",
+        "type": "Bad",
+        "percentage": -9,
+        "reason": "Dropped -9%.",
+        "description": "Funds investing in developing nation economies."
+      },
+      {
+        "name": "Luxury Stocks",
+        "type": "Bad",
+        "percentage": -7,
+        "reason": "Down -7% on weakened Chinese demand.",
+        "description": "Shares in companies selling high-end, premium consumer goods."
+      },
+      {
+        "name": "Copper ETFs",
+        "type": "Bad",
+        "percentage": -6,
+        "reason": "Dropped -6% due to industrial slowdown.",
+        "description": "Funds that track the price of copper."
+      },
+      {
+        "name": "Rare Earth Miners in China",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "Down -10%.",
+        "description": "Companies mining rare earth elements located in China."
+      },
+      {
+        "name": "US Tech with China Exposure",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "Fell -15%.",
+        "description": "American technology companies reliant on Chinese markets."
+      },
+      {
+        "name": "Asia-Pacific REITs",
+        "type": "Bad",
+        "percentage": -8,
+        "reason": "Down -8%.",
+        "description": "Real estate investment trusts operating in the Asia-Pacific region."
+      },
+      {
+        "name": "China Logistics Firms",
+        "type": "Bad",
+        "percentage": -11,
+        "reason": "Fell -11%.",
+        "description": "Companies managing supply chains and transport in China."
+      },
+      {
+        "name": "Chinese Import Retailers",
+        "type": "Bad",
+        "percentage": -9,
+        "reason": "Dropped -9%.",
+        "description": "Retail businesses specializing in goods imported from China."
+      },
+      {
+        "name": "China-Linked Commodities",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "Fell -12%.",
+        "description": "Raw materials whose prices rely heavily on Chinese demand."
+      },
+      {
+        "name": "Taiwan Stocks Index (TWSE)",
+        "type": "Bad",
+        "percentage": -14,
+        "reason": "Dropped -14%.",
+        "description": "An index tracking the performance of the Taiwan stock market."
+      },
+      {
+        "name": "Chinese Real Estate Stocks",
+        "type": "Bad",
+        "percentage": -16,
+        "reason": "Down -16%.",
+        "description": "Shares in Chinese property development and management companies."
+      },
+      {
+        "name": "Asia Tourism & Airlines",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "Fell -10%.",
+        "description": "Companies operating travel and flights in Asia."
+      },
+      {
+        "name": "ETF: iShares Asia 50 (AIA)",
+        "type": "Bad",
+        "percentage": -13,
+        "reason": "Lost -13%.",
+        "description": "A fund tracking the 50 largest Asian companies."
+      },
+      {
+        "name": "US-listed China VIE Stocks",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "Down -18%.",
+        "description": "Chinese companies structured to trade on US exchanges."
+      },
+      {
+        "name": "Delisted China ADRs",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "Lost 100% in value.",
+        "description": "Chinese stocks that have been removed from US exchanges."
+      }
+    ]
+  },
+  {
+    "id": "the_great_depression_(1929-1939)",
+    "name": "The Great Depression (1929–1939)",
+    "description": "Stock market crash triggers the worst economic downturn.",
+    "investments": [
+      {
+        "name": "Gold Bullion",
+        "type": "Good",
+        "percentage": 70,
+        "reason": "+70%; held its value as currency collapsed.",
+        "description": "Physical gold kept as an investment."
+      },
+      {
+        "name": "Long-Term US Treasuries",
+        "type": "Good",
+        "percentage": 40,
+        "reason": "+40%; viewed as safest asset.",
+        "description": "US government bonds with long maturity periods."
+      },
+      {
+        "name": "Cash (held outside banks)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "+10%; useful amid deflation and bank failures.",
+        "description": "Physical currency not deposited in a financial institution."
+      },
+      {
+        "name": "Farmland",
+        "type": "Good",
+        "percentage": 15,
+        "reason": "+15%; food remained necessary.",
+        "description": "Agricultural property used for farming or investment."
+      },
+      {
+        "name": "Foreign Bonds (Swiss franc)",
+        "type": "Good",
+        "percentage": 25,
+        "reason": "+25%; safe-haven currency.",
+        "description": "Bonds issued in the currency of Switzerland."
+      },
+      {
+        "name": "Short Selling",
+        "type": "Good",
+        "percentage": 200,
+        "reason": "+200% (for early movers).",
+        "description": "An investment strategy predicting a decline in asset prices."
+      },
+      {
+        "name": "Mining Stocks (Gold/Silver)",
+        "type": "Good",
+        "percentage": 40,
+        "reason": "+40%; gained as precious metals held value.",
+        "description": "Shares of companies that mine precious metals."
+      },
+      {
+        "name": "Utility Stocks",
+        "type": "Good",
+        "percentage": 12,
+        "reason": "+12%; some demand remained constant.",
+        "description": "Shares of companies providing electricity, water, or gas."
+      },
+      {
+        "name": "Consumer Staples",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "+8%; daily needs persisted.",
+        "description": "Companies selling essential everyday products."
+      },
+      {
+        "name": "Railroad Bonds (AAA-rated)",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6%; reliable over time despite decline in equity.",
+        "description": "Highly rated debt issued by railroad companies."
+      },
+      {
+        "name": "Municipal Bonds",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5%; low default rate.",
+        "description": "Debt securities issued by local or state governments."
+      },
+      {
+        "name": "War Bonds (British, pre-WWII)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "+10%; gained trust pre-conflict.",
+        "description": "Historical government debt issued to fund military operations."
+      },
+      {
+        "name": "Canadian Government Bonds",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "+7%; Canada remained relatively stable.",
+        "description": "Debt securities issued by the government of Canada."
+      },
+      {
+        "name": "Blue-Chip Defensive Stocks",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "+4%; stable earnings helped buffer losses.",
+        "description": "Stable, reliable companies that perform steadily in downturns."
+      },
+      {
+        "name": "Insurance Company Bonds",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6%; relatively resilient if well-managed.",
+        "description": "Debt securities issued by insurance providers."
+      },
+      {
+        "name": "Life Insurance Policies",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "+9%; provided stability.",
+        "description": "Financial products providing a payout upon the holder's death."
+      },
+      {
+        "name": "Gold Mining ETFs",
+        "type": "Good",
+        "percentage": 45,
+        "reason": "+45%; closely tracked rising gold value.",
+        "description": "Funds investing in companies that mine gold."
+      },
+      {
+        "name": "Gold-Backed Swiss Accounts",
+        "type": "Good",
+        "percentage": 12,
+        "reason": "+12%; seen as ultra-safe.",
+        "description": "Bank accounts backed by physical gold reserves in Switzerland."
+      },
+      {
+        "name": "Rural Credit Unions",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5%; local and more trusted.",
+        "description": "Member-owned financial cooperatives serving rural communities."
+      },
+      {
+        "name": "Debt-Free Farmland",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "+7%; income source.",
+        "description": "Agricultural land fully owned without any mortgages."
+      },
+      {
+        "name": "Pawn Shops (operators)",
+        "type": "Good",
+        "percentage": 30,
+        "reason": "+30%; grew during hardship.",
+        "description": "Businesses offering secured loans using personal property as collateral."
+      },
+      {
+        "name": "Scrap Metal Dealers",
+        "type": "Good",
+        "percentage": 15,
+        "reason": "+15%; industry demand for reuse.",
+        "description": "Businesses that buy and recycle metallic waste."
+      },
+      {
+        "name": "Repair Shops (shoes, clothes)",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "+8%; people repaired, not replaced.",
+        "description": "Businesses providing maintenance for personal apparel."
+      },
+      {
+        "name": "Barter Networks",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "+10%; alternative economies flourished.",
+        "description": "Systems allowing the exchange of goods without currency."
+      },
+      {
+        "name": "Producers of Durable Goods",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6%; items like canning equipment.",
+        "description": "Companies manufacturing long-lasting products like appliances."
+      },
+      {
+        "name": "Intl. Exposure Companies",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "+7%; less tied to U.S. downturn.",
+        "description": "Firms generating significant revenue from international markets."
+      },
+      {
+        "name": "Pharmaceutical Stocks",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5%; demand for health persisted.",
+        "description": "Shares of companies developing and selling medical drugs."
+      },
+      {
+        "name": "Cigarette Companies",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "+4%; consistent demand.",
+        "description": "Corporations manufacturing and selling tobacco products."
+      },
+      {
+        "name": "Whiskey/Spirits Producers",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5%; demand returned.",
+        "description": "Companies distilling and selling alcoholic beverages."
+      },
+      {
+        "name": "Underground Economy Assets",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "+9%; alternative finance grew.",
+        "description": "Unregulated, informal, or off-the-books financial holdings."
+      },
+      {
+        "name": "Libraries/Publishing",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6%; cheap leisure.",
+        "description": "Institutions and companies managing the distribution of books."
+      },
+      {
+        "name": "Charity-Linked Institutions",
+        "type": "Good",
+        "percentage": 3,
+        "reason": "+3%; donations held up.",
+        "description": "Organizations aligned with philanthropic and nonprofit causes."
+      },
+      {
+        "name": "Basic Clothing Manufacturers",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "+4%; practical goods stayed viable.",
+        "description": "Companies mass-producing everyday apparel."
+      },
+      {
+        "name": "Canning Supply Stocks",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5%; home preservation increased.",
+        "description": "Shares of companies providing food preservation supplies."
+      },
+      {
+        "name": "Seed Producers",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6%; home gardening surged.",
+        "description": "Agricultural companies supplying seeds for farming."
+      },
+      {
+        "name": "Firewood Suppliers",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "+7%; heating demand stable.",
+        "description": "Businesses that harvest and sell wood for fuel."
+      },
+      {
+        "name": "Dow Jones Industrial Average",
+        "type": "Bad",
+        "percentage": -89,
+        "reason": "−89%; collapsed post-1929.",
+        "description": "A stock market index of 30 prominent US companies."
+      },
+      {
+        "name": "Automotive Stocks",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "−80%; demand vanished.",
+        "description": "Shares of companies manufacturing cars and vehicles."
+      },
+      {
+        "name": "Retail Stocks",
+        "type": "Bad",
+        "percentage": -75,
+        "reason": "−75%; mass store closures.",
+        "description": "Shares of companies selling consumer goods directly."
+      },
+      {
+        "name": "Luxury Goods Stocks",
+        "type": "Bad",
+        "percentage": -85,
+        "reason": "−85%; no demand.",
+        "description": "Shares of companies producing high-end premium goods."
+      },
+      {
+        "name": "Airline Stocks (early-stage)",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "−90%; nascent industry crumbled.",
+        "description": "Shares in emerging companies in the aviation sector."
+      },
+      {
+        "name": "Hotel Chains",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "−70%; travel halted.",
+        "description": "Corporations operating multiple lodging facilities globally."
+      },
+      {
+        "name": "Steel Industry Stocks",
+        "type": "Bad",
+        "percentage": -78,
+        "reason": "−78%; construction slowed.",
+        "description": "Shares of companies producing or processing steel."
+      },
+      {
+        "name": "Bank Stocks",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "−90%; systemic collapse.",
+        "description": "Shares in financial institutions providing banking services."
+      },
+      {
+        "name": "Oil Companies (Standard Oil)",
+        "type": "Bad",
+        "percentage": -65,
+        "reason": "−65%; price wars & low demand.",
+        "description": "Firms engaged in exploring and refining petroleum products."
+      },
+      {
+        "name": "REITs",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "−80%; property values fell.",
+        "description": "Companies that own and operate income-producing real estate."
+      },
+      {
+        "name": "Urban Real Estate",
+        "type": "Bad",
+        "percentage": -75,
+        "reason": "−75%; oversupply and foreclosure.",
+        "description": "Property investments located in city environments."
+      },
+      {
+        "name": "Commercial Real Estate",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "−80%; vacancy soared.",
+        "description": "Properties used for business purposes rather than residential."
+      },
+      {
+        "name": "High-Yield / Junk Bonds",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "−90%; mass defaults.",
+        "description": "High-risk corporate bonds offering higher interest rates."
+      },
+      {
+        "name": "Speculative Mining Stocks",
+        "type": "Bad",
+        "percentage": -95,
+        "reason": "−95%; collapsed with commodities.",
+        "description": "High-risk shares in unproven mining ventures."
+      },
+      {
+        "name": "German Stock Holdings",
+        "type": "Bad",
+        "percentage": -85,
+        "reason": "−85%; hyperinflation and chaos.",
+        "description": "Investments in equities traded on German exchanges."
+      },
+      {
+        "name": "Margin Accounts (Leverage)",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "−100%; wiped out in crash.",
+        "description": "Investing with borrowed money to amplify potential returns."
+      },
+      {
+        "name": "Construction Companies",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "−70%; projects halted.",
+        "description": "Businesses focused on building infrastructure and real estate."
+      },
+      {
+        "name": "Investment Banks",
+        "type": "Bad",
+        "percentage": -88,
+        "reason": "−88%; business disappeared.",
+        "description": "Financial institutions assisting corporations in raising capital."
+      },
+      {
+        "name": "Railroad Stocks",
+        "type": "Bad",
+        "percentage": -66,
+        "reason": "−66%; lower cargo and travel.",
+        "description": "Shares of companies operating railway networks."
+      },
+      {
+        "name": "Luxury Apartment Developers",
+        "type": "Bad",
+        "percentage": -78,
+        "reason": "−78%; no market.",
+        "description": "Companies building high-end residential real estate."
+      },
+      {
+        "name": "Consumer Credit Lenders",
+        "type": "Bad",
+        "percentage": -85,
+        "reason": "−85%; defaults skyrocketed.",
+        "description": "Firms offering personal loans and credit to consumers."
+      },
+      {
+        "name": "Advertising Agencies",
+        "type": "Bad",
+        "percentage": -75,
+        "reason": "−75%; cuts in business spending.",
+        "description": "Companies creating and managing marketing campaigns."
+      },
+      {
+        "name": "Cinema Chains",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "−60%; people saved instead.",
+        "description": "Companies operating multiple movie theaters."
+      },
+      {
+        "name": "Radio Manufacturers",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "−70%; dropped out of budget.",
+        "description": "Companies producing radio broadcasting and receiving equipment."
+      },
+      {
+        "name": "Department Stores",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "−80%; footfall collapsed.",
+        "description": "Large retail businesses offering diverse consumer goods."
+      },
+      {
+        "name": "Appliance Manufacturers",
+        "type": "Bad",
+        "percentage": -73,
+        "reason": "−73%; few could afford.",
+        "description": "Companies producing household electrical devices."
+      },
+      {
+        "name": "Shipping Companies",
+        "type": "Bad",
+        "percentage": -77,
+        "reason": "−77%; trade volume fell.",
+        "description": "Businesses transporting goods globally via sea or air."
+      },
+      {
+        "name": "Newspaper Stocks",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "−60%; ad revenue fell.",
+        "description": "Shares in print media and news publishing companies."
+      },
+      {
+        "name": "Art Dealers/Investment Art",
+        "type": "Bad",
+        "percentage": -85,
+        "reason": "−85%; discretionary spending vanished.",
+        "description": "Firms or assets focused on the high-end art market."
+      },
+      {
+        "name": "Education Stocks",
+        "type": "Bad",
+        "percentage": -66,
+        "reason": "−66%; enrollment fell.",
+        "description": "Shares of companies offering educational services and products."
+      },
+      {
+        "name": "Luxury Fashion Stocks",
+        "type": "Bad",
+        "percentage": -82,
+        "reason": "−82%; market disappeared.",
+        "description": "Shares of companies producing high-end designer apparel."
+      },
+      {
+        "name": "Tire Manufacturers",
+        "type": "Bad",
+        "percentage": -68,
+        "reason": "−68%; fewer vehicles.",
+        "description": "Companies producing rubber tires for vehicles."
+      },
+      {
+        "name": "Consumer Electronics",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "−70%; dropped demand.",
+        "description": "Companies manufacturing gadgets and devices for personal use."
+      },
+      {
+        "name": "High-Debt Utility Firms",
+        "type": "Bad",
+        "percentage": -74,
+        "reason": "−74%; couldn’t service debt.",
+        "description": "Utility providers operating with significant borrowed capital."
+      },
+      {
+        "name": "Private Equity Firms",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "−90%; no liquidity.",
+        "description": "Investment companies buying and restructuring private businesses."
+      },
+      {
+        "name": "Speculative RE Syndicates",
+        "type": "Bad",
+        "percentage": -95,
+        "reason": "−95%; collapsed under leverage.",
+        "description": "High-risk pooled investments in real estate projects."
+      }
+    ]
+  },
+  {
+    "id": "ai_boom_&_tech_rally_(2023-2025)",
+    "name": "AI Boom & Tech Stock Rally (2023–2025)",
+    "description": "Generative AI sparks a tech revolution.",
+    "investments": [
+      {
+        "name": "NVIDIA (NVDA)",
+        "type": "Good",
+        "percentage": 210,
+        "reason": "+210% — Massive demand for AI chips.",
+        "description": "A multinational technology company known for graphics processing units."
+      },
+      {
+        "name": "AMD (Advanced Micro Devices)",
+        "type": "Good",
+        "percentage": 110,
+        "reason": "+110% — Competitor in AI chips.",
+        "description": "A US multinational semiconductor company."
+      },
+      {
+        "name": "Microsoft (MSFT)",
+        "type": "Good",
+        "percentage": 65,
+        "reason": "+65% — Integrated AI into Office, Bing, Azure.",
+        "description": "A US multinational technology corporation."
+      },
+      {
+        "name": "Alphabet (GOOGL)",
+        "type": "Good",
+        "percentage": 48,
+        "reason": "+48% — AI-enhanced search and Bard.",
+        "description": "The multinational technology conglomerate parent company of Google."
+      },
+      {
+        "name": "Meta (META)",
+        "type": "Good",
+        "percentage": 92,
+        "reason": "+92% — AI-powered advertising and LLaMA model.",
+        "description": "A multinational technology conglomerate owning Facebook and Instagram."
+      },
+      {
+        "name": "Amazon (AMZN)",
+        "type": "Good",
+        "percentage": 55,
+        "reason": "+55% — AI in AWS and retail personalization.",
+        "description": "A multinational tech and e-commerce giant."
+      },
+      {
+        "name": "Palantir (PLTR)",
+        "type": "Good",
+        "percentage": 140,
+        "reason": "+140% — Gained from AI data analytics contracts.",
+        "description": "A US company specializing in big data analytics."
+      },
+      {
+        "name": "ServiceNow (NOW)",
+        "type": "Good",
+        "percentage": 38,
+        "reason": "+38% — AI-powered enterprise automation.",
+        "description": "A US software company offering cloud computing platforms."
+      },
+      {
+        "name": "Salesforce (CRM)",
+        "type": "Good",
+        "percentage": 36,
+        "reason": "+36% — AI-driven CRM services.",
+        "description": "A US cloud-based software company focusing on CRM."
+      },
+      {
+        "name": "Arista Networks (ANET)",
+        "type": "Good",
+        "percentage": 70,
+        "reason": "+70% — AI data center networking.",
+        "description": "A US computer networking company."
+      },
+      {
+        "name": "Robotics & AI ETF (BOTZ)",
+        "type": "Good",
+        "percentage": 45,
+        "reason": "+45% — Basket of AI stocks.",
+        "description": "A fund investing in robotics and artificial intelligence companies."
+      },
+      {
+        "name": "Semiconductor ETF (SOXX)",
+        "type": "Good",
+        "percentage": 62,
+        "reason": "+62% — Boosted by chipmakers.",
+        "description": "A fund tracking the performance of semiconductor stocks."
+      },
+      {
+        "name": "ARK Innovation ETF (ARKK)",
+        "type": "Good",
+        "percentage": 52,
+        "reason": "+52% — AI-exposed growth stocks.",
+        "description": "A fund focused on disruptive innovation companies."
+      },
+      {
+        "name": "Semiconductor ETF (SMH)",
+        "type": "Good",
+        "percentage": 66,
+        "reason": "+66% — Chips for AI.",
+        "description": "An exchange-traded fund focused on the semiconductor sector."
+      },
+      {
+        "name": "AI ETF (WTAI)",
+        "type": "Good",
+        "percentage": 49,
+        "reason": "+49% — Global AI exposure.",
+        "description": "A fund investing in artificial intelligence technology firms."
+      },
+      {
+        "name": "Gen. AI ETF (CHAT)",
+        "type": "Good",
+        "percentage": 60,
+        "reason": "+60% — New AI-focused ETF.",
+        "description": "A fund tracking generative artificial intelligence companies."
+      },
+      {
+        "name": "QQQ (QQQ)",
+        "type": "Good",
+        "percentage": 40,
+        "reason": "+40% — Tech-heavy index ETF.",
+        "description": "An ETF tracking the NASDAQ-100 index."
+      },
+      {
+        "name": "Cloud Computing ETF (SKYY)",
+        "type": "Good",
+        "percentage": 42,
+        "reason": "+42% — AI-heavy cloud firms.",
+        "description": "A fund investing in cloud computing companies."
+      },
+      {
+        "name": "ASML (ASML)",
+        "type": "Good",
+        "percentage": 75,
+        "reason": "+75% — Lithography machines for chips.",
+        "description": "A Dutch multinational company specializing in semiconductor manufacturing."
+      },
+      {
+        "name": "TSMC (TSM)",
+        "type": "Good",
+        "percentage": 40,
+        "reason": "+40% — Chip manufacturer for AI leaders.",
+        "description": "A Taiwanese multinational semiconductor manufacturing company."
+      },
+      {
+        "name": "Broadcom (AVGO)",
+        "type": "Good",
+        "percentage": 55,
+        "reason": "+55% — AI chips and connectivity.",
+        "description": "A US multinational designer and manufacturer of semiconductors."
+      },
+      {
+        "name": "Marvell Technology (MRVL)",
+        "type": "Good",
+        "percentage": 88,
+        "reason": "+88% — AI networking and chips.",
+        "description": "A US company producing storage and networking semiconductors."
+      },
+      {
+        "name": "Lam Research (LRCX)",
+        "type": "Good",
+        "percentage": 50,
+        "reason": "+50% — Chip equipment.",
+        "description": "A US supplier of semiconductor manufacturing equipment."
+      },
+      {
+        "name": "UiPath (PATH)",
+        "type": "Good",
+        "percentage": 35,
+        "reason": "+35% — Automation and AI workflows.",
+        "description": "A global software company making robotic process automation tools."
+      },
+      {
+        "name": "C3.ai (AI)",
+        "type": "Good",
+        "percentage": 65,
+        "reason": "+65% — Pure-play AI software.",
+        "description": "An enterprise artificial intelligence software provider."
+      },
+      {
+        "name": "Snowflake (SNOW)",
+        "type": "Good",
+        "percentage": 45,
+        "reason": "+45% — AI-powered data cloud.",
+        "description": "A cloud computing-based data cloud company."
+      },
+      {
+        "name": "Datadog (DDOG)",
+        "type": "Good",
+        "percentage": 41,
+        "reason": "+41% — AI monitoring tools.",
+        "description": "A monitoring and security platform for cloud applications."
+      },
+      {
+        "name": "HubSpot (HUBS)",
+        "type": "Good",
+        "percentage": 39,
+        "reason": "+39% — AI-enhanced marketing CRM.",
+        "description": "A developer of software products for inbound marketing."
+      },
+      {
+        "name": "Splunk (SPLK)",
+        "type": "Good",
+        "percentage": 34,
+        "reason": "+34% — AI log analysis tools.",
+        "description": "A software company searching and analyzing machine-generated data."
+      },
+      {
+        "name": "Adobe (ADBE)",
+        "type": "Good",
+        "percentage": 28,
+        "reason": "+28% — Firefly AI tools in creative suite.",
+        "description": "A US multinational computer software company."
+      },
+      {
+        "name": "Intuit (INTU)",
+        "type": "Good",
+        "percentage": 32,
+        "reason": "+32% — AI in finance and tax automation.",
+        "description": "A business software company specializing in financial software."
+      },
+      {
+        "name": "MongoDB (MDB)",
+        "type": "Good",
+        "percentage": 44,
+        "reason": "+44% — AI-enhanced database infrastructure.",
+        "description": "A software company developing a document-oriented database program."
+      },
+      {
+        "name": "ABB (ABB)",
+        "type": "Good",
+        "percentage": 40,
+        "reason": "+40% — AI-powered robotics in manufacturing.",
+        "description": "A Swedish-Swiss multinational corporation specializing in robotics."
+      },
+      {
+        "name": "Siemens (SIEGY)",
+        "type": "Good",
+        "percentage": 38,
+        "reason": "+38% — Smart AI infrastructure.",
+        "description": "A German multinational conglomerate and manufacturing company."
+      },
+      {
+        "name": "Rockwell Automation (ROK)",
+        "type": "Good",
+        "percentage": 33,
+        "reason": "+33% — Industrial AI systems.",
+        "description": "A US provider of industrial automation and IT."
+      },
+      {
+        "name": "Trimble (TRMB)",
+        "type": "Good",
+        "percentage": 30,
+        "reason": "+30% — AI in geospatial and construction.",
+        "description": "A hardware, software, and services technology company."
+      },
+      {
+        "name": "Walgreens (WBA)",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "-40% — Retail decline.",
+        "description": "An American company operating the second-largest pharmacy store chain."
+      },
+      {
+        "name": "3M (MMM)",
+        "type": "Bad",
+        "percentage": -35,
+        "reason": "-35% — Old economy industrials lost relevance.",
+        "description": "A US multinational conglomerate operating in industry and healthcare."
+      },
+      {
+        "name": "Intel (INTC)",
+        "type": "Bad",
+        "percentage": -28,
+        "reason": "-28% — Lagged in AI chip race.",
+        "description": "A multinational semiconductor and technology corporation."
+      },
+      {
+        "name": "Verizon (VZ)",
+        "type": "Bad",
+        "percentage": -22,
+        "reason": "-22% — Low growth telecom.",
+        "description": "A major American telecommunications conglomerate."
+      },
+      {
+        "name": "AT&T (T)",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Declining relevance.",
+        "description": "A major American telecommunications company."
+      },
+      {
+        "name": "Altria (MO)",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "-18% — Sin stocks fell out of favor.",
+        "description": "An American corporation and one of the largest tobacco producers."
+      },
+      {
+        "name": "IBM (IBM)",
+        "type": "Bad",
+        "percentage": -16,
+        "reason": "-16% — Legacy tech not seen as AI innovator.",
+        "description": "A multinational technology corporation known for hardware and software."
+      },
+      {
+        "name": "Coca-Cola (KO)",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "-10% — Defensive stock underperformed.",
+        "description": "An American multinational beverage corporation."
+      },
+      {
+        "name": "McDonald’s (MCD)",
+        "type": "Bad",
+        "percentage": -8,
+        "reason": "-8% — Stagnated during tech boom.",
+        "description": "An American multinational fast food chain."
+      },
+      {
+        "name": "Boeing (BA)",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Ongoing issues + no AI leverage.",
+        "description": "An American multinational aerospace and defense corporation."
+      },
+      {
+        "name": "Goldman Sachs (GS)",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "-12% — Underperformed vs. tech.",
+        "description": "A leading global investment banking and financial services firm."
+      },
+      {
+        "name": "JPMorgan Chase (JPM)",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "-10% — Banking slowed down.",
+        "description": "An American multinational financial services firm."
+      },
+      {
+        "name": "Bank of America (BAC)",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "-18% — High interest rates pressure.",
+        "description": "An American multinational investment bank and financial services company."
+      },
+      {
+        "name": "Wells Fargo (WFC)",
+        "type": "Bad",
+        "percentage": -14,
+        "reason": "-14% — Weak growth.",
+        "description": "An American multinational financial services company."
+      },
+      {
+        "name": "US Bancorp (USB)",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "-25% — Regional banks stress.",
+        "description": "An American bank holding company."
+      },
+      {
+        "name": "Capital One (COF)",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Credit risk concerns.",
+        "description": "An American bank holding company specializing in credit cards."
+      },
+      {
+        "name": "Citigroup (C)",
+        "type": "Bad",
+        "percentage": -16,
+        "reason": "-16% — Global finance exposure lagged.",
+        "description": "An American multinational investment bank and financial services corporation."
+      },
+      {
+        "name": "Charles Schwab (SCHW)",
+        "type": "Bad",
+        "percentage": -22,
+        "reason": "-22% — Retail investing drop.",
+        "description": "A US multinational financial services company."
+      },
+      {
+        "name": "Prologis (PLD)",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "-12% — Commercial real estate correction.",
+        "description": "A real estate investment trust focused on logistics."
+      },
+      {
+        "name": "Simon Property Group (SPG)",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "-25% — Mall REIT weakness.",
+        "description": "A real estate investment trust investing in shopping malls."
+      },
+      {
+        "name": "Digital Realty Trust (DLR)",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "-15% — High debt load.",
+        "description": "A real estate investment trust focusing on data centers."
+      },
+      {
+        "name": "Realty Income (O)",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "-18% — REITs lost appeal.",
+        "description": "A real estate investment trust investing in commercial properties."
+      },
+      {
+        "name": "Vornado Realty Trust (VNO)",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "-40% — Office real estate collapse.",
+        "description": "A real estate investment trust investing in office buildings."
+      },
+      {
+        "name": "SL Green Realty (SLG)",
+        "type": "Bad",
+        "percentage": -35,
+        "reason": "-35% — NYC offices hit hard.",
+        "description": "A real estate investment trust investing in NYC office buildings."
+      },
+      {
+        "name": "Boston Properties (BXP)",
+        "type": "Bad",
+        "percentage": -28,
+        "reason": "-28% — Declining rents.",
+        "description": "A real estate investment trust investing in office workplaces."
+      },
+      {
+        "name": "Crown Castle (CCI)",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Telecom REITs under pressure.",
+        "description": "A real estate investment trust focusing on communications infrastructure."
+      },
+      {
+        "name": "ExxonMobil (XOM)",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "-10% — Less focus during tech surge.",
+        "description": "An American multinational oil and gas corporation."
+      },
+      {
+        "name": "Chevron (CVX)",
+        "type": "Bad",
+        "percentage": -9,
+        "reason": "-9% — Same reasons.",
+        "description": "An American multinational energy corporation."
+      },
+      {
+        "name": "Occidental Petroleum (OXY)",
+        "type": "Bad",
+        "percentage": -8,
+        "reason": "-8% — Declining oil buzz.",
+        "description": "An American company engaged in hydrocarbon exploration."
+      },
+      {
+        "name": "Barrick Gold (GOLD)",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "-12% — Less inflation fear.",
+        "description": "A Canadian mining company producing gold and copper."
+      },
+      {
+        "name": "Newmont Mining (NEM)",
+        "type": "Bad",
+        "percentage": -13,
+        "reason": "-13% — Precious metals cooled.",
+        "description": "An American gold mining company."
+      },
+      {
+        "name": "Alibaba (BABA)",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — China tech crackdowns.",
+        "description": "A Chinese multinational e-commerce and tech company."
+      },
+      {
+        "name": "Tencent (TCEHY)",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "-25% — Same issues.",
+        "description": "A Chinese multinational technology and entertainment conglomerate."
+      },
+      {
+        "name": "Baidu (BIDU)",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Lost AI leadership to U.S.",
+        "description": "A Chinese multinational tech company specializing in internet services."
+      },
+      {
+        "name": "NIO (NIO)",
+        "type": "Bad",
+        "percentage": -28,
+        "reason": "-28% — EV startup volatility.",
+        "description": "A Chinese multinational electric vehicle manufacturer."
+      },
+      {
+        "name": "Petrobras (PBR)",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "-18% — Energy volatility.",
+        "description": "A state-owned Brazilian multinational petroleum corporation."
+      }
+    ]
+  },
+  {
+    "id": "war_in_ukraine_(2022-ongoing)",
+    "name": "War in Ukraine (2022–Ongoing)",
+    "description": "Global sanctions disrupt energy, grain, and commodity chains.",
+    "investments": [
+      {
+        "name": "Lockheed Martin (LMT)",
+        "type": "Good",
+        "percentage": 32,
+        "reason": "+32% — Defense contracts surged.",
+        "description": "A US defense and aerospace manufacturer."
+      },
+      {
+        "name": "Northrop Grumman (NOC)",
+        "type": "Good",
+        "percentage": 34,
+        "reason": "+34% — Increased drone/missile demand.",
+        "description": "A multinational aerospace and defense technology company."
+      },
+      {
+        "name": "Raytheon Technologies (RTX)",
+        "type": "Good",
+        "percentage": 18,
+        "reason": "+18% — Air defense systems demand.",
+        "description": "A major US aerospace and defense conglomerate."
+      },
+      {
+        "name": "General Dynamics (GD)",
+        "type": "Good",
+        "percentage": 26,
+        "reason": "+26% — Military equipment.",
+        "description": "A US aerospace and defense corporation."
+      },
+      {
+        "name": "ExxonMobil (XOM)",
+        "type": "Good",
+        "percentage": 44,
+        "reason": "+44% — Oil prices up.",
+        "description": "An American multinational oil and gas corporation."
+      },
+      {
+        "name": "Chevron (CVX)",
+        "type": "Good",
+        "percentage": 38,
+        "reason": "+38% — Crude oil rally.",
+        "description": "An American multinational energy corporation."
+      },
+      {
+        "name": "Occidental Petroleum (OXY)",
+        "type": "Good",
+        "percentage": 57,
+        "reason": "+57% — Warren Buffett-backed, oil surge.",
+        "description": "An American company engaged in hydrocarbon exploration."
+      },
+      {
+        "name": "BP (BP)",
+        "type": "Good",
+        "percentage": 29,
+        "reason": "+29% — Energy gains.",
+        "description": "A British multinational oil and gas company."
+      },
+      {
+        "name": "Bunge (BG)",
+        "type": "Good",
+        "percentage": 21,
+        "reason": "+21% — Grain disruptions.",
+        "description": "An American agribusiness and food company."
+      },
+      {
+        "name": "Deere & Company (DE)",
+        "type": "Good",
+        "percentage": 19,
+        "reason": "+19% — Farm equipment.",
+        "description": "An American corporation manufacturing agricultural machinery."
+      },
+      {
+        "name": "BAE Systems (BAESY)",
+        "type": "Good",
+        "percentage": 25,
+        "reason": "+25% — UK-based defense company.",
+        "description": "A British multinational arms, security, and aerospace company."
+      },
+      {
+        "name": "Thales Group (HO.PA)",
+        "type": "Good",
+        "percentage": 20,
+        "reason": "+20% — Defense tech.",
+        "description": "A French multinational company designing electrical systems."
+      },
+      {
+        "name": "Huntington Ingalls (HII)",
+        "type": "Good",
+        "percentage": 15,
+        "reason": "+15% — Naval shipbuilding.",
+        "description": "America's largest military shipbuilding company."
+      },
+      {
+        "name": "Energy Transfer (ET)",
+        "type": "Good",
+        "percentage": 24,
+        "reason": "+24% — Pipeline boom.",
+        "description": "A company engaged in natural gas and propane pipeline transport."
+      },
+      {
+        "name": "ConocoPhillips (COP)",
+        "type": "Good",
+        "percentage": 37,
+        "reason": "+37% — Crude surge.",
+        "description": "An American multinational corporation engaged in hydrocarbon exploration."
+      },
+      {
+        "name": "Aerospace ETF (XAR)",
+        "type": "Good",
+        "percentage": 25,
+        "reason": "+25% — Defense sector rally.",
+        "description": "A fund investing in the aerospace sector."
+      },
+      {
+        "name": "US Oil & Gas ETF (IEO)",
+        "type": "Good",
+        "percentage": 33,
+        "reason": "+33% — Oil sector rally.",
+        "description": "A fund investing in US oil and gas companies."
+      },
+      {
+        "name": "Oil Services ETF (OIH)",
+        "type": "Good",
+        "percentage": 35,
+        "reason": "+35% — Oil services.",
+        "description": "A fund investing in oilfield equipment and services companies."
+      },
+      {
+        "name": "Agriculture ETF (DBA)",
+        "type": "Good",
+        "percentage": 18,
+        "reason": "+18% — Ag boom.",
+        "description": "A fund tracking agricultural commodities like corn and wheat."
+      },
+      {
+        "name": "Aerospace & Defense ETF",
+        "type": "Good",
+        "percentage": 20,
+        "reason": "+20% — Defense ETF.",
+        "description": "A fund investing in aviation and defense stocks."
+      },
+      {
+        "name": "Global Energy ETF (FILL)",
+        "type": "Good",
+        "percentage": 24,
+        "reason": "+24% — Global energy.",
+        "description": "A fund investing in global energy companies."
+      },
+      {
+        "name": "Crude Oil (WTI)",
+        "type": "Good",
+        "percentage": 45,
+        "reason": "+45% — Sanctions on Russian oil.",
+        "description": "A specific grade of crude oil used as a benchmark in oil pricing."
+      },
+      {
+        "name": "Natural Gas (EU/TTF)",
+        "type": "Good",
+        "percentage": 300,
+        "reason": "+300% — Russia cut supplies.",
+        "description": "The virtual trading point for natural gas in the Netherlands."
+      },
+      {
+        "name": "Wheat Futures",
+        "type": "Good",
+        "percentage": 55,
+        "reason": "+55% — Ukraine/Russia wheat exports halted.",
+        "description": "Contracts to buy or sell wheat at a set price in the future."
+      },
+      {
+        "name": "Corn Futures",
+        "type": "Good",
+        "percentage": 38,
+        "reason": "+38% — Global supply shock.",
+        "description": "Contracts to buy or sell corn at a set price in the future."
+      },
+      {
+        "name": "Fertilizer (CF Industries)",
+        "type": "Good",
+        "percentage": 70,
+        "reason": "+70% — Russia = major exporter.",
+        "description": "An American manufacturer and distributor of agricultural fertilizers."
+      },
+      {
+        "name": "Coal (Newcastle Index)",
+        "type": "Good",
+        "percentage": 250,
+        "reason": "+250% — EU pivoted to coal.",
+        "description": "The benchmark price for seaborne thermal coal in the Asia-Pacific."
+      },
+      {
+        "name": "U.S. Dollar Index (DXY)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "+10% — Flight to safety.",
+        "description": "An index of the value of the US dollar relative to a basket of foreign currencies."
+      },
+      {
+        "name": "Norwegian Krone (NOK)",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "+8% — Energy export strength.",
+        "description": "The official currency of Norway."
+      },
+      {
+        "name": "Brazilian Real (BRL)",
+        "type": "Good",
+        "percentage": 11,
+        "reason": "+11% — Commodity boom.",
+        "description": "The official currency of Brazil."
+      },
+      {
+        "name": "Short-Term US Treasuries",
+        "type": "Good",
+        "percentage": 2,
+        "reason": "+2% — Safe haven.",
+        "description": "US government debt obligations with maturities of one year or less."
+      },
+      {
+        "name": "Defense Corp. Bonds",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Low-risk sector growth.",
+        "description": "Debt securities issued by defense contracting companies."
+      },
+      {
+        "name": "TX Energy Corridor REITs",
+        "type": "Good",
+        "percentage": 12,
+        "reason": "+12% — Energy boom.",
+        "description": "Real estate investment trusts focusing on the Texas energy corridor."
+      },
+      {
+        "name": "Defense R&D Zone REITs",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "+10% — Defense growth.",
+        "description": "Real estate investment trusts focusing on defense research zones."
+      },
+      {
+        "name": "Rural U.S. Farmland",
+        "type": "Good",
+        "percentage": 14,
+        "reason": "+14% — Food security demand.",
+        "description": "Agricultural land located in rural areas of the United States."
+      },
+      {
+        "name": "AU Agricultural REITs",
+        "type": "Good",
+        "percentage": 11,
+        "reason": "+11% — Wheat substitute supplier.",
+        "description": "Australian real estate investment trusts focused on agriculture."
+      },
+      {
+        "name": "Aeroflot (AFLT.MM)",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "-80% — Flights halted by sanctions.",
+        "description": "The flag carrier and largest airline of the Russian Federation."
+      },
+      {
+        "name": "Sberbank (SBRCY)",
+        "type": "Bad",
+        "percentage": -95,
+        "reason": "-95% — SWIFT cutoff.",
+        "description": "A state-owned Russian banking and financial services company."
+      },
+      {
+        "name": "Gazprom (OGZPY)",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "-70% — Lost EU buyers.",
+        "description": "A majority state-owned multinational energy corporation in Russia."
+      },
+      {
+        "name": "Lukoil (LUKOY)",
+        "type": "Bad",
+        "percentage": -85,
+        "reason": "-85% — Asset seizures.",
+        "description": "A Russian multinational energy corporation."
+      },
+      {
+        "name": "Volkswagen (VWAGY)",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Supply chain, Russia ops cut.",
+        "description": "A German multinational automotive manufacturing corporation."
+      },
+      {
+        "name": "Renault (RNLSY)",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "-40% — Exited Russia.",
+        "description": "A French multinational automobile manufacturer."
+      },
+      {
+        "name": "Adidas (ADDYY)",
+        "type": "Bad",
+        "percentage": -38,
+        "reason": "-38% — Retail pullout.",
+        "description": "A German multinational corporation designing and manufacturing athletic shoes."
+      },
+      {
+        "name": "McDonald's (MCD)",
+        "type": "Bad",
+        "percentage": -8,
+        "reason": "-8% — Business exit loss.",
+        "description": "An American multinational fast food chain."
+      },
+      {
+        "name": "Societe Generale (GLE.PA)",
+        "type": "Bad",
+        "percentage": -26,
+        "reason": "-26% — Russian loans write-off.",
+        "description": "A French multinational investment bank and financial services company."
+      },
+      {
+        "name": "Raiffeisen Bank (RBI)",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "-50% — Eastern EU exposure.",
+        "description": "An Austrian banking group."
+      },
+      {
+        "name": "Alrosa (Diamonds)",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "-60% — Export bans.",
+        "description": "A Russian partially state-owned diamond mining company."
+      },
+      {
+        "name": "Norilsk Nickel (GMKN.MM)",
+        "type": "Bad",
+        "percentage": -55,
+        "reason": "-55% — Metal sanctions.",
+        "description": "A Russian nickel and palladium mining and smelting company."
+      },
+      {
+        "name": "Magnit (MGNT.MM)",
+        "type": "Bad",
+        "percentage": -45,
+        "reason": "-45% — Retail collapsed.",
+        "description": "One of Russia's largest food retail chains."
+      },
+      {
+        "name": "Tatneft (TATN.MM)",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "-60% — Oil sanctions.",
+        "description": "A Russian vertically integrated oil and gas company."
+      },
+      {
+        "name": "Yandex (YNDX)",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "-70% — Tech crackdown.",
+        "description": "A Russian multinational technology company providing internet services."
+      },
+      {
+        "name": "Russia ETF (RSX)",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "-100% — Halted.",
+        "description": "An exchange-traded fund tracking Russian equities."
+      },
+      {
+        "name": "Russia ETF (ERUS)",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "-100% — Delisted.",
+        "description": "An exchange-traded fund investing in Russian companies."
+      },
+      {
+        "name": "SuperDividend ETF (SDIV)",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "-18% — Russian weight.",
+        "description": "A fund investing in high-dividend-yielding equities globally."
+      },
+      {
+        "name": "EU Financials ETF (EUFN)",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "-15% — Contagion fears.",
+        "description": "A fund investing in European financial sector companies."
+      },
+      {
+        "name": "Emerg. Markets ETF (EEM)",
+        "type": "Bad",
+        "percentage": -11,
+        "reason": "-11% — Russian risk.",
+        "description": "A fund investing in emerging market equities."
+      },
+      {
+        "name": "Euro Stoxx 50 (FEZ)",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "-10% — Eurozone downturn.",
+        "description": "An ETF tracking the Euro Stoxx 50 index of European blue-chip stocks."
+      },
+      {
+        "name": "Russian Ruble",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "-40% — Initial collapse.",
+        "description": "The official currency of the Russian Federation."
+      },
+      {
+        "name": "Russian Sovereign Bonds",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "-90% — Defaulted.",
+        "description": "Government debt securities issued by the Russian Federation."
+      },
+      {
+        "name": "Russian Corporate Bonds",
+        "type": "Bad",
+        "percentage": -85,
+        "reason": "-85% — No foreign buyers.",
+        "description": "Debt securities issued by Russian companies."
+      },
+      {
+        "name": "Nickel (after LME spike)",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "-60% — Market manipulation backlash.",
+        "description": "A silvery-white metal used primarily in making stainless steel."
+      },
+      {
+        "name": "Platinum",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "-15% — Volatility.",
+        "description": "A precious silvery-white metal used in jewelry and industry."
+      },
+      {
+        "name": "Russian Export Coal",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "-50% — Bans.",
+        "description": "Coal produced in Russia destined for international markets."
+      },
+      {
+        "name": "Euro (EUR)",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "-12% — Energy shock.",
+        "description": "The official currency of 20 of the 27 member states of the European Union."
+      },
+      {
+        "name": "Polish Zloty (PLN)",
+        "type": "Bad",
+        "percentage": -10,
+        "reason": "-10% — Border tension.",
+        "description": "The official currency of Poland."
+      },
+      {
+        "name": "Hungarian Forint (HUF)",
+        "type": "Bad",
+        "percentage": -14,
+        "reason": "-14% — War exposure.",
+        "description": "The official currency of Hungary."
+      },
+      {
+        "name": "Ukrainian Hryvnia (UAH)",
+        "type": "Bad",
+        "percentage": -35,
+        "reason": "-35% — War.",
+        "description": "The official currency of Ukraine."
+      },
+      {
+        "name": "Russian Municipal Bonds",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "-90% — Default risk.",
+        "description": "Debt securities issued by local governments in Russia."
+      },
+      {
+        "name": "Moscow Real Estate",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "-50% — Sanctions and capital flight.",
+        "description": "Property investments located in the capital of Russia."
+      },
+      {
+        "name": "Kyiv Residential Property",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "-60% — Warzone destruction.",
+        "description": "Residential real estate located in the capital of Ukraine."
+      },
+      {
+        "name": "Eastern Polish Towns",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Proximity to front.",
+        "description": "Real estate and business investments in eastern Poland."
+      },
+      {
+        "name": "EU Luxury REITs",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "-15% — Russian buyers gone.",
+        "description": "European real estate trusts managing luxury properties."
+      }
+    ]
+  },
+  {
+    "id": "us_regional_bank_failures_(2023)",
+    "name": "U.S. Regional Bank Failures (2023)",
+    "description": "Regional banks collapse due to poor risk management.",
+    "investments": [
+      {
+        "name": "JPMorgan Chase (JPM)",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "+9% — Gained deposits and acquired assets from failed banks.",
+        "description": "An American multinational financial services firm."
+      },
+      {
+        "name": "Bank of America (BAC)",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6% — Benefited from depositor migration to large banks.",
+        "description": "An American multinational investment bank and financial services company."
+      },
+      {
+        "name": "Charles Schwab (SCHW)",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Initially hit but rebounded as investors parked money.",
+        "description": "A US multinational financial services company."
+      },
+      {
+        "name": "S&P 500 ETF (SPY)",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "+7% — Market stabilized as contagion fears faded.",
+        "description": "A fund tracking the performance of the S&P 500 index."
+      },
+      {
+        "name": "Goldman Sachs (GS)",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "+8% — Gained advisory deals amid crisis.",
+        "description": "A leading global investment banking and financial services firm."
+      },
+      {
+        "name": "Money Market Fund",
+        "type": "Good",
+        "percentage": 3,
+        "reason": "+3% — Inflow of capital from depositors.",
+        "description": "A mutual fund investing in highly liquid, near-term instruments."
+      },
+      {
+        "name": "(BLK)",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6% — Managed inflows into institutional money products.",
+        "description": "BlackRock, a US multinational investment management corporation."
+      },
+      {
+        "name": "Short Banks ETF (SEF)",
+        "type": "Good",
+        "percentage": 24,
+        "reason": "+24% — Rose as regional bank stocks fell.",
+        "description": "An ETF designed to profit from a decline in bank stocks."
+      },
+      {
+        "name": "Long-Term Treasuries (TLT)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "+10% — Demand for long-dated safe assets.",
+        "description": "A fund tracking long-term US government bonds."
+      },
+      {
+        "name": "Gold ETF (GLD)",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "+8% — Gold demand rose amid fear.",
+        "description": "An exchange-traded fund designed to track the price of gold."
+      },
+      {
+        "name": "Gold (XAU/USD)",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "+9% — Traditional safe haven.",
+        "description": "The spot exchange rate of gold against the US dollar."
+      },
+      {
+        "name": "Silver (XAG/USD)",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "+7% — Often rises during banking fear.",
+        "description": "The spot exchange rate of silver against the US dollar."
+      },
+      {
+        "name": "Bitcoin (BTC)",
+        "type": "Good",
+        "percentage": 22,
+        "reason": "+22% — Gained popularity as alternative to banks.",
+        "description": "A decentralized digital currency and payment system."
+      },
+      {
+        "name": "Ethereum (ETH)",
+        "type": "Good",
+        "percentage": 17,
+        "reason": "+17% — Followed BTC during fear-driven rally.",
+        "description": "A decentralized, open-source blockchain with smart contract functionality."
+      },
+      {
+        "name": "Tether (USDT)",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Used by crypto investors avoiding traditional banks.",
+        "description": "A cryptocurrency stablecoin pegged to the US dollar."
+      },
+      {
+        "name": "USD Index (DXY)",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Dollar strength during market stress.",
+        "description": "A measure of the value of the US dollar against a basket of foreign currencies."
+      },
+      {
+        "name": "TIPS (Inflation-Protected)",
+        "type": "Good",
+        "percentage": 3,
+        "reason": "+3% — Gained as a low-risk bond.",
+        "description": "US Treasury securities indexed to inflation."
+      },
+      {
+        "name": "Municipal Bonds (Short-term)",
+        "type": "Good",
+        "percentage": 2,
+        "reason": "+2% — Considered safer than corporate debt.",
+        "description": "Short-term debt issued by local or state governments."
+      },
+      {
+        "name": "Certificates of Deposit",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "+4% — Shifted from regionals.",
+        "description": "A savings product that earns interest on a lump sum for a fixed period."
+      },
+      {
+        "name": "Large Cap Value Stocks",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6% — Stable income generators attracted investors.",
+        "description": "Shares of large companies considered to be undervalued."
+      },
+      {
+        "name": "Data Center REITs",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Stable cash flow.",
+        "description": "Real estate trusts owning and managing facilities that store data."
+      },
+      {
+        "name": "Healthcare REITs",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "+4% — Resilient during volatility.",
+        "description": "Real estate trusts focusing on medical properties."
+      },
+      {
+        "name": "Logistics REITs",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6% — Supported by e-commerce demand.",
+        "description": "Real estate trusts managing warehouses and distribution centers."
+      },
+      {
+        "name": "Rental Housing Markets",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "+4% — Less impacted by banking turmoil.",
+        "description": "Investments in residential properties intended for leasing."
+      },
+      {
+        "name": "Farmland Investment Funds",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Long-term hedge against volatility.",
+        "description": "Funds investing in agricultural land for return."
+      },
+      {
+        "name": "High-Yield Savings",
+        "type": "Good",
+        "percentage": 3,
+        "reason": "+3% — Safe haven shift.",
+        "description": "Bank accounts offering higher interest rates than standard savings accounts."
+      },
+      {
+        "name": "Defensive Private Equity",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Defensive investments remained strong.",
+        "description": "Private equity investing in stable, recession-resistant businesses."
+      },
+      {
+        "name": "Consumer Staples Stocks",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "+6% — Defensive sector rose.",
+        "description": "Shares of companies producing essential household goods."
+      },
+      {
+        "name": "Utilities Stocks",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Stable cash flows attracted investors.",
+        "description": "Shares of companies providing basic amenities like water and power."
+      },
+      {
+        "name": "Tech Megacaps",
+        "type": "Good",
+        "percentage": 7,
+        "reason": "+7% — Perceived as too big to fail.",
+        "description": "The largest and most influential technology companies in the market."
+      },
+      {
+        "name": "Defense Sector Stocks",
+        "type": "Good",
+        "percentage": 4,
+        "reason": "+4% — Continued government spending.",
+        "description": "Shares of companies manufacturing military equipment and technology."
+      },
+      {
+        "name": "Cybersecurity ETFs",
+        "type": "Good",
+        "percentage": 8,
+        "reason": "+8% — Gained from digital infrastructure focus.",
+        "description": "Funds investing in companies that protect against cyber threats."
+      },
+      {
+        "name": "Short-Term T-Bills",
+        "type": "Good",
+        "percentage": 3,
+        "reason": "+3% — Safe and highly liquid.",
+        "description": "Short-term debt obligations backed by the US government."
+      },
+      {
+        "name": "Precious Metals Mutual Funds",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Rose with metals rally.",
+        "description": "Funds investing in metals like gold, silver, and platinum."
+      },
+      {
+        "name": "VIX ETF (VIXY)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "+10% — Volatility spike benefited.",
+        "description": "A fund tracking the volatility index of the stock market."
+      },
+      {
+        "name": "Insurance Stocks",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "+5% — Benefited from sector rotation.",
+        "description": "Shares of companies providing risk management and insurance policies."
+      },
+      {
+        "name": "Silicon Valley Bank (SIVB)",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "-100% — Collapsed and taken over by FDIC.",
+        "description": "A defunct US commercial bank that focused on tech startups."
+      },
+      {
+        "name": "Signature Bank (SBNY)",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "-100% — Shut down by regulators.",
+        "description": "A defunct US full-service commercial bank."
+      },
+      {
+        "name": "First Republic Bank (FRC)",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "-100% — Collapsed after deposit outflows.",
+        "description": "A defunct US commercial bank and wealth management provider."
+      },
+      {
+        "name": "PacWest Bancorp (PACW)",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "-80% — Heavy exposure to tech/startups.",
+        "description": "A US bank holding company based in California."
+      },
+      {
+        "name": "Western Alliance (WAL)",
+        "type": "Bad",
+        "percentage": -75,
+        "reason": "-75% — Similar regional bank vulnerabilities.",
+        "description": "A US regional bank holding company."
+      },
+      {
+        "name": "KRE Regional Bank ETF",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Basket of small banks hit hard.",
+        "description": "An exchange-traded fund tracking US regional banks."
+      },
+      {
+        "name": "Zions Bancorporation (ZION)",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "-40% — Investor concern over regional banks.",
+        "description": "An American bank holding company headquartered in Utah."
+      },
+      {
+        "name": "KeyCorp (KEY)",
+        "type": "Bad",
+        "percentage": -35,
+        "reason": "-35% — Hit by deposit flight.",
+        "description": "An American bank holding company based in Ohio."
+      },
+      {
+        "name": "Comerica (CMA)",
+        "type": "Bad",
+        "percentage": -45,
+        "reason": "-45% — Struggled with balance sheet risk.",
+        "description": "A US financial services company headquartered in Texas."
+      },
+      {
+        "name": "Fifth Third Bancorp (FITB)",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Suffered from same exposure.",
+        "description": "A US bank holding company based in Ohio."
+      },
+      {
+        "name": "Regional Bank Bonds",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "-40% — Perceived default risk.",
+        "description": "Debt securities issued by regional banking institutions."
+      },
+      {
+        "name": "Mortgage-Backed Securities",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Interest rate impact.",
+        "description": "Investments secured by a collection of mortgages."
+      },
+      {
+        "name": "High-Yield Bonds (JNK ETF)",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "-12% — Risk-off sentiment.",
+        "description": "A fund tracking high-yield, lower-quality corporate bonds."
+      },
+      {
+        "name": "Bank Preferred Shares",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "-60% — Wiped out in crises.",
+        "description": "Preferred stock issued by banking institutions."
+      },
+      {
+        "name": "Office/Retail REIT Bonds",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "-15% — Higher risk.",
+        "description": "Debt issued by trusts managing office and retail properties."
+      },
+      {
+        "name": "Startup Lender Bonds",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Exposure to failed tech.",
+        "description": "Debt issued by financial institutions that lend to startups."
+      },
+      {
+        "name": "Leveraged Bond Hedge Funds",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "-18% — Suffered from volatility.",
+        "description": "Funds using borrowed capital to invest in debt securities."
+      },
+      {
+        "name": "CLOs with Bank Loan Exposure",
+        "type": "Bad",
+        "percentage": -22,
+        "reason": "-22% — Credit quality concerns.",
+        "description": "Collateralized loan obligations backed by bank loans."
+      },
+      {
+        "name": "RE Private Debt Funds",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "-25% — Illiquidity concerns.",
+        "description": "Private funds investing in real estate debt."
+      },
+      {
+        "name": "Subordinated Bank Debt",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "-50% — High risk of nonpayment.",
+        "description": "Bank debt that ranks below other loans in claims on assets."
+      },
+      {
+        "name": "Urban Commercial RE",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Credit tightening.",
+        "description": "Commercial real estate properties located in city centers."
+      },
+      {
+        "name": "Office REITs",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Low occupancy + tighter lending.",
+        "description": "Real estate trusts owning and managing office buildings."
+      },
+      {
+        "name": "Retail REITs",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "-15% — Weak consumer spending outlook.",
+        "description": "Real estate trusts focusing on shopping centers and retail spaces."
+      },
+      {
+        "name": "Regional Mall Properties",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "-25% — Retail exodus + loan concerns.",
+        "description": "Investments in large shopping malls outside urban centers."
+      },
+      {
+        "name": "Coastal Luxury Real Estate",
+        "type": "Bad",
+        "percentage": -12,
+        "reason": "-12% — Lost speculative interest.",
+        "description": "High-end residential properties located near coastlines."
+      },
+      {
+        "name": "RE Crowdfunding",
+        "type": "Bad",
+        "percentage": -20,
+        "reason": "-20% — Liquidity stress.",
+        "description": "Pooling money online from investors for real estate projects."
+      },
+      {
+        "name": "Student Housing REITs",
+        "type": "Bad",
+        "percentage": -15,
+        "reason": "-15% — Affordability concerns.",
+        "description": "Real estate trusts managing properties intended for university students."
+      },
+      {
+        "name": "REITs with Hotel Holdings",
+        "type": "Bad",
+        "percentage": -18,
+        "reason": "-18% — Travel softness.",
+        "description": "Real estate trusts investing in the hospitality industry."
+      },
+      {
+        "name": "ARM Mortgage Landlords",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "-25% — Higher interest burden.",
+        "description": "Landlords relying on adjustable-rate mortgages for financing."
+      },
+      {
+        "name": "Leveraged RE Funds",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Liquidity crunch.",
+        "description": "Real estate funds using significant debt to finance investments."
+      },
+      {
+        "name": "Crypto Banks",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "-100% — Collapsed from exposure.",
+        "description": "Financial institutions providing services for digital currencies."
+      },
+      {
+        "name": "Private Tech Startups",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "-40% — Dependent on failed banks for funding.",
+        "description": "Privately held technology companies in their early stages."
+      },
+      {
+        "name": "Venture Capital Funds",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "-30% — Portfolio marked down.",
+        "description": "Investment funds managing money for high-growth startups."
+      },
+      {
+        "name": "Startup IPO Market",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "-80% — Activity froze.",
+        "description": "The market for newly public startup companies."
+      },
+      {
+        "name": "Fintech Stocks",
+        "type": "Bad",
+        "percentage": -25,
+        "reason": "-25% — Investor caution.",
+        "description": "Shares of companies innovating in financial technology."
+      },
+      {
+        "name": "Regional Bank Funds",
+        "type": "Bad",
+        "percentage": -35,
+        "reason": "-35% — Broad losses.",
+        "description": "Mutual or exchange-traded funds investing in regional banks."
+      }
+    ]
+  },
+  {
+    "id": "2008_global_financial_crisis",
+    "name": "2008 Global Financial Crisis",
+    "description": "Collapse of the U.S. housing bubble and subprime defaults.",
+    "investments": [
+      {
+        "name": "Gold",
+        "type": "Good",
+        "percentage": 25,
+        "reason": "Safe haven demand soared",
+        "description": "A precious metal often viewed as a safe haven asset."
+      },
+      {
+        "name": "U.S. Treasury Bonds",
+        "type": "Good",
+        "percentage": 15,
+        "reason": "Flight to safety asset",
+        "description": "Long-term debt securities issued by the US government."
+      },
+      {
+        "name": "Put Options on S&P 500",
+        "type": "Good",
+        "percentage": 500,
+        "reason": "Hedged against crash",
+        "description": "Financial contracts betting against the S&P 500 index."
+      },
+      {
+        "name": "VIX Call Options",
+        "type": "Good",
+        "percentage": 800,
+        "reason": "Volatility spiked",
+        "description": "Financial contracts betting on an increase in market volatility."
+      },
+      {
+        "name": "USD (U.S. Dollar)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Safe haven currency demand",
+        "description": "The official currency of the United States."
+      },
+      {
+        "name": "Inverse ETFs",
+        "type": "Good",
+        "percentage": 35,
+        "reason": "Profited as market dropped",
+        "description": "Funds designed to profit from a decline in an underlying benchmark."
+      },
+      {
+        "name": "TIPS",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "Low inflation + safe",
+        "description": "Treasury securities designed to protect investors from inflation."
+      },
+      {
+        "name": "Cash",
+        "type": "Good",
+        "percentage": 1,
+        "reason": "Preserved value amid chaos",
+        "description": "Physical currency or highly liquid financial assets."
+      },
+      {
+        "name": "Swiss Franc (CHF)",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Another safe haven",
+        "description": "The official currency of Switzerland, often considered a safe haven."
+      },
+      {
+        "name": "Short Financials",
+        "type": "Good",
+        "percentage": 300,
+        "reason": "Big banks collapsed",
+        "description": "Investment strategies betting against the financial sector."
+      },
+      {
+        "name": "Lehman CDS",
+        "type": "Good",
+        "percentage": 1000,
+        "reason": "Profited from default",
+        "description": "Credit default swaps insuring against the default of Lehman Brothers."
+      },
+      {
+        "name": "Bridgewater Alpha Fund",
+        "type": "Good",
+        "percentage": 9,
+        "reason": "Macro strategy thrived",
+        "description": "A prominent hedge fund managed by Bridgewater Associates."
+      },
+      {
+        "name": "Paulson & Co. Fund",
+        "type": "Good",
+        "percentage": 100,
+        "reason": "Bet against subprime",
+        "description": "A hedge fund known for betting against the subprime mortgage market."
+      },
+      {
+        "name": "Utilities (Selective)",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "Defensive, less volatile",
+        "description": "Specific investments in the utility sector."
+      },
+      {
+        "name": "Consumer Staples",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Stable demand products",
+        "description": "Companies selling essential everyday products."
+      },
+      {
+        "name": "CDs (FDIC insured)",
+        "type": "Good",
+        "percentage": 2,
+        "reason": "Safe principal",
+        "description": "Certificates of deposit protected by federal insurance."
+      },
+      {
+        "name": "Healthcare Stocks",
+        "type": "Good",
+        "percentage": 1,
+        "reason": "Non-cyclical",
+        "description": "Shares of companies in the medical and healthcare industry."
+      },
+      {
+        "name": "Short Homebuilders",
+        "type": "Good",
+        "percentage": 80,
+        "reason": "Housing collapse",
+        "description": "Investments betting against companies that construct residential housing."
+      },
+      {
+        "name": "Soros Fund Mgmt. Holdings",
+        "type": "Good",
+        "percentage": 30,
+        "reason": "Well-diversified plays",
+        "description": "Investments managed by Soros Fund Management."
+      },
+      {
+        "name": "Commodities Short ETFs",
+        "type": "Good",
+        "percentage": 50,
+        "reason": "Oil tanked",
+        "description": "Funds designed to profit from falling commodity prices."
+      },
+      {
+        "name": "Municipal Bonds",
+        "type": "Good",
+        "percentage": 3,
+        "reason": "Less default risk",
+        "description": "Debt securities issued by local or state governments."
+      },
+      {
+        "name": "Defense Stocks",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Gov't-funded industry",
+        "description": "Shares of companies providing military and defense equipment."
+      },
+      {
+        "name": "Futures in VIX or S&P Shorts",
+        "type": "Good",
+        "percentage": 300,
+        "reason": "Risk hedge",
+        "description": "Derivatives betting on market volatility or a market decline."
+      },
+      {
+        "name": "Money Market Funds",
+        "type": "Good",
+        "percentage": 1,
+        "reason": "Preserved capital",
+        "description": "Mutual funds investing in highly liquid, short-term debt."
+      },
+      {
+        "name": "Short-Term Bond ETF (SHY)",
+        "type": "Good",
+        "percentage": 6,
+        "reason": "Safety",
+        "description": "A fund tracking short-maturity US Treasury bonds."
+      },
+      {
+        "name": "Investment-Grade Corp Bonds",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "Safer than junk",
+        "description": "High-quality debt securities issued by financially stable corporations."
+      },
+      {
+        "name": "Agriculture Stocks",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "Food demand steady",
+        "description": "Shares of companies involved in farming and agricultural production."
+      },
+      {
+        "name": "Land in Stable Rural Areas",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "Didn't crash like cities",
+        "description": "Real estate investments in low-volatility agricultural regions."
+      },
+      {
+        "name": "Canadian Banks",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Less toxic exposure",
+        "description": "Financial institutions operating in the Canadian banking sector."
+      },
+      {
+        "name": "Nordic Sovereign Bonds",
+        "type": "Good",
+        "percentage": 5,
+        "reason": "Low risk",
+        "description": "Government debt issued by Scandinavian countries."
+      },
+      {
+        "name": "Berkshire Hathaway",
+        "type": "Good",
+        "percentage": 10,
+        "reason": "Buffett's positioning proved relatively resilient",
+        "description": "A multinational conglomerate holding company led by Warren Buffett."
+      },
+      {
+        "name": "Short ETFs",
+        "type": "Good",
+        "percentage": 50,
+        "reason": "Short major indexes",
+        "description": "Exchange-traded funds designed to profit from market declines."
+      },
+      {
+        "name": "Oil Short ETFs",
+        "type": "Good",
+        "percentage": 100,
+        "reason": "Oil fell hard",
+        "description": "Funds that increase in value when oil prices fall."
+      },
+      {
+        "name": "REIT Shorts",
+        "type": "Good",
+        "percentage": 80,
+        "reason": "Commercial real estate crash",
+        "description": "Investments betting against real estate investment trusts."
+      },
+      {
+        "name": "Credit Hedge Funds",
+        "type": "Good",
+        "percentage": 200,
+        "reason": "Profited on defaults",
+        "description": "Investment funds focusing on debt and credit instruments."
+      },
+      {
+        "name": "Precious Metals ETF",
+        "type": "Good",
+        "percentage": 25,
+        "reason": "Safe haven buying",
+        "description": "A fund investing in metals like gold and silver."
+      },
+      {
+        "name": "Lehman Brothers Stock",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "Bankruptcy",
+        "description": "Shares of the defunct global financial services firm."
+      },
+      {
+        "name": "Bear Stearns Stock",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "Forced sale",
+        "description": "Shares of the defunct New York-based investment bank."
+      },
+      {
+        "name": "AIG Stock",
+        "type": "Bad",
+        "percentage": -97,
+        "reason": "Bailout needed",
+        "description": "Shares of the American International Group insurance corporation."
+      },
+      {
+        "name": "Washington Mutual Stock",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "Failure",
+        "description": "Shares of the defunct American savings bank."
+      },
+      {
+        "name": "Merrill Lynch Stock",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "Bought by BofA",
+        "description": "Shares of the wealth management division of Bank of America."
+      },
+      {
+        "name": "S&P 500 Index",
+        "type": "Bad",
+        "percentage": -57,
+        "reason": "Broad crash",
+        "description": "An index tracking 500 large companies listed on US exchanges."
+      },
+      {
+        "name": "NASDAQ Composite",
+        "type": "Bad",
+        "percentage": -55,
+        "reason": "Sharp selloff",
+        "description": "A stock market index heavily weighted towards technology companies."
+      },
+      {
+        "name": "Dow Jones Industrial Average",
+        "type": "Bad",
+        "percentage": -53,
+        "reason": "Global panic",
+        "description": "A stock market index of 30 prominent US companies."
+      },
+      {
+        "name": "Real Estate (Urban US)",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "Bubble burst",
+        "description": "Property investments within major United States cities."
+      },
+      {
+        "name": "Homebuilder Stocks",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "Collapse in sales",
+        "description": "Shares of companies involved in residential construction."
+      },
+      {
+        "name": "Commercial REITs",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "Falling rents/values",
+        "description": "Real estate trusts managing business and office properties."
+      },
+      {
+        "name": "Subprime Mortgage Bonds",
+        "type": "Bad",
+        "percentage": -100,
+        "reason": "Massive default",
+        "description": "Debt securities backed by high-risk residential mortgages."
+      },
+      {
+        "name": "CDOs",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "Toxic exposure",
+        "description": "Complex financial products backed by a pool of loans."
+      },
+      {
+        "name": "Junk Bonds",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "High default risk",
+        "description": "High-yield, higher-risk corporate debt securities."
+      },
+      {
+        "name": "Retail Stocks",
+        "type": "Bad",
+        "percentage": -80,
+        "reason": "Weak demand",
+        "description": "Shares of companies selling consumer goods directly."
+      },
+      {
+        "name": "Luxury Brands",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "Low spending",
+        "description": "Companies manufacturing and selling high-end premium products."
+      },
+      {
+        "name": "Airline Stocks",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "Travel collapse",
+        "description": "Shares of companies providing commercial aviation services."
+      },
+      {
+        "name": "Auto Stocks",
+        "type": "Bad",
+        "percentage": -90,
+        "reason": "GM went bankrupt",
+        "description": "Shares of companies manufacturing automobiles."
+      },
+      {
+        "name": "Bank ETFs",
+        "type": "Bad",
+        "percentage": -75,
+        "reason": "Exposure to crisis",
+        "description": "Funds tracking the performance of the banking sector."
+      },
+      {
+        "name": "Financial Stocks",
+        "type": "Bad",
+        "percentage": -85,
+        "reason": "Exposure + dilution",
+        "description": "Shares of companies in the financial services industry."
+      },
+      {
+        "name": "Emerging Markets ETFs",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "Capital outflows",
+        "description": "Funds investing in the stock markets of developing countries."
+      },
+      {
+        "name": "Oil Stocks",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "Demand fell",
+        "description": "Shares of companies involved in petroleum exploration and production."
+      },
+      {
+        "name": "Commodity Funds (Broad)",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "Demand collapse",
+        "description": "Investment funds tracking a diverse basket of raw materials."
+      },
+      {
+        "name": "Private Equity Funds",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "No liquidity",
+        "description": "Funds investing directly in private companies."
+      },
+      {
+        "name": "Luxury Real Estate",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "No demand",
+        "description": "High-end, premium residential or commercial property investments."
+      },
+      {
+        "name": "IPO Stocks (2006-08)",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "Overhyped",
+        "description": "Companies that went public during the mid-2000s market cycle."
+      },
+      {
+        "name": "Mortgage REITs",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "Collapse in payouts",
+        "description": "Real estate trusts that finance income-producing real estate."
+      },
+      {
+        "name": "European Banks",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "Global exposure",
+        "description": "Financial institutions operating within the European banking system."
+      },
+      {
+        "name": "Forex Trades Long GBP",
+        "type": "Bad",
+        "percentage": -30,
+        "reason": "Pound fell vs USD",
+        "description": "Currency trading strategies betting on the British pound rising."
+      },
+      {
+        "name": "Mutual Funds (Active)",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "Tracked markets",
+        "description": "Investment funds actively managed by a portfolio manager."
+      },
+      {
+        "name": "Tech Stocks",
+        "type": "Bad",
+        "percentage": -60,
+        "reason": "Broad selloff",
+        "description": "Shares of companies in the technology sector."
+      },
+      {
+        "name": "China ADRs",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "Global panic",
+        "description": "Chinese companies' shares traded on US stock exchanges."
+      },
+      {
+        "name": "Consumer Discretionary ETFs",
+        "type": "Bad",
+        "percentage": -45,
+        "reason": "Spending crash",
+        "description": "Funds investing in non-essential consumer goods and services."
+      },
+      {
+        "name": "Construction Stocks",
+        "type": "Bad",
+        "percentage": -50,
+        "reason": "Low projects",
+        "description": "Shares of companies in the building and infrastructure industry."
+      },
+      {
+        "name": "Banking Preferred Shares",
+        "type": "Bad",
+        "percentage": -70,
+        "reason": "Cut dividends",
+        "description": "Higher-priority stock issued by banks."
+      },
+      {
+        "name": "Corporate Bonds (BBB/BB)",
+        "type": "Bad",
+        "percentage": -40,
+        "reason": "Downgrades/defaults",
+        "description": "Mid-tier corporate debt securities with moderate risk."
+      }
+    ]
+  }
+]

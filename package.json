@@ -3,10 +3,15 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "concurrently -n server,web -c blue,green \"pnpm --filter @finopoly/server dev\" \"pnpm --filter @finopoly/web dev\"",
+    "dev": "npm --prefix market-masters run dev",
+    "dev:rewrite": "concurrently -n server,web -c blue,green \"pnpm --filter @finopoly/server dev\" \"pnpm --filter @finopoly/web dev\"",
+    "install:live": "npm --prefix market-masters ci --no-audit --no-fund && npm --prefix market-masters/client ci --no-audit --no-fund",
+    "build": "npm run install:live && npm --prefix market-masters/client run build",
+    "start": "node market-masters/server/index.js",
+    "test:live": "npm --prefix market-masters test",
     "dev:server": "pnpm --filter @finopoly/server dev",
     "dev:web": "pnpm --filter @finopoly/web dev",
     "test": "pnpm -r test"

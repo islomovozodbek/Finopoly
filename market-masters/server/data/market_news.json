@@ -1,0 +1,22 @@
+[
+  { "id": 1, "title": "3x Leverage", "description": "Your next investment's return (positive or negative) is multiplied by 3.", "type": "MODIFIER", "effect": "MULTIPLIER", "value": 3 },
+  { "id": 2, "title": "The Hedge Fund", "description": "Your next investment has zero downside. If it's negative, you lose $0.", "type": "MODIFIER", "effect": "HEDGE_FUND" },
+  { "id": 3, "title": "Insider Information", "description": "On your next turn, you will only draw 'Good' investments.", "type": "MODIFIER", "effect": "INSIDER_INFO" },
+  { "id": 4, "title": "Blind Faith (All-In)", "description": "On your next turn, you are forced to invest 100% of your cash. Positive returns are doubled.", "type": "MODIFIER", "effect": "BLIND_FAITH" },
+  { "id": 5, "title": "The Big Short", "description": "On your next turn, returns are inverted (losses become gains, gains become losses).", "type": "MODIFIER", "effect": "BIG_SHORT" },
+  { "id": 6, "title": "Monopoly Power", "description": "On your next turn, you will pull 5 investment options instead of 3.", "type": "MODIFIER", "effect": "MONOPOLY_POWER" },
+  { "id": 7, "title": "Freeze Assets", "description": "Choose an opponent. They are forbidden from making an investment on their next turn.", "type": "TARGET_OPPONENT", "effect": "FREEZE" },
+  { "id": 8, "title": "Sabotage", "description": "Choose an opponent. On their next turn, they will only draw 'Bad' investments.", "type": "TARGET_OPPONENT", "effect": "SABOTAGE" },
+  { "id": 9, "title": "Wealth Tax", "description": "The team currently in 1st place instantly loses 20% of their cash.", "type": "GLOBAL_CASH", "effect": "WEALTH_TAX" },
+  { "id": 10, "title": "Stimulus Checks", "description": "Every team except 1st place receives 20% of the 1st place team's cash.", "type": "GLOBAL_CASH", "effect": "STIMULUS" },
+  { "id": 11, "title": "Embezzlement", "description": "Instantly steal 20% of the 1st place team's cash.", "type": "INSTANT_CASH", "effect": "EMBEZZLE" },
+  { "id": 12, "title": "Philanthropic Match", "description": "If you are not last, donate 25% to last place. If you are last, all others give you 6.7%.", "type": "GLOBAL_CASH", "effect": "PHILANTHROPY" },
+  { "id": 13, "title": "Regulatory Audit", "description": "Flip a coin. Heads: +30% cash. Tails: -30% cash.", "type": "COIN_TOSS", "effect": "AUDIT" },
+  { "id": 14, "title": "Bailout", "description": "If you have less than $2,000, your cash is restored to $2,000.", "type": "INSTANT_CASH", "effect": "BAILOUT" },
+  { "id": 15, "title": "Hostile Bid", "description": "Target an opponent and roll dice. Higher roll steals 20% of loser's cash.", "type": "TARGET_OPPONENT", "effect": "HOSTILE_BID" },
+  { "id": 16, "title": "Economic Boom", "description": "Every team instantly gains 20% to their cash balance.", "type": "GLOBAL_CASH", "effect": "BOOM" },
+  { "id": 17, "title": "The Robin Hood", "description": "The team in 1st place loses 30%. The stolen cash is distributed evenly to all others.", "type": "GLOBAL_CASH", "effect": "ROBIN_HOOD" },
+  { "id": 18, "title": "Black Swan Event", "description": "All teams are forced to invest at least $500 in 1 random asset immediately.", "type": "GLOBAL_EVENT", "effect": "BLACK_SWAN" },
+  { "id": 19, "title": "Angel Investor", "description": "Gain $1,000 instantly, but you must invest 100% of your cash on your next turn.", "type": "INSTANT_CASH", "effect": "ANGEL_INVESTOR" },
+  { "id": 20, "title": "High Stakes Coin Toss", "description": "Flip a coin. Win: +33% cash. Lose: Every other team receives $1,000.", "type": "COIN_TOSS", "effect": "HIGH_STAKES_COIN" }
+]
