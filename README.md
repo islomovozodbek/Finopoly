@@ -28,6 +28,8 @@ The existing SQLite file location remains `market-masters/server/data/database.s
 
 Rolls, offered investments, and board events are saved on the server. Reopening a page, reconnecting, or restarting the server with the same database restores the exact pending turn. The server rejects additional movement and stale submissions, and calculates returns from the saved card. Investment returns stay hidden until submission. Team icons are assigned once and stored with the team.
 
+When migrating an installation without persistent storage, a private full-state export can be supplied once using `FINOPOLY_RESTORE_GZIP_BASE64` (gzip-compressed JSON, encoded as base64). It restores rooms, decks, teams, modifiers, pending turns, and transactions only into an empty database. An initialized database is never overwritten, including after a host resets the game. Keep this value out of Git and remove the variable after verifying the migration. Mount the database on persistent storage before deploying.
+
 ## Verify a deployment
 
 `GET /health` returns JSON with `app: "Finopoly"`, `source: "market-masters"`, and the Railway Git commit when available. The page title is **Finopoly**, and the header contains a light/dark theme switch. These signals distinguish this release from the older Market Masters bundle and the Supabase rewrite.

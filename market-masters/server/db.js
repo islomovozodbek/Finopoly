@@ -1,6 +1,7 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
+const { restoreSnapshot } = require('./restore');
 
 // Keep the existing path by default. Deployments with a persistent volume can
 // set FINOPOLY_DB_PATH without moving or resetting the current database.
@@ -42,18 +43,6 @@ try { db.exec("ALTER TABLE teams ADD COLUMN eraStartingCash INTEGER DEFAULT 2000
 try { db.exec("ALTER TABLE rooms ADD COLUMN pendingTurn TEXT"); } catch (e) {}
 try { db.exec("ALTER TABLE teams ADD COLUMN iconIndex INTEGER"); } catch (e) {}
 
-// Assign once, rather than changing identities when cash or rank changes.
-const identityRooms = db.prepare('SELECT DISTINCT room FROM teams').all();
-for (const { room } of identityRooms) {
-  const teams = db.prepare('SELECT id, iconIndex FROM teams WHERE room = ? ORDER BY rowid').all(room);
-  const used = new Set(teams.filter(t => t.iconIndex !== null).map(t => t.iconIndex));
-  for (const team of teams.filter(t => t.iconIndex === null)) {
-    const free = Array.from({ length: 8 }, (_, i) => i).find(i => !used.has(i)) ?? 0;
-    db.prepare('UPDATE teams SET iconIndex = ? WHERE id = ?').run(free, team.id);
-    used.add(free);
-  }
-}
-
 // New Market News Modifiers
 try { db.exec("ALTER TABLE teams ADD COLUMN nextMultiplier INTEGER DEFAULT 1"); } catch (e) {}
 try { db.exec("ALTER TABLE teams ADD COLUMN hedgeFund INTEGER DEFAULT 0"); } catch (e) {}
@@ -79,6 +68,22 @@ db.exec(`
 
 const erasDb = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'eras_db.json'), 'utf8'));
 const defaultEra = erasDb.find(e => e.investments.length === 72) || erasDb[0];
+
+if (restoreSnapshot(db, process.env.FINOPOLY_RESTORE_GZIP_BASE64)) {
+  console.log('Existing game snapshot restored to the new database.');
+}
+
+// Assign once, including teams imported from the previous deployment.
+const identityRooms = db.prepare('SELECT DISTINCT room FROM teams').all();
+for (const { room } of identityRooms) {
+  const teams = db.prepare('SELECT id, iconIndex FROM teams WHERE room = ? ORDER BY rowid').all(room);
+  const used = new Set(teams.filter(t => t.iconIndex !== null).map(t => t.iconIndex));
+  for (const team of teams.filter(t => t.iconIndex === null)) {
+    const free = Array.from({ length: 8 }, (_, i) => i).find(i => !used.has(i)) ?? 0;
+    db.prepare('UPDATE teams SET iconIndex = ? WHERE id = ?').run(free, team.id);
+    used.add(free);
+  }
+}
 
 // Insert default state if not exists
 const state = db.prepare('SELECT * FROM app_state WHERE id = 1').get();
